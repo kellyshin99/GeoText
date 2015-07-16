@@ -10,14 +10,20 @@ import UIKit
 import MapKit
 import CoreLocation
 
-
 class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var bottomSpaceContraint: NSLayoutConstraint!
     @IBOutlet weak var searchText: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     var matchingItems: [MKMapItem] = [MKMapItem]()
-
+    let locationManager = CLLocationManager()
+    
+    @IBAction func currentLocation() {
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
+    }
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
 
         mapView.removeAnnotations(mapView.annotations)
@@ -25,7 +31,7 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, 
         searchBar.resignFirstResponder()
         
         UIView.animateWithDuration(0.3) {
-            self.bottomSpaceContraint.constant = 0
+            self.bottomSpaceContraint.constant = 44
             self.view.layoutIfNeeded()
         }
     }
@@ -55,25 +61,32 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, 
                     annotation.coordinate = item.placemark.coordinate
                     annotation.title = item.name
                     self.mapView.addAnnotation(annotation)
+                    self.mapView.showAnnotations(self.mapView.annotations, animated: true)
                 }
             }
         })
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        mapView.delegate = self
-        mapView.showsUserLocation = true
+        locationManager.requestAlwaysAuthorization()
+        
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+        
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
     }
-    
-    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
-        mapView.centerCoordinate = userLocation.location.coordinate
+
+    func mapViewDidFinishLoadingMap(mapView: MKMapView!) {
+        
     }
-    
+
     func keyboardWillShow(notification: NSNotification) {
         if let info = notification.userInfo {
             var keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
@@ -84,6 +97,7 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, 
             
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

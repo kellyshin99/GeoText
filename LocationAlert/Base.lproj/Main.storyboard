@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Set Location-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cyW-gn-SYC">
-                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="448"/>
                             </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="b70-xG-LX6">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
@@ -26,19 +26,39 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="4LT-QW-B14"/>
                                 </connections>
                             </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3B-ED-Kns">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="8Mw-93-hyx">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iWI-Cs-f5N">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="currentLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yff-qV-0mM"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cyW-gn-SYC" secondAttribute="bottom" id="4TT-k6-XzY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cyW-gn-SYC" secondAttribute="bottom" constant="44" id="4TT-k6-XzY"/>
                             <constraint firstItem="b70-xG-LX6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7zy-Ae-Spe"/>
+                            <constraint firstItem="F3B-ED-Kns" firstAttribute="trailing" secondItem="cyW-gn-SYC" secondAttribute="trailing" id="Ccb-n9-skp"/>
+                            <constraint firstItem="F3B-ED-Kns" firstAttribute="leading" secondItem="cyW-gn-SYC" secondAttribute="leading" id="F81-d2-4FU"/>
                             <constraint firstItem="cyW-gn-SYC" firstAttribute="top" secondItem="b70-xG-LX6" secondAttribute="bottom" id="IS7-KD-TyL"/>
                             <constraint firstAttribute="trailing" secondItem="cyW-gn-SYC" secondAttribute="trailing" id="Q7I-Bq-Oe7"/>
                             <constraint firstItem="cyW-gn-SYC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zmh-t5-fa4"/>
                             <constraint firstItem="b70-xG-LX6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aO0-Rm-4hK"/>
+                            <constraint firstItem="F3B-ED-Kns" firstAttribute="top" secondItem="cyW-gn-SYC" secondAttribute="bottom" id="dKK-pY-1dG"/>
                             <constraint firstAttribute="trailing" secondItem="b70-xG-LX6" secondAttribute="trailing" id="qme-49-iDl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PJv-8J-LB8"/>
+                    <navigationItem key="navigationItem" title="Set Location" id="PJv-8J-LB8"/>
                     <connections>
                         <outlet property="bottomSpaceContraint" destination="4TT-k6-XzY" id="oMC-KQ-YoV"/>
                         <outlet property="mapView" destination="cyW-gn-SYC" id="Ceh-EF-2iI"/>
