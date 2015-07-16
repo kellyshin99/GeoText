@@ -13,6 +13,7 @@
 		0AAC5E791B56CE1F00329E15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC5E781B56CE1F00329E15 /* Images.xcassets */; };
 		0AAC5E7C1B56CE1F00329E15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC5E7A1B56CE1F00329E15 /* LaunchScreen.xib */; };
 		0AAC5E881B56CE2000329E15 /* LocationAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E871B56CE2000329E15 /* LocationAlertTests.swift */; };
+		0AAC5E921B56D4B300329E15 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC5E911B56D4B300329E15 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0AAC5E811B56CE2000329E15 /* LocationAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAC5E861B56CE2000329E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AAC5E871B56CE2000329E15 /* LocationAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertTests.swift; sourceTree = "<group>"; };
+		0AAC5E911B56D4B300329E15 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AAC5E921B56D4B300329E15 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		0AAC5E631B56CE1F00329E15 = {
 			isa = PBXGroup;
 			children = (
+				0AAC5E911B56D4B300329E15 /* MapKit.framework */,
 				0AAC5E6E1B56CE1F00329E15 /* LocationAlert */,
 				0AAC5E841B56CE2000329E15 /* LocationAlertTests */,
 				0AAC5E6D1B56CE1F00329E15 /* Products */,

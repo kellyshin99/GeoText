@@ -7,17 +7,50 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var locationManager: CLLocationManager?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        locationManager = CLLocationManager()
+        locationManager?.requestAlwaysAuthorization()
+        
+/*
+        switch CLLocationManager.authorizationStatus() {
+            case .AuthorizedAlways:
+                locationManager.startUpdatingLocation()
+            case .NotDetermined:
+                locationManager.requestAlwaysAuthorization()
+            case .Restricted, .Denied:
+                let alertController = UIAlertController (
+                    title: "Background Location Access Disabled",
+                    message: "In order to track your location, please open this app's settings and set location access to 'Always'.",
+                    preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                alertController.addAction(cancelAction)
+                
+                let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
+                    if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
+                        UIApplication.sharedApplication().openURL(url)
+                    }
+                }
+                alertController.addAction(openAction)
+            default:
+                println("Error")
+            }
+    
         return true
     }
+        */
+        return true
+}
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -41,6 +74,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-
