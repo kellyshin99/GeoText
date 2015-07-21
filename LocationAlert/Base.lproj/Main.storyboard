@@ -7,7 +7,7 @@
         <!--Set Location-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,7 +37,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="currentLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yff-qV-0mM"/>
+                                                <action selector="showUserLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="V1U-Cp-0Ky"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -58,7 +58,13 @@
                             <constraint firstAttribute="trailing" secondItem="b70-xG-LX6" secondAttribute="trailing" id="qme-49-iDl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Set Location" id="PJv-8J-LB8"/>
+                    <navigationItem key="navigationItem" title="Set Location" id="PJv-8J-LB8">
+                        <barButtonItem key="rightBarButtonItem" title="Set" id="YPK-Ww-DBH">
+                            <connections>
+                                <action selector="showPicker:" destination="BYZ-38-t0r" id="iBX-m5-k1z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomSpaceContraint" destination="4TT-k6-XzY" id="oMC-KQ-YoV"/>
                         <outlet property="mapView" destination="cyW-gn-SYC" id="Ceh-EF-2iI"/>

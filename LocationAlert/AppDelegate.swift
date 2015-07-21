@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 import MapKit
+import AddressBook
+import AddressBookUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

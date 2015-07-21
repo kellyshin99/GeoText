@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A278E9AA-8337-4A0F-8D21-EC383256CD20</string>
+	<string>4EA08F91-1477-4701-9EA9-4CE8652B2BBD</string>
 	<key>IDESourceControlProjectName</key>
 	<string>LocationAlert</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/kellyshin99/LocationAlert.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LocationAlert.xcodeproj</string>
+	<string>LocationAlert.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>64E02E1B85C32693589543BC1CBC8F6BC4D934BA</key>
-		<string>../..</string>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/kellyshin99/LocationAlert.git</string>

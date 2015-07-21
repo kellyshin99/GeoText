@@ -9,8 +9,10 @@
 import UIKit
 import MapKit
 import CoreLocation
+import AddressBook
+import AddressBookUI
 
-class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
+class MapViewViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, ABPeoplePickerNavigationControllerDelegate {
 
     @IBOutlet weak var bottomSpaceContraint: NSLayoutConstraint!
     @IBOutlet weak var searchText: UISearchBar!
@@ -18,11 +20,21 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, 
     var matchingItems: [MKMapItem] = [MKMapItem]()
     let locationManager = CLLocationManager()
     
-    @IBAction func currentLocation() {
+    
+    @IBAction func showUserLocation() {
         mapView.delegate = self
         mapView.showsUserLocation = true
         mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
     }
+    
+    @IBAction func showPicker(sender: AnyObject) {
+        
+        var picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
+        
+        picker.peoplePickerDelegate = self
+        self.presentViewController(picker, animated: true, completion:nil)
+    }//showPicker
+
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
 
@@ -78,15 +90,12 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, 
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
-        
+        mapView.showsUserLocation = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
     }
 
-    func mapViewDidFinishLoadingMap(mapView: MKMapView!) {
-        
-    }
-
+    
     func keyboardWillShow(notification: NSNotification) {
         if let info = notification.userInfo {
             var keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
@@ -97,12 +106,31 @@ class ViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, 
             
         }
     }
+/*
+    func displayCantShowMapAlert() {
+        let cantShowMapAlert = UIAlertController(title: "Location Services is Turned Off", message: "You must give the app permission to use location services", preferredStyle: UIAlertControllerStyle.Alert)
+        cantShowMapAlert.addAction(UIAlertAction(title: "Change Settings",
+            style: .Default,
+            handler: { action in
+                self.openSettings()
+        }))
+        
+        cantShowMapAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        presentViewController(cantShowMapAlert, animated: true, completion: nil)
+        
+    }
     
+    func openSettings() {
+        let url = NSURL(string: UIApplicationOpenSettingsURLString)
+        UIApplication.sharedApplication().openURL(url!)
+    }
+*/    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 
 }
+
 

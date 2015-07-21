@@ -1,0 +1,6 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/APAddressBook" "${PODS_ROOT}/Headers/Public/DTModelStorage" "${PODS_ROOT}/Headers/Public/DTTableViewManager"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/APAddressBook" -isystem "${PODS_ROOT}/Headers/Public/DTModelStorage" -isystem "${PODS_ROOT}/Headers/Public/DTTableViewManager"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-LocationAlert-APAddressBook" -l"Pods-LocationAlert-DTModelStorage" -l"Pods-LocationAlert-DTTableViewManager" -framework "AddressBook" -framework "CoreData" -framework "Foundation" -framework "UIKit"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/Pods
