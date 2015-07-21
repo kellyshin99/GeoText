@@ -15,6 +15,15 @@ class PickContactViewController: UIViewController, ABPeoplePickerNavigationContr
     var authDone = false
     var person: ABRecord!
     
+    @IBAction func showPicker(sender: AnyObject) {
+        
+        var picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
+        
+        picker.peoplePickerDelegate = self
+        self.presentViewController(picker, animated: true, completion:nil)
+    }//showPicker
+
+    
     override func viewDidAppear(animated: Bool) {
         getContacts()
     }

@@ -61,7 +61,7 @@
                     <navigationItem key="navigationItem" title="Set Location" id="PJv-8J-LB8">
                         <barButtonItem key="rightBarButtonItem" title="Set" id="YPK-Ww-DBH">
                             <connections>
-                                <action selector="showPicker:" destination="BYZ-38-t0r" id="iBX-m5-k1z"/>
+                                <action selector="showPicker:" destination="BYZ-38-t0r" id="7pG-Ls-fwE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
