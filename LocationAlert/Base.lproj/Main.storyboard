@@ -7,7 +7,7 @@
         <!--Set Location-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -68,7 +68,7 @@
                     <connections>
                         <outlet property="bottomSpaceContraint" destination="4TT-k6-XzY" id="oMC-KQ-YoV"/>
                         <outlet property="mapView" destination="cyW-gn-SYC" id="Ceh-EF-2iI"/>
-                        <outlet property="searchText" destination="b70-xG-LX6" id="c1l-a6-VAP"/>
+                        <outlet property="searchBar" destination="b70-xG-LX6" id="u2m-4L-zCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

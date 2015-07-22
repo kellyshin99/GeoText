@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3EB42A1B5F0ED2002F0016 /* PeoplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EB4291B5F0ED2002F0016 /* PeoplePickerViewController.swift */; };
 		0AAC5E721B56CE1F00329E15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E711B56CE1F00329E15 /* AppDelegate.swift */; };
 		0AAC5E771B56CE1F00329E15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC5E751B56CE1F00329E15 /* Main.storyboard */; };
 		0AAC5E791B56CE1F00329E15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC5E781B56CE1F00329E15 /* Images.xcassets */; };
 		0AAC5E7C1B56CE1F00329E15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC5E7A1B56CE1F00329E15 /* LaunchScreen.xib */; };
 		0AAC5E881B56CE2000329E15 /* LocationAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E871B56CE2000329E15 /* LocationAlertTests.swift */; };
 		0AAC5E921B56D4B300329E15 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC5E911B56D4B300329E15 /* MapKit.framework */; };
-		0AAC5E9D1B585C8400329E15 /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E9C1B585C8400329E15 /* MapViewViewController.swift */; };
+		0AAC5E9D1B585C8400329E15 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E9C1B585C8400329E15 /* MapViewController.swift */; };
 		B4086C6A19C8D01F9BB60CE2 /* libPods-LocationAlert.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E63E890B521E9305E86F41 /* libPods-LocationAlert.a */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		040527FDEC174474EB865698 /* Pods-LocationAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationAlert/Pods-LocationAlert.debug.xcconfig"; sourceTree = "<group>"; };
+		0A3EB4291B5F0ED2002F0016 /* PeoplePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePickerViewController.swift; sourceTree = "<group>"; };
 		0AAC5E6C1B56CE1F00329E15 /* LocationAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAC5E701B56CE1F00329E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AAC5E711B56CE1F00329E15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +41,7 @@
 		0AAC5E861B56CE2000329E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AAC5E871B56CE2000329E15 /* LocationAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertTests.swift; sourceTree = "<group>"; };
 		0AAC5E911B56D4B300329E15 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		0AAC5E9C1B585C8400329E15 /* MapViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
+		0AAC5E9C1B585C8400329E15 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0AAC5EB11B59CD1400329E15 /* APAddressBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APAddressBook-Bridging-Header.h"; sourceTree = "<group>"; };
 		87FDC4E2D700399EEEABAF0F /* Pods-LocationAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationAlert/Pods-LocationAlert.release.xcconfig"; sourceTree = "<group>"; };
 		C9E63E890B521E9305E86F41 /* libPods-LocationAlert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationAlert.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +130,8 @@
 		0AAC5E9B1B585C8400329E15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0AAC5E9C1B585C8400329E15 /* MapViewViewController.swift */,
+				0AAC5E9C1B585C8400329E15 /* MapViewController.swift */,
+				0A3EB4291B5F0ED2002F0016 /* PeoplePickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -285,7 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AAC5E9D1B585C8400329E15 /* MapViewViewController.swift in Sources */,
+				0A3EB42A1B5F0ED2002F0016 /* PeoplePickerViewController.swift in Sources */,
+				0AAC5E9D1B585C8400329E15 /* MapViewController.swift in Sources */,
 				0AAC5E721B56CE1F00329E15 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

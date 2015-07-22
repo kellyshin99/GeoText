@@ -12,12 +12,12 @@ import CoreLocation
 import AddressBook
 import AddressBookUI
 
-class MapViewViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, ABPeoplePickerNavigationControllerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, ABPeoplePickerNavigationControllerDelegate {
     
     var delegate: ABPeoplePickerNavigationControllerDelegate!
     
     @IBOutlet weak var bottomSpaceContraint: NSLayoutConstraint!
-    @IBOutlet weak var searchText: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     var matchingItems: [MKMapItem] = [MKMapItem]()
     let locationManager = CLLocationManager()
@@ -25,9 +25,16 @@ class MapViewViewController: UIViewController, MKMapViewDelegate, UISearchBarDel
     var person: ABRecord!
     
     @IBAction func showUserLocation() {
-        mapView.delegate = self
-        mapView.showsUserLocation = true
-        mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
+        switch CLLocationManager.authorizationStatus() {
+        case .AuthorizedAlways, .AuthorizedWhenInUse:
+            mapView.delegate = self
+            mapView.showsUserLocation = true
+            mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
+        case .Denied, .Restricted:
+            self.displayCantShowLocationAlert()
+        case .NotDetermined:
+            println("not determined")
+        }
     }
     
     @IBAction func showPicker(sender: AnyObject) {
@@ -66,17 +73,17 @@ class MapViewViewController: UIViewController, MKMapViewDelegate, UISearchBarDel
             self.view.layoutIfNeeded()
         }
     }
-    
+
     func performSearch() {
         
         let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = searchText.text
+        request.naturalLanguageQuery = searchBar.text
         request.region = mapView.region
 
         let search = MKLocalSearch(request: request)
         
         search.startWithCompletionHandler({(response: MKLocalSearchResponse!, error: NSError!) in
-            
+
             if error != nil {
                 println("Error occured in search: \(error.localizedDescription)")
             } else if response.mapItems.count == 0 {
@@ -114,8 +121,13 @@ class MapViewViewController: UIViewController, MKMapViewDelegate, UISearchBarDel
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     func keyboardWillShow(notification: NSNotification) {
+        self.searchBar.setShowsCancelButton(true, animated: true)
         if let info = notification.userInfo {
             var keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
             UIView.animateWithDuration(3.0) {
@@ -126,29 +138,23 @@ class MapViewViewController: UIViewController, MKMapViewDelegate, UISearchBarDel
         }
     }
     
-/*
-    func displayCantShowMapAlert() {
-        let cantShowMapAlert = UIAlertController(title: "Location Services is Turned Off", message: "You must give the app permission to use location services", preferredStyle: UIAlertControllerStyle.Alert)
-        cantShowMapAlert.addAction(UIAlertAction(title: "Change Settings",
+
+    func displayCantShowLocationAlert() {
+        let cantShowLocationAlert = UIAlertController(title: "Location Services is Turned Off",
+            message: "You must give the app permission to use Location Services.",
+            preferredStyle: .Alert)
+        cantShowLocationAlert.addAction(UIAlertAction(title: "Change Settings",
             style: .Default,
             handler: { action in
-                self.openSettings()
+                self.openLocationSettings()
         }))
-        
-        cantShowMapAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        presentViewController(cantShowMapAlert, animated: true, completion: nil)
-        
+        cantShowLocationAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        presentViewController(cantShowLocationAlert, animated: true, completion: nil)
     }
     
-    func openSettings() {
+    func openLocationSettings() {
         let url = NSURL(string: UIApplicationOpenSettingsURLString)
         UIApplication.sharedApplication().openURL(url!)
-    }
-*/
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
