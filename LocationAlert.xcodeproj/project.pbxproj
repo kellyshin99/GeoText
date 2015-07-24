@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A3EB42A1B5F0ED2002F0016 /* PeoplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EB4291B5F0ED2002F0016 /* PeoplePickerViewController.swift */; };
+		0A3EB42A1B5F0ED2002F0016 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EB4291B5F0ED2002F0016 /* DetailViewController.swift */; };
+		0A74CB9C1B6175F100354B3C /* PeoplePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A74CB9B1B6175F100354B3C /* PeoplePicker.swift */; };
+		0A74CB9E1B61ABE000354B3C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A74CB9D1B61ABE000354B3C /* CoreLocation.framework */; };
+		0A74CB9F1B61AC0300354B3C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC5E911B56D4B300329E15 /* MapKit.framework */; };
 		0AAC5E721B56CE1F00329E15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E711B56CE1F00329E15 /* AppDelegate.swift */; };
 		0AAC5E771B56CE1F00329E15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC5E751B56CE1F00329E15 /* Main.storyboard */; };
 		0AAC5E791B56CE1F00329E15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC5E781B56CE1F00329E15 /* Images.xcassets */; };
 		0AAC5E7C1B56CE1F00329E15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC5E7A1B56CE1F00329E15 /* LaunchScreen.xib */; };
 		0AAC5E881B56CE2000329E15 /* LocationAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E871B56CE2000329E15 /* LocationAlertTests.swift */; };
-		0AAC5E921B56D4B300329E15 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC5E911B56D4B300329E15 /* MapKit.framework */; };
 		0AAC5E9D1B585C8400329E15 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E9C1B585C8400329E15 /* MapViewController.swift */; };
 		B4086C6A19C8D01F9BB60CE2 /* libPods-LocationAlert.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E63E890B521E9305E86F41 /* libPods-LocationAlert.a */; };
 /* End PBXBuildFile section */
@@ -30,7 +32,9 @@
 
 /* Begin PBXFileReference section */
 		040527FDEC174474EB865698 /* Pods-LocationAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationAlert/Pods-LocationAlert.debug.xcconfig"; sourceTree = "<group>"; };
-		0A3EB4291B5F0ED2002F0016 /* PeoplePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePickerViewController.swift; sourceTree = "<group>"; };
+		0A3EB4291B5F0ED2002F0016 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0A74CB9B1B6175F100354B3C /* PeoplePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePicker.swift; sourceTree = "<group>"; };
+		0A74CB9D1B61ABE000354B3C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0AAC5E6C1B56CE1F00329E15 /* LocationAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAC5E701B56CE1F00329E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AAC5E711B56CE1F00329E15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AAC5E921B56D4B300329E15 /* MapKit.framework in Frameworks */,
+				0A74CB9F1B61AC0300354B3C /* MapKit.framework in Frameworks */,
+				0A74CB9E1B61ABE000354B3C /* CoreLocation.framework in Frameworks */,
 				B4086C6A19C8D01F9BB60CE2 /* libPods-LocationAlert.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,7 +75,6 @@
 		0AAC5E631B56CE1F00329E15 = {
 			isa = PBXGroup;
 			children = (
-				0AAC5E911B56D4B300329E15 /* MapKit.framework */,
 				0AAC5E6E1B56CE1F00329E15 /* LocationAlert */,
 				0AAC5E841B56CE2000329E15 /* LocationAlertTests */,
 				0AAC5E6D1B56CE1F00329E15 /* Products */,
@@ -131,7 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				0AAC5E9C1B585C8400329E15 /* MapViewController.swift */,
-				0A3EB4291B5F0ED2002F0016 /* PeoplePickerViewController.swift */,
+				0A74CB9B1B6175F100354B3C /* PeoplePicker.swift */,
+				0A3EB4291B5F0ED2002F0016 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -148,6 +153,8 @@
 		B9F143DC5C05EF7C296FA236 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AAC5E911B56D4B300329E15 /* MapKit.framework */,
+				0A74CB9D1B61ABE000354B3C /* CoreLocation.framework */,
 				C9E63E890B521E9305E86F41 /* libPods-LocationAlert.a */,
 			);
 			name = Frameworks;
@@ -288,7 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A3EB42A1B5F0ED2002F0016 /* PeoplePickerViewController.swift in Sources */,
+				0A74CB9C1B6175F100354B3C /* PeoplePicker.swift in Sources */,
+				0A3EB42A1B5F0ED2002F0016 /* DetailViewController.swift in Sources */,
 				0AAC5E9D1B585C8400329E15 /* MapViewController.swift in Sources */,
 				0AAC5E721B56CE1F00329E15 /* AppDelegate.swift in Sources */,
 			);

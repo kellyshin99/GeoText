@@ -9,12 +9,8 @@
 import UIKit
 import MapKit
 import CoreLocation
-import AddressBook
-import AddressBookUI
 
-class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, ABPeoplePickerNavigationControllerDelegate {
-    
-    var delegate: ABPeoplePickerNavigationControllerDelegate!
+class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, DetailViewControllerDelegate {
     
     @IBOutlet weak var bottomSpaceContraint: NSLayoutConstraint!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -37,53 +33,38 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         }
     }
     
-    @IBAction func showPicker(sender: AnyObject) {
+    override func viewDidLoad() {
+        mapView.delegate = self
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        locationManager.requestAlwaysAuthorization()
         
-        let authorizationStatus = ABAddressBookGetAuthorizationStatus()
-        if (authorizationStatus == ABAuthorizationStatus.NotDetermined) {
-            var emptyDictionary: CFDictionaryRef?
-            var addressBook = !(ABAddressBookCreateWithOptions(emptyDictionary, nil) != nil)
-            ABAddressBookRequestAccessWithCompletion(addressBook,{success, error in
-                if success {
-                    self.addressBook = addressBook
-                    self.showContacts()
-                }
-                else {
-                    self.displayCantShowContactsAlert()
-                }
-            })
-        } else if (authorizationStatus == ABAuthorizationStatus.Denied || authorizationStatus == ABAuthorizationStatus.Restricted) {
-            println("access denied")
-        } else if (authorizationStatus == ABAuthorizationStatus.Authorized) {
-            println("access granted")
-            self.showContacts()
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
         }
-       
-    }
-
+        mapView.showsUserLocation = true
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-
-        mapView.removeAnnotations(mapView.annotations)
-        performSearch()
-        searchBar.resignFirstResponder()
-        
-        UIView.animateWithDuration(0.3) {
-            self.bottomSpaceContraint.constant = 44
-            self.view.layoutIfNeeded()
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-
+    
     func performSearch() {
         
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = searchBar.text
         request.region = mapView.region
-
+        
         let search = MKLocalSearch(request: request)
         
         search.startWithCompletionHandler({(response: MKLocalSearchResponse!, error: NSError!) in
-
+            
             if error != nil {
                 println("Error occured in search: \(error.localizedDescription)")
             } else if response.mapItems.count == 0 {
@@ -105,40 +86,65 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         })
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        locationManager.requestAlwaysAuthorization()
-        
-        if (CLLocationManager.locationServicesEnabled()) {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if annotation is MKUserLocation{
+            return nil
         }
-        mapView.showsUserLocation = true
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        self.searchBar.setShowsCancelButton(true, animated: true)
-        if let info = notification.userInfo {
-            var keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-            UIView.animateWithDuration(3.0) {
-                self.bottomSpaceContraint.constant = keyboardFrame.height
-                self.view.layoutIfNeeded()
-            }
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
+        
+        if(pinView == nil){
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.draggable = false
+            pinView!.animatesDrop = true
+            pinView!.pinColor = .Red
             
+            var calloutButton = UIButton.buttonWithType(.DetailDisclosure) as! UIButton
+            pinView!.rightCalloutAccessoryView = calloutButton
+        } else {
+            pinView!.annotation = annotation
+        }
+        return pinView!
+    }
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        if control == view.rightCalloutAccessoryView {
+            performSegueWithIdentifier("Detail", sender: self)
+        }
+        let location = MKPointAnnotation()
+        regionWithGeofence(location)
+        
+    }
+    
+    func regionWithGeofence(location: MKPointAnnotation) -> CLCircularRegion {
+        let region = CLCircularRegion(center: location.coordinate, radius: 10.0, identifier: "geofence")
+        println("geofence set")
+        mapView.rendererForOverlay()
+        return region
+    }
+
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if (overlay.isKindOfClass(CLCircularRegion)) {
+        var circleRenderer = MKCircleRenderer(overlay: overlay)
+        circleRenderer.strokeColor = UIColor.purpleColor()
+        circleRenderer.fillColor = UIColor.purpleColor()
+        
+        return circleRenderer
+        }
+        return nil
+    }
+    
+    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        if region is CLCircularRegion {
+            println("send text")
         }
     }
     
-
+    // MARK: Map Settings Alert
+    
     func displayCantShowLocationAlert() {
         let cantShowLocationAlert = UIAlertController(title: "Location Services is Turned Off",
             message: "You must give the app permission to use Location Services.",
@@ -156,60 +162,45 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         let url = NSURL(string: UIApplicationOpenSettingsURLString)
         UIApplication.sharedApplication().openURL(url!)
     }
+    
+}
 
 
-// MARK: People Picker
-
-    func showContacts() {
-        var picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
-        
-        picker.peoplePickerDelegate = self
-        self.presentViewController(picker, animated: true, completion:nil)
+extension MapViewController: UISearchBarDelegate {
+    
+    func keyboardWillShow(notification: NSNotification) {
+        self.searchBar.setShowsCancelButton(true, animated: true)
+        if let info = notification.userInfo {
+            var keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+            UIView.animateWithDuration(3.0) {
+                self.bottomSpaceContraint.constant = keyboardFrame.height
+                self.view.layoutIfNeeded()
+            }
+            
+        }
     }
     
-    func displayCantShowContactsAlert() {
-        let cantShowContactAlert = UIAlertController(title: "Cannot Show Contacts",
-            message: "You must give the app permission to acces your contacts.",
-            preferredStyle: .Alert)
-        cantShowContactAlert.addAction(UIAlertAction(title: "Change Settings",
-            style: .Default,
-            handler: { action in
-                self.openSettings()
-        }))
-        cantShowContactAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        presentViewController(cantShowContactAlert, animated: true, completion: nil)
-    }
-
-    func openSettings() {
-        let url = NSURL(string: UIApplicationOpenSettingsURLString)
-        UIApplication.sharedApplication().openURL(url!)
-    }
-
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-        peoplePickerNavigationController(peoplePicker, shouldContinueAfterSelectingPerson: person)
+        mapView.removeAnnotations(mapView.annotations)
+        performSearch()
+        searchBar.resignFirstResponder()
+        searchBar.showsCancelButton = false
         
-        peoplePicker.dismissViewControllerAnimated(true, completion: nil)
-        
-        return false;
+        UIView.animateWithDuration(0.3) {
+            self.bottomSpaceContraint.constant = 44
+            self.view.layoutIfNeeded()
+        }
     }
     
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!) {
-        let numbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue()
-        if (ABMultiValueGetCount(numbers) > 0) {
-            let index = 0 as CFIndex
-            let phoneNumber = ABMultiValueCopyValueAtIndex(numbers, index).takeRetainedValue() as! String
-            println(phoneNumber)
-        } else {
-            println("No phone number")
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.showsCancelButton = false
+        UIView.animateWithDuration(0.3) {
+            self.bottomSpaceContraint.constant = 44
+            self.view.layoutIfNeeded()
         }
         
     }
-    
-    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
-        peoplePicker.dismissViewControllerAnimated(true, completion: nil)
-    }
-
 }
-
 

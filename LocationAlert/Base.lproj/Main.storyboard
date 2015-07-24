@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DKL-Nd-zYh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Set Location-->
@@ -29,11 +30,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3B-ED-Kns">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" id="8Mw-93-hyx">
+                                    <barButtonItem title="Current Location" style="plain" id="8Mw-93-hyx">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iWI-Cs-f5N">
-                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <rect key="frame" x="16" y="7" width="100" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal" title="My Location">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -58,22 +59,90 @@
                             <constraint firstAttribute="trailing" secondItem="b70-xG-LX6" secondAttribute="trailing" id="qme-49-iDl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Set Location" id="PJv-8J-LB8">
-                        <barButtonItem key="rightBarButtonItem" title="Set" id="YPK-Ww-DBH">
-                            <connections>
-                                <action selector="showPicker:" destination="BYZ-38-t0r" id="7pG-Ls-fwE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Set Location" id="PJv-8J-LB8"/>
                     <connections>
                         <outlet property="bottomSpaceContraint" destination="4TT-k6-XzY" id="oMC-KQ-YoV"/>
                         <outlet property="mapView" destination="cyW-gn-SYC" id="Ceh-EF-2iI"/>
                         <outlet property="searchBar" destination="b70-xG-LX6" id="u2m-4L-zCM"/>
+                        <segue destination="ook-iR-k7v" kind="show" identifier="Detail" id="Fvc-1y-1at"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1012" y="1048"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="fbd-rh-SZc">
+            <objects>
+                <viewController id="ook-iR-k7v" customClass="DetailViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cHa-Hb-FLf"/>
+                        <viewControllerLayoutGuide type="bottom" id="FVG-CD-BhP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B0C-Bd-PUs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3I-66-o8I">
+                                <rect key="frame" x="238" y="490" width="125" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="b75-9v-eL0"/>
+                                </constraints>
+                                <state key="normal" title="Choose Contact">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPicker:" destination="ook-iR-k7v" eventType="touchUpInside" id="xsc-V5-auL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcL-ba-YqM">
+                                <rect key="frame" x="25" y="90" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpy-yG-RLq">
+                                <rect key="frame" x="25" y="130" width="550" height="182"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="182" id="atO-Ft-75v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcD-G0-chD">
+                                <rect key="frame" x="244" y="543" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dpy-yG-RLq" firstAttribute="leading" secondItem="xcL-ba-YqM" secondAttribute="leading" id="4Af-P2-ehB"/>
+                            <constraint firstItem="dpy-yG-RLq" firstAttribute="centerX" secondItem="o3I-66-o8I" secondAttribute="centerX" id="4aA-xl-cyO"/>
+                            <constraint firstItem="o3I-66-o8I" firstAttribute="centerX" secondItem="B0C-Bd-PUs" secondAttribute="centerX" id="6KZ-mU-uIF"/>
+                            <constraint firstItem="zcD-G0-chD" firstAttribute="top" secondItem="o3I-66-o8I" secondAttribute="bottom" constant="23" id="9H3-qR-uil"/>
+                            <constraint firstItem="FVG-CD-BhP" firstAttribute="top" secondItem="zcD-G0-chD" secondAttribute="bottom" constant="36" id="UBP-5Z-z8v"/>
+                            <constraint firstItem="xcL-ba-YqM" firstAttribute="top" secondItem="cHa-Hb-FLf" secondAttribute="bottom" constant="26" id="apZ-fh-Kno"/>
+                            <constraint firstItem="xcL-ba-YqM" firstAttribute="leading" secondItem="B0C-Bd-PUs" secondAttribute="leadingMargin" constant="9" id="cfL-CB-LZd"/>
+                            <constraint firstItem="zcD-G0-chD" firstAttribute="centerX" secondItem="o3I-66-o8I" secondAttribute="centerX" id="h1x-hb-zw4"/>
+                            <constraint firstItem="dpy-yG-RLq" firstAttribute="top" secondItem="cHa-Hb-FLf" secondAttribute="bottom" constant="66" id="ncQ-Lv-4dn"/>
+                            <constraint firstItem="FVG-CD-BhP" firstAttribute="top" secondItem="o3I-66-o8I" secondAttribute="bottom" constant="80" id="r4p-87-0Nm"/>
+                            <constraint firstItem="dpy-yG-RLq" firstAttribute="top" secondItem="xcL-ba-YqM" secondAttribute="bottom" constant="19" id="xOS-og-I1e"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="w5z-h4-4np">
+                        <barButtonItem key="rightBarButtonItem" title="Set" id="5KP-aP-jdb">
+                            <connections>
+                                <action selector="returnToMap" destination="ook-iR-k7v" id="8MA-Ts-JaD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7P-Vf-Lvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693" y="1048"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVJ-ni-STK">
