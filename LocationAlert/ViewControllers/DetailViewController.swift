@@ -10,16 +10,16 @@ import UIKit
 import MapKit
 import CoreLocation
 import AddressBookUI
-import MessageUI
 
-protocol DetailViewControllerDelegate {
-    
-}
+class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 
-class DetailViewController: UIViewController, MKMapViewDelegate, ABPeoplePickerNavigationControllerDelegate, CLLocationManagerDelegate {
-
+    @IBOutlet weak var address: UITextView!
+    @IBOutlet weak var contactName: UITextField!
     var addressBook: ABAddressBook!
     var person: ABRecord!
+    let locationManager = CLLocationManager()
+    var location = kCLLocationCoordinate2DInvalid
+    var DViewController: MapViewController = MapViewController()
     
     @IBAction func showPicker(sender: AnyObject) {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
@@ -43,13 +43,17 @@ class DetailViewController: UIViewController, MKMapViewDelegate, ABPeoplePickerN
         
     }
     
-    @IBAction func returnToMap() {
+    @IBAction func set() {
+        locationManager.delegate = self
+        let region = CLCircularRegion(center: self.location, radius: 100.0, identifier: "geofence")
+        self.locationManager.startMonitoringForRegion(region)
+        
         navigationController!.popViewControllerAnimated(true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        contactName.delegate = self
         // Do any additional setup after loading the view.
     }
     

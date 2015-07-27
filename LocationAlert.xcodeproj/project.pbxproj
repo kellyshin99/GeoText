@@ -135,8 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				0AAC5E9C1B585C8400329E15 /* MapViewController.swift */,
-				0A74CB9B1B6175F100354B3C /* PeoplePicker.swift */,
 				0A3EB4291B5F0ED2002F0016 /* DetailViewController.swift */,
+				0A74CB9B1B6175F100354B3C /* PeoplePicker.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

@@ -35,9 +35,13 @@ extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
         } else {
             println("No phone number")
         }
-        
-    }
-    
+
+        let nameCFString : CFString = ABRecordCopyCompositeName(person).takeRetainedValue()
+        let name : NSString = nameCFString as NSString
+        contactName.text = name as String
+        }
+
+
     func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
         peoplePicker.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -62,5 +66,4 @@ extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
         UIApplication.sharedApplication().openURL(url!)
     }
 
-    
 }

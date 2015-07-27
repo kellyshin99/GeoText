@@ -10,15 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, DetailViewControllerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var bottomSpaceContraint: NSLayoutConstraint!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     var matchingItems: [MKMapItem] = [MKMapItem]()
     let locationManager = CLLocationManager()
-    var addressBook: ABAddressBook!
-    var person: ABRecord!
+    var overlay: MKOverlay!
     
     @IBAction func showUserLocation() {
         switch CLLocationManager.authorizationStatus() {
@@ -81,6 +80,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
                     annotation.title = item.name
                     self.mapView.addAnnotation(annotation)
                     self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+                    
                 }
             }
         })
@@ -112,20 +112,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         if control == view.rightCalloutAccessoryView {
-            performSegueWithIdentifier("Detail", sender: self)
+            performSegueWithIdentifier("Detail", sender: view.annotation)
         }
-        let location = MKPointAnnotation()
-        regionWithGeofence(location)
-        
     }
     
-    func regionWithGeofence(location: MKPointAnnotation) -> CLCircularRegion {
-        let region = CLCircularRegion(center: location.coordinate, radius: 10.0, identifier: "geofence")
-        println("geofence set")
-        mapView.rendererForOverlay()
-        return region
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Detail" {
+        let location = (sender as! MKAnnotation).coordinate
+        var detailVC = segue.destinationViewController as! DetailViewController
+        }
     }
-
+    
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if (overlay.isKindOfClass(CLCircularRegion)) {
         var circleRenderer = MKCircleRenderer(overlay: overlay)
