@@ -10,17 +10,15 @@ import UIKit
 import MapKit
 import CoreLocation
 import AddressBookUI
-import MessageUI
 
-class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var address: UITextView!
-    @IBOutlet weak var contactName: UITextField!
+    @IBOutlet weak var contactName: UITextView!
     var addressBook: ABAddressBook!
     var person: ABRecord!
     var locationManager: CLLocationManager!
     var location: CLLocationCoordinate2D!
-    var DViewController: MapViewController = MapViewController()
     
     @IBAction func showPicker(sender: AnyObject) {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
@@ -45,24 +43,27 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
     }
     
     @IBAction func set() {
-        let region = CLCircularRegion(center: self.location, radius: 50.0, identifier: "geofence")
+        if contactName.text == "Contact Name" {
+            let alert = UIAlertView(title: "Select a Contact", message: "Please select a contact to message", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        } else {
+        
+        let region = CLCircularRegion(center: self.location, radius: 25.0, identifier: "geofence")
         self.locationManager.startMonitoringForRegion(region)
         
         navigationController!.popViewControllerAnimated(true)
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactName.delegate = self
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
+
     
 }
 

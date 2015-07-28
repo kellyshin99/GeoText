@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import MessageUI
 
 class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
     
@@ -148,12 +149,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             return circleRenderer
     }
     
-    
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         if region is CLCircularRegion {
+            let alert = UIAlertView(title: "IT WORKS", message: "It's working", delegate: self, cancelButtonTitle: "OK")
             println("send text")
         }
     }
+
     
     // MARK: Map Settings Alert
     
@@ -175,7 +177,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         UIApplication.sharedApplication().openURL(url!)
     }
 }
-
 
 extension MapViewController: UISearchBarDelegate {
     
@@ -215,7 +216,5 @@ extension MapViewController: UISearchBarDelegate {
     }
 }
 
-protocol MapViewControllerDelegate {
-    
-}
+
 

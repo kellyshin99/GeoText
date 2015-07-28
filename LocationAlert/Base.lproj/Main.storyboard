@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="1048"/>
+            <point key="canvasLocation" x="280" y="858"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="fbd-rh-SZc">
@@ -101,34 +101,37 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Contact Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJI-HW-rT9">
-                                <rect key="frame" x="111" y="539" width="378" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Address" translatesAutoresizingMaskIntoConstraints="NO" id="19J-LZ-pb6">
-                                <rect key="frame" x="21" y="119" width="559" height="229"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Address" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19J-LZ-pb6">
+                                <rect key="frame" x="21" y="119" width="563" height="255"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="229" id="DKL-yv-kGy"/>
+                                    <constraint firstAttribute="height" constant="255" id="DKL-yv-kGy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact Name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEm-rb-GLy">
+                                <rect key="frame" x="230" y="535" width="141" height="37"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141" id="cJv-Wj-RrO"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="o3I-66-o8I" firstAttribute="centerX" secondItem="B0C-Bd-PUs" secondAttribute="centerX" id="6KZ-mU-uIF"/>
-                            <constraint firstItem="19J-LZ-pb6" firstAttribute="centerX" secondItem="o3I-66-o8I" secondAttribute="centerX" id="Fqn-LX-gLC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RJI-HW-rT9" secondAttribute="trailing" constant="95" id="KwL-Wp-ko7"/>
+                            <constraint firstItem="19J-LZ-pb6" firstAttribute="centerX" secondItem="o3I-66-o8I" secondAttribute="centerX" constant="2" id="Fqn-LX-gLC"/>
+                            <constraint firstItem="JEm-rb-GLy" firstAttribute="top" secondItem="o3I-66-o8I" secondAttribute="bottom" constant="15" id="K0c-gw-JGX"/>
                             <constraint firstItem="19J-LZ-pb6" firstAttribute="leading" secondItem="B0C-Bd-PUs" secondAttribute="leadingMargin" constant="5" id="QST-hq-Qn3"/>
-                            <constraint firstItem="FVG-CD-BhP" firstAttribute="top" secondItem="RJI-HW-rT9" secondAttribute="bottom" constant="31" id="Xrn-Kz-xAD"/>
+                            <constraint firstItem="JEm-rb-GLy" firstAttribute="centerX" secondItem="o3I-66-o8I" secondAttribute="centerX" id="ZwR-qo-Dfr"/>
                             <constraint firstItem="xcL-ba-YqM" firstAttribute="top" secondItem="cHa-Hb-FLf" secondAttribute="bottom" constant="26" id="apZ-fh-Kno"/>
                             <constraint firstItem="xcL-ba-YqM" firstAttribute="leading" secondItem="B0C-Bd-PUs" secondAttribute="leadingMargin" constant="9" id="cfL-CB-LZd"/>
                             <constraint firstItem="19J-LZ-pb6" firstAttribute="top" secondItem="xcL-ba-YqM" secondAttribute="bottom" constant="8" symbolic="YES" id="ilh-Vz-GNR"/>
-                            <constraint firstItem="RJI-HW-rT9" firstAttribute="leading" secondItem="B0C-Bd-PUs" secondAttribute="leadingMargin" constant="95" id="kEg-Ch-xVR"/>
                             <constraint firstItem="FVG-CD-BhP" firstAttribute="top" secondItem="o3I-66-o8I" secondAttribute="bottom" constant="80" id="r4p-87-0Nm"/>
-                            <constraint firstItem="RJI-HW-rT9" firstAttribute="top" secondItem="o3I-66-o8I" secondAttribute="bottom" constant="19" id="rve-7Z-jcs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w5z-h4-4np">
@@ -140,12 +143,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="address" destination="19J-LZ-pb6" id="fQu-BA-evx"/>
-                        <outlet property="contactName" destination="RJI-HW-rT9" id="CwE-Yx-Ao9"/>
+                        <outlet property="contactName" destination="JEm-rb-GLy" id="HNg-Kw-JNr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7P-Vf-Lvq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="1048"/>
+            <point key="canvasLocation" x="961" y="858"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVJ-ni-STK">
@@ -163,7 +166,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9A-50-fbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="1048"/>
+            <point key="canvasLocation" x="-407" y="858"/>
         </scene>
     </scenes>
 </document>
