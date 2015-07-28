@@ -19,6 +19,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     let locationManager = CLLocationManager()
     var overlay: MKOverlay!
     
+    var storedLocation: CLLocationCoordinate2D? = nil
+    
     @IBAction func showUserLocation() {
         switch CLLocationManager.authorizationStatus() {
         case .AuthorizedAlways, .AuthorizedWhenInUse:
@@ -48,6 +50,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        locationManager.monitoredRegions
+        
+        if let storedLocation = storedLocation {
+            var circle = MKCircle(centerCoordinate: storedLocation, radius: 60)
+            mapView.addOverlay(circle)
+        }
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -118,21 +132,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Detail" {
-        let location = (sender as! MKAnnotation).coordinate
-        var detailVC = segue.destinationViewController as! DetailViewController
+            storedLocation = (sender as! MKAnnotation).coordinate
+         
+            var detailVC = segue.destinationViewController as! DetailViewController
+            detailVC.locationManager = locationManager
+            detailVC.location = storedLocation
         }
     }
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        if (overlay.isKindOfClass(CLCircularRegion)) {
-        var circleRenderer = MKCircleRenderer(overlay: overlay)
-        circleRenderer.strokeColor = UIColor.purpleColor()
-        circleRenderer.fillColor = UIColor.purpleColor()
-        
-        return circleRenderer
-        }
-        return nil
+            var circleRenderer = MKCircleRenderer(overlay: overlay)
+            circleRenderer.strokeColor = UIColor.purpleColor()
+            circleRenderer.fillColor = UIColor.purpleColor()
+            
+            return circleRenderer
     }
+    
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         if region is CLCircularRegion {
@@ -159,7 +174,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         let url = NSURL(string: UIApplicationOpenSettingsURLString)
         UIApplication.sharedApplication().openURL(url!)
     }
-    
 }
 
 
@@ -199,5 +213,9 @@ extension MapViewController: UISearchBarDelegate {
         }
         
     }
+}
+
+protocol MapViewControllerDelegate {
+    
 }
 

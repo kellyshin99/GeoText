@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import AddressBookUI
+import MessageUI
 
 class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -17,8 +18,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
     @IBOutlet weak var contactName: UITextField!
     var addressBook: ABAddressBook!
     var person: ABRecord!
-    let locationManager = CLLocationManager()
-    var location = kCLLocationCoordinate2DInvalid
+    var locationManager: CLLocationManager!
+    var location: CLLocationCoordinate2D!
     var DViewController: MapViewController = MapViewController()
     
     @IBAction func showPicker(sender: AnyObject) {
@@ -44,12 +45,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
     }
     
     @IBAction func set() {
-        locationManager.delegate = self
-        let region = CLCircularRegion(center: self.location, radius: 100.0, identifier: "geofence")
+        let region = CLCircularRegion(center: self.location, radius: 50.0, identifier: "geofence")
         self.locationManager.startMonitoringForRegion(region)
         
         navigationController!.popViewControllerAnimated(true)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,13 +63,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
         // Dispose of any resources that can be recreated.
     }
     
-    func displayAddress() {
-
-    }
-    
-    func geofenceRegion() {
-        
-    }
     
 }
+
+
 
