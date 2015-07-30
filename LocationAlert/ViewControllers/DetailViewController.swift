@@ -54,23 +54,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
         navigationController!.popViewControllerAnimated(true)
         }
     }
-    
-//    @IBAction func sendMessage(sender: UIButton) {
-//        if (MFMessageComposeViewController.canSendText()) {
-//            let controller = MFMessageComposeViewController()
-//            controller.body = "Hello world"
-//            controller.recipients = []
-//            controller.messageComposeDelegate = self
-//            self.presentViewController(controller, animated: true, completion: nil)
-//        } else {
-//            let errorAlert = UIAlertView(title: "Cannot Send Message", message: "Sorry, your device is unable to send messages", delegate: self, cancelButtonTitle: "OK")
-//            errorAlert.show()
-//        }
-//    }
-//    
-//    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
-//        self.dismissViewControllerAnimated(true, completion: nil)
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,5 +66,63 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
     
 }
 
-
+extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
+    func showContacts() {
+        var picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
+        
+        picker.peoplePickerDelegate = self
+        self.presentViewController(picker, animated: true, completion:nil)
+    }
+    
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {
+        
+        peoplePickerNavigationController(peoplePicker, shouldContinueAfterSelectingPerson: person)
+        
+        peoplePicker.dismissViewControllerAnimated(true, completion: nil)
+        
+        return false;
+    }
+    
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!) {
+        let numbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue()
+        if (ABMultiValueGetCount(numbers) > 0) {
+            let index = 0 as CFIndex
+            let phoneNumber = ABMultiValueCopyValueAtIndex(numbers, index).takeRetainedValue() as! String
+            println(phoneNumber)
+            
+        } else {
+            println("No phone number")
+        }
+        
+        let nameCFString : CFString = ABRecordCopyCompositeName(person).takeRetainedValue()
+        let name : NSString = nameCFString as NSString
+        contactName.text = name as String
+    }
+    
+    
+    func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
+        peoplePicker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: Contact Settings Alert
+    
+    func displayCantShowContactsAlert() {
+        let cantShowContactAlert = UIAlertController(title: "Cannot Show Contacts",
+            message: "You must give the app permission to acces your contacts.",
+            preferredStyle: .Alert)
+        cantShowContactAlert.addAction(UIAlertAction(title: "Change Settings",
+            style: .Default,
+            handler: { action in
+                self.openContactSettings()
+        }))
+        cantShowContactAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        presentViewController(cantShowContactAlert, animated: true, completion: nil)
+    }
+    
+    func openContactSettings() {
+        let url = NSURL(string: UIApplicationOpenSettingsURLString)
+        UIApplication.sharedApplication().openURL(url!)
+    }
+    
+}
 

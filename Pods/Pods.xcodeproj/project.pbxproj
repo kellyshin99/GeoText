@@ -7,754 +7,263 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08DFE6C0B7527AF484B6F13A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E8925D9483C8E9077B7075 /* Foundation.framework */; };
-		0D0F79BDDC9878FFEE94990B /* APAddressBook-Bridging.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7438EC1B0C2DB31DA1A0CE /* APAddressBook-Bridging.h */; };
-		10165CF867012B900D52CEA6 /* DTTableViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 126E569185D6B161B6EAEA31 /* DTTableViewManager.h */; };
-		1069BD31270D4E539D43FB04 /* Pods-LocationAlert-APAddressBook-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9AA5411AE63B90FEFD7D8F /* Pods-LocationAlert-APAddressBook-dummy.m */; };
-		267BA72878D20790D2E1E7EE /* DTMemoryStorage_DTTableViewManagerAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CA07FF3FC3174563370E9B7A /* DTMemoryStorage_DTTableViewManagerAdditions.h */; };
-		2BB1209226669345B06E5812 /* UIView+DTLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA69FA305569F99728E4A2E /* UIView+DTLoading.m */; };
-		34165318CD4DBF4FDBACF630 /* DTMemoryStorage+UpdateWithoutAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = A43E8DD8DCB7D55B5726933A /* DTMemoryStorage+UpdateWithoutAnimations.h */; };
-		379007C381E7721AF45367E2 /* DTMemoryStorage_DTTableViewManagerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC80E8F214F8E6AF7307A1B /* DTMemoryStorage_DTTableViewManagerAdditions.m */; };
-		39B315D300DD106A0CFE6D7D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E40C668DB85E6FA8FB91C16A /* CoreData.framework */; };
-		3BCB04FA07BE7A6CFC58DB9C /* DTRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F4234CAC260A1E1CA7358FEC /* DTRuntimeHelper.m */; };
-		3BE36BE54AB43EBE13E7EE6A /* APTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = F956456D6188868736C075DA /* APTypes.h */; };
-		400A592062E6FCEDB05BF98A /* Pods-LocationAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 530BD64ADF7EDC546B05B95C /* Pods-LocationAlert-dummy.m */; };
-		438C5F19185FF2A53D296EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E8925D9483C8E9077B7075 /* Foundation.framework */; };
-		4D11508B1D30FCA5491BA1FB /* APContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C8DEED8A031BBC2042686C /* APContact.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4EFB0D054BBCB6EE9945E545 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88FA52AA2D341F0453F3E43 /* AddressBook.framework */; };
-		50F3A77ABE395D9182E55F99 /* DTBaseStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7203C52B4839D278344D965B /* DTBaseStorage.h */; };
-		53E29EB1C034D613EEEE95DB /* DTMemoryStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 196538B8F1E1E17CD9ABABF3 /* DTMemoryStorage.h */; };
-		5757D74699791A3F20A0E7F9 /* APSocialProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1858FB14BACA08C9BFEEF48B /* APSocialProfile.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		59E330A38770A6D1E589F5AF /* DTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E86C4362EF6E39E53D1F6AF6 /* DTTableViewCell.m */; };
-		60E90F445B576E710D5F84F0 /* APPhoneWithLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = A83FC4A7CED60B3D512EAB96 /* APPhoneWithLabel.h */; };
-		65F67ED21119678B88D83290 /* DTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2205EACC96BCA6B78FED46 /* DTTableViewController.m */; };
-		67EA1CD9C13255DDF4369F0A /* APSocialProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = FBFB978A562C877AC19139FC /* APSocialProfile.h */; };
-		73E1EBF91050F62BDF506A23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E8925D9483C8E9077B7075 /* Foundation.framework */; };
-		74E933A454E94CEB0A9B7D40 /* DTModelTransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = 552DD6E406540E77EAF24A21 /* DTModelTransfer.h */; };
-		783AB5B6EDE6B899BDF1860D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E8925D9483C8E9077B7075 /* Foundation.framework */; };
-		7AC05C79C0F903658F5C0BCD /* APPhoneWithLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B345661C4BFC9B7D0741D65 /* APPhoneWithLabel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		7DFCE495CEF6E5BBEB40DF07 /* DTTableViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B7EF54FEAEE10F37E4B75 /* DTTableViewFactory.m */; };
-		882F67FB08D0AFBB8C6CA577 /* UIView+DTLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 7724F124DE878B7EED4D5417 /* UIView+DTLoading.h */; };
-		89E40DAA4099BF296FC9BFB1 /* APAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = E980F97C3A977DFE85712BB0 /* APAddress.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		8A68AAD19278F7AE89900825 /* DTTableViewControllerEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DC0E893376D8116BDBDE8F5 /* DTTableViewControllerEvents.h */; };
-		8ADF6EE3FB0AE1C5858D6CA9 /* DTStorageUpdating.h in Headers */ = {isa = PBXBuildFile; fileRef = A517193760AAD5D578B48793 /* DTStorageUpdating.h */; };
-		8E520CB44FF26004AC895528 /* DTSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 67300089AD4214CEE51428D0 /* DTSection.h */; };
-		907CB7DF8E0858E5DEB4E79C /* DTMemoryStorage+UpdateWithoutAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D56E1E47837768A645102 /* DTMemoryStorage+UpdateWithoutAnimations.m */; };
-		909CB751B2E30004A43FDF09 /* Pods-LocationAlert-DTModelStorage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AB47754ED33DE24DDE9300 /* Pods-LocationAlert-DTModelStorage-dummy.m */; };
-		92BEBCD925C3A6EF9B90505D /* DTTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 916032011360F2220572FB49 /* DTTableViewCell.h */; };
-		97EC22ADF550D4F619ECFFA9 /* DTStorageUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = 82D9E7AF873F08A4B7DE53F8 /* DTStorageUpdate.h */; };
-		99EAD617C731566A7F734CAC /* DTSectionModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 614F0A52629064F62DFB282C /* DTSectionModel.h */; };
-		9AFAEB0FA5969CC73871184E /* DTSectionModel+SectionHeadersFooters.h in Headers */ = {isa = PBXBuildFile; fileRef = 602091024C419920840D80A3 /* DTSectionModel+SectionHeadersFooters.h */; };
-		AB2D056CDE30332D51416D85 /* DTCoreDataStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = DBA4FF1DFA8B27502A77C0EF /* DTCoreDataStorage.h */; };
-		AB30BF82A4ACBC6FAFE6E1A5 /* DTBaseStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA90FCD8C6B4A1CFC21B222 /* DTBaseStorage.m */; };
-		AF6CE9230FB5938A10788B7D /* DTStorageUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9933EE5CAFF2D5D4ED671 /* DTStorageUpdate.m */; };
-		B1FCFD72EE3C70F6F560046E /* APContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 31412779C5727B0E3EB13735 /* APContact.h */; };
-		B282D642E539F2EA47278216 /* DTMemoryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B426B24DED1FD0DD008DB8 /* DTMemoryStorage.m */; };
-		B97315902713AB6D17BD608E /* APAddressBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BDAF6DC132744BFAAAEE6E1 /* APAddressBook.h */; };
-		BB6E62589ED110C7AFDAE46D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E8CFF6D4BBFDCFDBECC744 /* UIKit.framework */; };
-		CD60BCBEFB737ACC9C17D4D1 /* DTTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F37814E73BCDF2393979F144 /* DTTableViewController.h */; };
-		D236A7B8BDBB0D584354D209 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E8CFF6D4BBFDCFDBECC744 /* UIKit.framework */; };
-		DE4E2EA670921CEC71FDD46C /* APAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 819E04CE910329C9C4BCF52B /* APAddressBook.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E7BE568AA3B8590A9ACB86E0 /* DTSectionModel+SectionHeadersFooters.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B2E1B4DEBED13FC76F8B0B /* DTSectionModel+SectionHeadersFooters.m */; };
-		EF2284B917E10EB3D8D55D10 /* APAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 12F78802C905B420A1E907D7 /* APAddress.h */; };
-		F32C8E680F6E3BF87781D0FE /* DTSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7025A6900F0161B3DB2C14BD /* DTSectionModel.m */; };
-		F4E0B093EB3C544527662B0D /* DTRuntimeHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 133C215CBA379684B969228B /* DTRuntimeHelper.h */; };
-		F6DD49CA6E73E68542B5634B /* DTCoreDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F6DC5611F017FF0484491 /* DTCoreDataStorage.m */; };
-		F73B8388E246BBA7326C2487 /* DTModelStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = D971C3B38E336D6CD629D16D /* DTModelStorage.h */; };
-		F92CD4A45029B9DFB31E92BA /* DTTableViewFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = E7B691890A7D2CEE48C47ABA /* DTTableViewFactory.h */; };
-		F9682A81A56AAA783DA42C38 /* Pods-LocationAlert-DTTableViewManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D3CC09582087C14F177DBA /* Pods-LocationAlert-DTTableViewManager-dummy.m */; };
-		FBBC366D9740AA968F4D64DF /* DTStorageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A8EB0BF0ADC25F736F795DC8 /* DTStorageProtocol.h */; };
+		42A7512AC10AACC569C3E5DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA48253E54848BBC1088E80 /* Foundation.framework */; };
+		EE4E09F8A03945FC67329D20 /* Pods-LocationAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AF91003ECADC6FB80FFAE6 /* Pods-LocationAlert-dummy.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		5F250C7661B3371A45BF4388 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2333D1EF611B5C62F73C7C66 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4EE6BFD167C7186B29B04429;
-			remoteInfo = "Pods-LocationAlert-DTTableViewManager";
-		};
-		65D22F4B94719B8EAA4D3CCA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2333D1EF611B5C62F73C7C66 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D0AD4FBEE47B167D45D2627;
-			remoteInfo = "Pods-LocationAlert-DTModelStorage";
-		};
-		84D6D150D9213D4977560D53 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2333D1EF611B5C62F73C7C66 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D0AD4FBEE47B167D45D2627;
-			remoteInfo = "Pods-LocationAlert-DTModelStorage";
-		};
-		B28617B7D24207D58F1B0225 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2333D1EF611B5C62F73C7C66 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F07965260C2F70E3DDE94226;
-			remoteInfo = "Pods-LocationAlert-APAddressBook";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		042E50742FA0F6A1DE169768 /* libPods-LocationAlert-DTTableViewManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationAlert-DTTableViewManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		07E8CFF6D4BBFDCFDBECC744 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		09FF26D2F51A2B459B4452BD /* Pods-LocationAlert-DTTableViewManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LocationAlert-DTTableViewManager-prefix.pch"; sourceTree = "<group>"; };
-		0BDAF6DC132744BFAAAEE6E1 /* APAddressBook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APAddressBook.h; path = Pod/Core/APAddressBook.h; sourceTree = "<group>"; };
-		0C7F6DC5611F017FF0484491 /* DTCoreDataStorage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTCoreDataStorage.m; path = DTModelStorage/CoreData/DTCoreDataStorage.m; sourceTree = "<group>"; };
-		11AB47754ED33DE24DDE9300 /* Pods-LocationAlert-DTModelStorage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LocationAlert-DTModelStorage-dummy.m"; sourceTree = "<group>"; };
-		126E569185D6B161B6EAEA31 /* DTTableViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTableViewManager.h; path = DTTableViewManager/DTTableViewManager.h; sourceTree = "<group>"; };
-		12F78802C905B420A1E907D7 /* APAddress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APAddress.h; path = Pod/Core/APAddress.h; sourceTree = "<group>"; };
-		133C215CBA379684B969228B /* DTRuntimeHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTRuntimeHelper.h; path = DTModelStorage/Utilities/DTRuntimeHelper.h; sourceTree = "<group>"; };
-		13B2E1B4DEBED13FC76F8B0B /* DTSectionModel+SectionHeadersFooters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DTSectionModel+SectionHeadersFooters.m"; path = "DTTableViewManager/DTSectionModel+SectionHeadersFooters.m"; sourceTree = "<group>"; };
-		13C42BB1B4EFCDDC55B04249 /* Pods-LocationAlert-DTModelStorage-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert-DTModelStorage-Private.xcconfig"; sourceTree = "<group>"; };
-		1858FB14BACA08C9BFEEF48B /* APSocialProfile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APSocialProfile.m; path = Pod/Core/APSocialProfile.m; sourceTree = "<group>"; };
-		18D77D9BF39A8D65313CB40B /* Pods-LocationAlert-DTTableViewManager-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert-DTTableViewManager-Private.xcconfig"; sourceTree = "<group>"; };
-		196538B8F1E1E17CD9ABABF3 /* DTMemoryStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTMemoryStorage.h; path = DTModelStorage/Memory/DTMemoryStorage.h; sourceTree = "<group>"; };
-		1DC80E8F214F8E6AF7307A1B /* DTMemoryStorage_DTTableViewManagerAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTMemoryStorage_DTTableViewManagerAdditions.m; path = DTTableViewManager/DTMemoryStorage_DTTableViewManagerAdditions.m; sourceTree = "<group>"; };
-		24E8925D9483C8E9077B7075 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		256063D44FE902DCFBD372A2 /* Pods-LocationAlert-APAddressBook.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert-APAddressBook.xcconfig"; sourceTree = "<group>"; };
-		29F94F14A80B92CB5795E703 /* Pods-LocationAlert-APAddressBook-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert-APAddressBook-Private.xcconfig"; sourceTree = "<group>"; };
-		2CCF2FBD159C72DC2FB12F5D /* Pods-LocationAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert.debug.xcconfig"; sourceTree = "<group>"; };
-		31412779C5727B0E3EB13735 /* APContact.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APContact.h; path = Pod/Core/APContact.h; sourceTree = "<group>"; };
-		34A6489D3B66E8790BC603DD /* libPods-LocationAlert-DTModelStorage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationAlert-DTModelStorage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		38EE36B2D832552EEA2B00BE /* Pods-LocationAlert-DTTableViewManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert-DTTableViewManager.xcconfig"; sourceTree = "<group>"; };
-		4D9AA5411AE63B90FEFD7D8F /* Pods-LocationAlert-APAddressBook-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LocationAlert-APAddressBook-dummy.m"; sourceTree = "<group>"; };
-		530BD64ADF7EDC546B05B95C /* Pods-LocationAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LocationAlert-dummy.m"; sourceTree = "<group>"; };
-		552DD6E406540E77EAF24A21 /* DTModelTransfer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTModelTransfer.h; path = DTModelStorage/Utilities/DTModelTransfer.h; sourceTree = "<group>"; };
-		5FA69FA305569F99728E4A2E /* UIView+DTLoading.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+DTLoading.m"; path = "DTTableViewManager/UIView+DTLoading.m"; sourceTree = "<group>"; };
-		602091024C419920840D80A3 /* DTSectionModel+SectionHeadersFooters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DTSectionModel+SectionHeadersFooters.h"; path = "DTTableViewManager/DTSectionModel+SectionHeadersFooters.h"; sourceTree = "<group>"; };
-		614F0A52629064F62DFB282C /* DTSectionModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTSectionModel.h; path = DTModelStorage/Memory/DTSectionModel.h; sourceTree = "<group>"; };
-		67300089AD4214CEE51428D0 /* DTSection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTSection.h; path = DTModelStorage/Core/DTSection.h; sourceTree = "<group>"; };
-		7025A6900F0161B3DB2C14BD /* DTSectionModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTSectionModel.m; path = DTModelStorage/Memory/DTSectionModel.m; sourceTree = "<group>"; };
-		7203C52B4839D278344D965B /* DTBaseStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTBaseStorage.h; path = DTModelStorage/Core/DTBaseStorage.h; sourceTree = "<group>"; };
-		73C8DEED8A031BBC2042686C /* APContact.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APContact.m; path = Pod/Core/APContact.m; sourceTree = "<group>"; };
-		7724F124DE878B7EED4D5417 /* UIView+DTLoading.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+DTLoading.h"; path = "DTTableViewManager/UIView+DTLoading.h"; sourceTree = "<group>"; };
-		7D2205EACC96BCA6B78FED46 /* DTTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTableViewController.m; path = DTTableViewManager/DTTableViewController.m; sourceTree = "<group>"; };
-		7FEE2CA8C51E202F759734EF /* Pods-LocationAlert-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LocationAlert-acknowledgements.markdown"; sourceTree = "<group>"; };
-		819E04CE910329C9C4BCF52B /* APAddressBook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APAddressBook.m; path = Pod/Core/APAddressBook.m; sourceTree = "<group>"; };
-		8224DD804ECF5563391ADBF1 /* Pods-LocationAlert-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LocationAlert-acknowledgements.plist"; sourceTree = "<group>"; };
-		82D9E7AF873F08A4B7DE53F8 /* DTStorageUpdate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTStorageUpdate.h; path = DTModelStorage/Core/DTStorageUpdate.h; sourceTree = "<group>"; };
-		84B9933EE5CAFF2D5D4ED671 /* DTStorageUpdate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTStorageUpdate.m; path = DTModelStorage/Core/DTStorageUpdate.m; sourceTree = "<group>"; };
-		867CEA996C1611E81B6A8380 /* Pods-LocationAlert-DTModelStorage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LocationAlert-DTModelStorage-prefix.pch"; sourceTree = "<group>"; };
-		916032011360F2220572FB49 /* DTTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTableViewCell.h; path = DTTableViewManager/DTTableViewCell.h; sourceTree = "<group>"; };
-		91D3CC09582087C14F177DBA /* Pods-LocationAlert-DTTableViewManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LocationAlert-DTTableViewManager-dummy.m"; sourceTree = "<group>"; };
-		9319C6F32DA05C6818356661 /* Pods-LocationAlert-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LocationAlert-environment.h"; sourceTree = "<group>"; };
-		9B345661C4BFC9B7D0741D65 /* APPhoneWithLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APPhoneWithLabel.m; path = Pod/Core/APPhoneWithLabel.m; sourceTree = "<group>"; };
-		9C6D56E1E47837768A645102 /* DTMemoryStorage+UpdateWithoutAnimations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DTMemoryStorage+UpdateWithoutAnimations.m"; path = "DTModelStorage/Utilities/DTMemoryStorage+UpdateWithoutAnimations.m"; sourceTree = "<group>"; };
-		9DC0E893376D8116BDBDE8F5 /* DTTableViewControllerEvents.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTableViewControllerEvents.h; path = DTTableViewManager/DTTableViewControllerEvents.h; sourceTree = "<group>"; };
-		9FC56A73577874692A1F5AFD /* libPods-LocationAlert-APAddressBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationAlert-APAddressBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A12F1B1FB6AE193B6F30644D /* Pods-LocationAlert-APAddressBook-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LocationAlert-APAddressBook-prefix.pch"; sourceTree = "<group>"; };
-		A43E8DD8DCB7D55B5726933A /* DTMemoryStorage+UpdateWithoutAnimations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DTMemoryStorage+UpdateWithoutAnimations.h"; path = "DTModelStorage/Utilities/DTMemoryStorage+UpdateWithoutAnimations.h"; sourceTree = "<group>"; };
-		A517193760AAD5D578B48793 /* DTStorageUpdating.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTStorageUpdating.h; path = DTModelStorage/Core/DTStorageUpdating.h; sourceTree = "<group>"; };
-		A83FC4A7CED60B3D512EAB96 /* APPhoneWithLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APPhoneWithLabel.h; path = Pod/Core/APPhoneWithLabel.h; sourceTree = "<group>"; };
-		A8EB0BF0ADC25F736F795DC8 /* DTStorageProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTStorageProtocol.h; path = DTModelStorage/Core/DTStorageProtocol.h; sourceTree = "<group>"; };
-		A9AEB348842905244A1E8F67 /* libPods-LocationAlert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationAlert.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE7438EC1B0C2DB31DA1A0CE /* APAddressBook-Bridging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "APAddressBook-Bridging.h"; path = "Pod/Swift/APAddressBook-Bridging.h"; sourceTree = "<group>"; };
-		AEA90FCD8C6B4A1CFC21B222 /* DTBaseStorage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTBaseStorage.m; path = DTModelStorage/Core/DTBaseStorage.m; sourceTree = "<group>"; };
-		B6381857D73336FD04731627 /* Pods-LocationAlert-DTModelStorage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert-DTModelStorage.xcconfig"; sourceTree = "<group>"; };
-		C28B7EF54FEAEE10F37E4B75 /* DTTableViewFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTableViewFactory.m; path = DTTableViewManager/DTTableViewFactory.m; sourceTree = "<group>"; };
-		CA07FF3FC3174563370E9B7A /* DTMemoryStorage_DTTableViewManagerAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTMemoryStorage_DTTableViewManagerAdditions.h; path = DTTableViewManager/DTMemoryStorage_DTTableViewManagerAdditions.h; sourceTree = "<group>"; };
-		D971C3B38E336D6CD629D16D /* DTModelStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTModelStorage.h; path = DTModelStorage/DTModelStorage.h; sourceTree = "<group>"; };
-		DBA4FF1DFA8B27502A77C0EF /* DTCoreDataStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTCoreDataStorage.h; path = DTModelStorage/CoreData/DTCoreDataStorage.h; sourceTree = "<group>"; };
-		E40C668DB85E6FA8FB91C16A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
-		E7B691890A7D2CEE48C47ABA /* DTTableViewFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTableViewFactory.h; path = DTTableViewManager/DTTableViewFactory.h; sourceTree = "<group>"; };
-		E86C4362EF6E39E53D1F6AF6 /* DTTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTTableViewCell.m; path = DTTableViewManager/DTTableViewCell.m; sourceTree = "<group>"; };
-		E9005078E358A7117AE55E05 /* Pods-LocationAlert-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LocationAlert-resources.sh"; sourceTree = "<group>"; };
-		E980F97C3A977DFE85712BB0 /* APAddress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = APAddress.m; path = Pod/Core/APAddress.m; sourceTree = "<group>"; };
-		F37814E73BCDF2393979F144 /* DTTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DTTableViewController.h; path = DTTableViewManager/DTTableViewController.h; sourceTree = "<group>"; };
-		F4234CAC260A1E1CA7358FEC /* DTRuntimeHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTRuntimeHelper.m; path = DTModelStorage/Utilities/DTRuntimeHelper.m; sourceTree = "<group>"; };
-		F6B426B24DED1FD0DD008DB8 /* DTMemoryStorage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DTMemoryStorage.m; path = DTModelStorage/Memory/DTMemoryStorage.m; sourceTree = "<group>"; };
-		F7213DF4ED096CC358DCDF7A /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F88FA52AA2D341F0453F3E43 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
-		F956456D6188868736C075DA /* APTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APTypes.h; path = Pod/Core/APTypes.h; sourceTree = "<group>"; };
-		FBFB978A562C877AC19139FC /* APSocialProfile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = APSocialProfile.h; path = Pod/Core/APSocialProfile.h; sourceTree = "<group>"; };
-		FF6282B544CB4D8C4FD653BB /* Pods-LocationAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert.release.xcconfig"; sourceTree = "<group>"; };
+		05409DF3A217F226ADAECB6B /* dtmf_hash.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_hash.wav; path = Resources/dtmf_hash.wav; sourceTree = "<group>"; };
+		07BFD7493A8E5094F19D0F41 /* Pods-LocationAlert-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LocationAlert-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0FDF6889E2AE76E3B542283B /* TCConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCConnection.h; path = Headers/TCConnection.h; sourceTree = "<group>"; };
+		2038C814726A9AA220EE0A0F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		32F8EF0F32EC074E7C8B91FB /* TCConnectionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCConnectionDelegate.h; path = Headers/TCConnectionDelegate.h; sourceTree = "<group>"; };
+		37604CA48623C4783213F002 /* dtmf_3.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_3.wav; path = Resources/dtmf_3.wav; sourceTree = "<group>"; };
+		3BA48253E54848BBC1088E80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3C2A2ECE4753AE5EDA86D830 /* Pods-LocationAlert-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LocationAlert-resources.sh"; sourceTree = "<group>"; };
+		3C3D61B84CC31D7D8A0C3A9F /* TCDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCDevice.h; path = Headers/TCDevice.h; sourceTree = "<group>"; };
+		3D8E1AA66B74930D62F2CBCF /* incoming.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = incoming.wav; path = Resources/incoming.wav; sourceTree = "<group>"; };
+		41C6889728B1044A1581F2DE /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = Libraries/libssl.a; sourceTree = "<group>"; };
+		444C28F2A366E48AE34C9D0C /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = Libraries/libcrypto.a; sourceTree = "<group>"; };
+		4B21077CE4EF71D74C10C99F /* dtmf_5.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_5.wav; path = Resources/dtmf_5.wav; sourceTree = "<group>"; };
+		4EF36B0879CB8876F5D9C734 /* Pods-LocationAlert-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LocationAlert-environment.h"; sourceTree = "<group>"; };
+		5E19E10FDCEAB8A92C56CC83 /* disconnect.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = disconnect.wav; path = Resources/disconnect.wav; sourceTree = "<group>"; };
+		5E5C9ABBDD1AE9244EEC8C52 /* dtmf_1.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_1.wav; path = Resources/dtmf_1.wav; sourceTree = "<group>"; };
+		63AF91003ECADC6FB80FFAE6 /* Pods-LocationAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LocationAlert-dummy.m"; sourceTree = "<group>"; };
+		6485F70A5A86E2F6B9797011 /* TCPresenceEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCPresenceEvent.h; path = Headers/TCPresenceEvent.h; sourceTree = "<group>"; };
+		651225575B3F0491F21B50F9 /* dtmf_2.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_2.wav; path = Resources/dtmf_2.wav; sourceTree = "<group>"; };
+		666196161EED5D159A2A0F7A /* dtmf_6.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_6.wav; path = Resources/dtmf_6.wav; sourceTree = "<group>"; };
+		7B56C5AF74945133F6651556 /* libTwilioClient.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libTwilioClient.a; path = Libraries/libTwilioClient.a; sourceTree = "<group>"; };
+		7D8D4E03B0911420A240A112 /* dtmf_9.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_9.wav; path = Resources/dtmf_9.wav; sourceTree = "<group>"; };
+		83C27A937CC51F3F8F33F19E /* Pods-LocationAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert.debug.xcconfig"; sourceTree = "<group>"; };
+		8B0DC935D8640C30F5B6503A /* dtmf_star.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_star.wav; path = Resources/dtmf_star.wav; sourceTree = "<group>"; };
+		98D291548D577E08292F3F24 /* TCDeviceDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCDeviceDelegate.h; path = Headers/TCDeviceDelegate.h; sourceTree = "<group>"; };
+		9B29F831D6771D654B55E6C9 /* libPods-LocationAlert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationAlert.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B430F7557662F88F90D9E28D /* outgoing.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = outgoing.wav; path = Resources/outgoing.wav; sourceTree = "<group>"; };
+		CF4345E80DF401E0CC2C0710 /* TwilioClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TwilioClient.h; path = Headers/TwilioClient.h; sourceTree = "<group>"; };
+		D0404090AD7EF93B9B961F84 /* dtmf_0.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_0.wav; path = Resources/dtmf_0.wav; sourceTree = "<group>"; };
+		D2B51B42C9870275D58C33CA /* dtmf_7.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_7.wav; path = Resources/dtmf_7.wav; sourceTree = "<group>"; };
+		D6338526207AAB90DB8A0FF1 /* dtmf_4.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_4.wav; path = Resources/dtmf_4.wav; sourceTree = "<group>"; };
+		DBF0F6C561462309500F3F15 /* dtmf_8.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_8.wav; path = Resources/dtmf_8.wav; sourceTree = "<group>"; };
+		E53563FF2F692753380FDA8F /* Pods-LocationAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert.release.xcconfig"; sourceTree = "<group>"; };
+		E6B969E07317C5D80C9484B5 /* Pods-LocationAlert-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LocationAlert-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		789385BE71D28FF7EF092B1C /* Frameworks */ = {
+		D84533CFBD4321BBFDDD8F7E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39B315D300DD106A0CFE6D7D /* CoreData.framework in Frameworks */,
-				783AB5B6EDE6B899BDF1860D /* Foundation.framework in Frameworks */,
-				D236A7B8BDBB0D584354D209 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		866210BD983C56E556A50790 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				438C5F19185FF2A53D296EA5 /* Foundation.framework in Frameworks */,
-				BB6E62589ED110C7AFDAE46D /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B83F2744BBA1EA9A3073EF1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4EFB0D054BBCB6EE9945E545 /* AddressBook.framework in Frameworks */,
-				73E1EBF91050F62BDF506A23 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF6904D9C971C47C55A50BC7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				08DFE6C0B7527AF484B6F13A /* Foundation.framework in Frameworks */,
+				42A7512AC10AACC569C3E5DB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1871054A5540F1A4369AFFB7 = {
+		1D685C325669B35C706C3DB8 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F7213DF4ED096CC358DCDF7A /* Podfile */,
-				A1B96B703829CE7C78722C7A /* Frameworks */,
-				86403F5001AB9FE2DCD0BDA4 /* Pods */,
-				7283C924C9CF8298AB68CA1F /* Products */,
-				24EFE4891941AC9EF17FC12B /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		1F396D24FF90931B57884224 /* CoreDataStorage */ = {
-			isa = PBXGroup;
-			children = (
-				DBA4FF1DFA8B27502A77C0EF /* DTCoreDataStorage.h */,
-				0C7F6DC5611F017FF0484491 /* DTCoreDataStorage.m */,
-			);
-			name = CoreDataStorage;
-			sourceTree = "<group>";
-		};
-		24EFE4891941AC9EF17FC12B /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E4E7E3609284E86652A26D7B /* Pods-LocationAlert */,
+				2D58B3A6440F5FADA84AF4A3 /* Pods-LocationAlert */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		40AD1C6C61A475D6018EC9EC /* iOS */ = {
+		2B0D261372F6511860F32492 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F88FA52AA2D341F0453F3E43 /* AddressBook.framework */,
-				E40C668DB85E6FA8FB91C16A /* CoreData.framework */,
-				24E8925D9483C8E9077B7075 /* Foundation.framework */,
-				07E8CFF6D4BBFDCFDBECC744 /* UIKit.framework */,
+				5E19E10FDCEAB8A92C56CC83 /* disconnect.wav */,
+				D0404090AD7EF93B9B961F84 /* dtmf_0.wav */,
+				5E5C9ABBDD1AE9244EEC8C52 /* dtmf_1.wav */,
+				651225575B3F0491F21B50F9 /* dtmf_2.wav */,
+				37604CA48623C4783213F002 /* dtmf_3.wav */,
+				D6338526207AAB90DB8A0FF1 /* dtmf_4.wav */,
+				4B21077CE4EF71D74C10C99F /* dtmf_5.wav */,
+				666196161EED5D159A2A0F7A /* dtmf_6.wav */,
+				D2B51B42C9870275D58C33CA /* dtmf_7.wav */,
+				DBF0F6C561462309500F3F15 /* dtmf_8.wav */,
+				7D8D4E03B0911420A240A112 /* dtmf_9.wav */,
+				05409DF3A217F226ADAECB6B /* dtmf_hash.wav */,
+				8B0DC935D8640C30F5B6503A /* dtmf_star.wav */,
+				3D8E1AA66B74930D62F2CBCF /* incoming.wav */,
+				B430F7557662F88F90D9E28D /* outgoing.wav */,
 			);
-			name = iOS;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		4D559A3CCBF022D6D68E0529 /* DTModelStorage */ = {
+		2D58B3A6440F5FADA84AF4A3 /* Pods-LocationAlert */ = {
 			isa = PBXGroup;
 			children = (
-				5FE4CA21A852E05B6470C132 /* All */,
-				9CE129264E4E4F9C4E793C1F /* Core */,
-				1F396D24FF90931B57884224 /* CoreDataStorage */,
-				D3A11695573B8D8D77D366BA /* MemoryStorage */,
-				CF5C964E1788AAAB2654C02D /* Support Files */,
-			);
-			path = DTModelStorage;
-			sourceTree = "<group>";
-		};
-		55E05FF91B30DF2259741A46 /* DTTableViewManager */ = {
-			isa = PBXGroup;
-			children = (
-				CA07FF3FC3174563370E9B7A /* DTMemoryStorage_DTTableViewManagerAdditions.h */,
-				1DC80E8F214F8E6AF7307A1B /* DTMemoryStorage_DTTableViewManagerAdditions.m */,
-				602091024C419920840D80A3 /* DTSectionModel+SectionHeadersFooters.h */,
-				13B2E1B4DEBED13FC76F8B0B /* DTSectionModel+SectionHeadersFooters.m */,
-				916032011360F2220572FB49 /* DTTableViewCell.h */,
-				E86C4362EF6E39E53D1F6AF6 /* DTTableViewCell.m */,
-				F37814E73BCDF2393979F144 /* DTTableViewController.h */,
-				7D2205EACC96BCA6B78FED46 /* DTTableViewController.m */,
-				9DC0E893376D8116BDBDE8F5 /* DTTableViewControllerEvents.h */,
-				E7B691890A7D2CEE48C47ABA /* DTTableViewFactory.h */,
-				C28B7EF54FEAEE10F37E4B75 /* DTTableViewFactory.m */,
-				126E569185D6B161B6EAEA31 /* DTTableViewManager.h */,
-				7724F124DE878B7EED4D5417 /* UIView+DTLoading.h */,
-				5FA69FA305569F99728E4A2E /* UIView+DTLoading.m */,
-				71B62A4CE981E602160E2A59 /* Support Files */,
-			);
-			path = DTTableViewManager;
-			sourceTree = "<group>";
-		};
-		5FE4CA21A852E05B6470C132 /* All */ = {
-			isa = PBXGroup;
-			children = (
-				D971C3B38E336D6CD629D16D /* DTModelStorage.h */,
-			);
-			name = All;
-			sourceTree = "<group>";
-		};
-		666C78DEAE45F5EE5883E6AF /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				256063D44FE902DCFBD372A2 /* Pods-LocationAlert-APAddressBook.xcconfig */,
-				29F94F14A80B92CB5795E703 /* Pods-LocationAlert-APAddressBook-Private.xcconfig */,
-				4D9AA5411AE63B90FEFD7D8F /* Pods-LocationAlert-APAddressBook-dummy.m */,
-				A12F1B1FB6AE193B6F30644D /* Pods-LocationAlert-APAddressBook-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-LocationAlert-APAddressBook";
-			sourceTree = "<group>";
-		};
-		691BB3379CFB9265714F82DC /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				12F78802C905B420A1E907D7 /* APAddress.h */,
-				E980F97C3A977DFE85712BB0 /* APAddress.m */,
-				0BDAF6DC132744BFAAAEE6E1 /* APAddressBook.h */,
-				819E04CE910329C9C4BCF52B /* APAddressBook.m */,
-				31412779C5727B0E3EB13735 /* APContact.h */,
-				73C8DEED8A031BBC2042686C /* APContact.m */,
-				A83FC4A7CED60B3D512EAB96 /* APPhoneWithLabel.h */,
-				9B345661C4BFC9B7D0741D65 /* APPhoneWithLabel.m */,
-				FBFB978A562C877AC19139FC /* APSocialProfile.h */,
-				1858FB14BACA08C9BFEEF48B /* APSocialProfile.m */,
-				F956456D6188868736C075DA /* APTypes.h */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		71B62A4CE981E602160E2A59 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				38EE36B2D832552EEA2B00BE /* Pods-LocationAlert-DTTableViewManager.xcconfig */,
-				18D77D9BF39A8D65313CB40B /* Pods-LocationAlert-DTTableViewManager-Private.xcconfig */,
-				91D3CC09582087C14F177DBA /* Pods-LocationAlert-DTTableViewManager-dummy.m */,
-				09FF26D2F51A2B459B4452BD /* Pods-LocationAlert-DTTableViewManager-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-LocationAlert-DTTableViewManager";
-			sourceTree = "<group>";
-		};
-		7283C924C9CF8298AB68CA1F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A9AEB348842905244A1E8F67 /* libPods-LocationAlert.a */,
-				9FC56A73577874692A1F5AFD /* libPods-LocationAlert-APAddressBook.a */,
-				34A6489D3B66E8790BC603DD /* libPods-LocationAlert-DTModelStorage.a */,
-				042E50742FA0F6A1DE169768 /* libPods-LocationAlert-DTTableViewManager.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		74541B3C16E07D81188D173C /* APAddressBook */ = {
-			isa = PBXGroup;
-			children = (
-				691BB3379CFB9265714F82DC /* Core */,
-				666C78DEAE45F5EE5883E6AF /* Support Files */,
-				DE42213EA4CC08ED3FAC948C /* Swift */,
-			);
-			path = APAddressBook;
-			sourceTree = "<group>";
-		};
-		86403F5001AB9FE2DCD0BDA4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				74541B3C16E07D81188D173C /* APAddressBook */,
-				4D559A3CCBF022D6D68E0529 /* DTModelStorage */,
-				55E05FF91B30DF2259741A46 /* DTTableViewManager */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		9CE129264E4E4F9C4E793C1F /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				7203C52B4839D278344D965B /* DTBaseStorage.h */,
-				AEA90FCD8C6B4A1CFC21B222 /* DTBaseStorage.m */,
-				67300089AD4214CEE51428D0 /* DTSection.h */,
-				A8EB0BF0ADC25F736F795DC8 /* DTStorageProtocol.h */,
-				82D9E7AF873F08A4B7DE53F8 /* DTStorageUpdate.h */,
-				84B9933EE5CAFF2D5D4ED671 /* DTStorageUpdate.m */,
-				A517193760AAD5D578B48793 /* DTStorageUpdating.h */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		A1B96B703829CE7C78722C7A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				40AD1C6C61A475D6018EC9EC /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CF5C964E1788AAAB2654C02D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B6381857D73336FD04731627 /* Pods-LocationAlert-DTModelStorage.xcconfig */,
-				13C42BB1B4EFCDDC55B04249 /* Pods-LocationAlert-DTModelStorage-Private.xcconfig */,
-				11AB47754ED33DE24DDE9300 /* Pods-LocationAlert-DTModelStorage-dummy.m */,
-				867CEA996C1611E81B6A8380 /* Pods-LocationAlert-DTModelStorage-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-LocationAlert-DTModelStorage";
-			sourceTree = "<group>";
-		};
-		D3A11695573B8D8D77D366BA /* MemoryStorage */ = {
-			isa = PBXGroup;
-			children = (
-				196538B8F1E1E17CD9ABABF3 /* DTMemoryStorage.h */,
-				F6B426B24DED1FD0DD008DB8 /* DTMemoryStorage.m */,
-				A43E8DD8DCB7D55B5726933A /* DTMemoryStorage+UpdateWithoutAnimations.h */,
-				9C6D56E1E47837768A645102 /* DTMemoryStorage+UpdateWithoutAnimations.m */,
-				552DD6E406540E77EAF24A21 /* DTModelTransfer.h */,
-				133C215CBA379684B969228B /* DTRuntimeHelper.h */,
-				F4234CAC260A1E1CA7358FEC /* DTRuntimeHelper.m */,
-				614F0A52629064F62DFB282C /* DTSectionModel.h */,
-				7025A6900F0161B3DB2C14BD /* DTSectionModel.m */,
-			);
-			name = MemoryStorage;
-			sourceTree = "<group>";
-		};
-		DE42213EA4CC08ED3FAC948C /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				AE7438EC1B0C2DB31DA1A0CE /* APAddressBook-Bridging.h */,
-			);
-			name = Swift;
-			sourceTree = "<group>";
-		};
-		E4E7E3609284E86652A26D7B /* Pods-LocationAlert */ = {
-			isa = PBXGroup;
-			children = (
-				7FEE2CA8C51E202F759734EF /* Pods-LocationAlert-acknowledgements.markdown */,
-				8224DD804ECF5563391ADBF1 /* Pods-LocationAlert-acknowledgements.plist */,
-				530BD64ADF7EDC546B05B95C /* Pods-LocationAlert-dummy.m */,
-				9319C6F32DA05C6818356661 /* Pods-LocationAlert-environment.h */,
-				E9005078E358A7117AE55E05 /* Pods-LocationAlert-resources.sh */,
-				2CCF2FBD159C72DC2FB12F5D /* Pods-LocationAlert.debug.xcconfig */,
-				FF6282B544CB4D8C4FD653BB /* Pods-LocationAlert.release.xcconfig */,
+				07BFD7493A8E5094F19D0F41 /* Pods-LocationAlert-acknowledgements.markdown */,
+				E6B969E07317C5D80C9484B5 /* Pods-LocationAlert-acknowledgements.plist */,
+				63AF91003ECADC6FB80FFAE6 /* Pods-LocationAlert-dummy.m */,
+				4EF36B0879CB8876F5D9C734 /* Pods-LocationAlert-environment.h */,
+				3C2A2ECE4753AE5EDA86D830 /* Pods-LocationAlert-resources.sh */,
+				83C27A937CC51F3F8F33F19E /* Pods-LocationAlert.debug.xcconfig */,
+				E53563FF2F692753380FDA8F /* Pods-LocationAlert.release.xcconfig */,
 			);
 			name = "Pods-LocationAlert";
 			path = "Target Support Files/Pods-LocationAlert";
 			sourceTree = "<group>";
 		};
+		51504A084BDB6DEB24B1F6D7 = {
+			isa = PBXGroup;
+			children = (
+				2038C814726A9AA220EE0A0F /* Podfile */,
+				DCD705C4851FAA9668363EF5 /* Frameworks */,
+				AD5FB2879616900F17B253F8 /* Pods */,
+				6D1370AF11BEA551F3081622 /* Products */,
+				1D685C325669B35C706C3DB8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		60CB1C7E981CF09C4151D7A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B56C5AF74945133F6651556 /* libTwilioClient.a */,
+				444C28F2A366E48AE34C9D0C /* libcrypto.a */,
+				41C6889728B1044A1581F2DE /* libssl.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D1370AF11BEA551F3081622 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B29F831D6771D654B55E6C9 /* libPods-LocationAlert.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F6C45F905C55D5AA5F95E48 /* TwilioSDK */ = {
+			isa = PBXGroup;
+			children = (
+				0FDF6889E2AE76E3B542283B /* TCConnection.h */,
+				32F8EF0F32EC074E7C8B91FB /* TCConnectionDelegate.h */,
+				3C3D61B84CC31D7D8A0C3A9F /* TCDevice.h */,
+				98D291548D577E08292F3F24 /* TCDeviceDelegate.h */,
+				6485F70A5A86E2F6B9797011 /* TCPresenceEvent.h */,
+				CF4345E80DF401E0CC2C0710 /* TwilioClient.h */,
+				60CB1C7E981CF09C4151D7A9 /* Frameworks */,
+				2B0D261372F6511860F32492 /* Resources */,
+			);
+			path = TwilioSDK;
+			sourceTree = "<group>";
+		};
+		A80DB34B690591DA1A67EB86 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3BA48253E54848BBC1088E80 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AD5FB2879616900F17B253F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F6C45F905C55D5AA5F95E48 /* TwilioSDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DCD705C4851FAA9668363EF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A80DB34B690591DA1A67EB86 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		ADF9B367DE5442BA32F55AAC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50F3A77ABE395D9182E55F99 /* DTBaseStorage.h in Headers */,
-				AB2D056CDE30332D51416D85 /* DTCoreDataStorage.h in Headers */,
-				34165318CD4DBF4FDBACF630 /* DTMemoryStorage+UpdateWithoutAnimations.h in Headers */,
-				53E29EB1C034D613EEEE95DB /* DTMemoryStorage.h in Headers */,
-				F73B8388E246BBA7326C2487 /* DTModelStorage.h in Headers */,
-				74E933A454E94CEB0A9B7D40 /* DTModelTransfer.h in Headers */,
-				F4E0B093EB3C544527662B0D /* DTRuntimeHelper.h in Headers */,
-				8E520CB44FF26004AC895528 /* DTSection.h in Headers */,
-				99EAD617C731566A7F734CAC /* DTSectionModel.h in Headers */,
-				FBBC366D9740AA968F4D64DF /* DTStorageProtocol.h in Headers */,
-				97EC22ADF550D4F619ECFFA9 /* DTStorageUpdate.h in Headers */,
-				8ADF6EE3FB0AE1C5858D6CA9 /* DTStorageUpdating.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADFA88F21EEB223748B0F705 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				267BA72878D20790D2E1E7EE /* DTMemoryStorage_DTTableViewManagerAdditions.h in Headers */,
-				9AFAEB0FA5969CC73871184E /* DTSectionModel+SectionHeadersFooters.h in Headers */,
-				92BEBCD925C3A6EF9B90505D /* DTTableViewCell.h in Headers */,
-				CD60BCBEFB737ACC9C17D4D1 /* DTTableViewController.h in Headers */,
-				8A68AAD19278F7AE89900825 /* DTTableViewControllerEvents.h in Headers */,
-				F92CD4A45029B9DFB31E92BA /* DTTableViewFactory.h in Headers */,
-				10165CF867012B900D52CEA6 /* DTTableViewManager.h in Headers */,
-				882F67FB08D0AFBB8C6CA577 /* UIView+DTLoading.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E87F7B882ACF44CF8F26D293 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EF2284B917E10EB3D8D55D10 /* APAddress.h in Headers */,
-				0D0F79BDDC9878FFEE94990B /* APAddressBook-Bridging.h in Headers */,
-				B97315902713AB6D17BD608E /* APAddressBook.h in Headers */,
-				B1FCFD72EE3C70F6F560046E /* APContact.h in Headers */,
-				60E90F445B576E710D5F84F0 /* APPhoneWithLabel.h in Headers */,
-				67EA1CD9C13255DDF4369F0A /* APSocialProfile.h in Headers */,
-				3BE36BE54AB43EBE13E7EE6A /* APTypes.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		4EE6BFD167C7186B29B04429 /* Pods-LocationAlert-DTTableViewManager */ = {
+		78AE17883BF46332B00FA232 /* Pods-LocationAlert */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2D490BBE156EEECEDCB865F /* Build configuration list for PBXNativeTarget "Pods-LocationAlert-DTTableViewManager" */;
+			buildConfigurationList = 1DC6BEBAF9AC3C288DA4847C /* Build configuration list for PBXNativeTarget "Pods-LocationAlert" */;
 			buildPhases = (
-				8850E7D1B21587B3A13FEA0B /* Sources */,
-				866210BD983C56E556A50790 /* Frameworks */,
-				ADFA88F21EEB223748B0F705 /* Headers */,
+				0D38C67AE2764B7999AD72A6 /* Sources */,
+				D84533CFBD4321BBFDDD8F7E /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A8719E6E6CD4CFE291689995 /* PBXTargetDependency */,
-			);
-			name = "Pods-LocationAlert-DTTableViewManager";
-			productName = "Pods-LocationAlert-DTTableViewManager";
-			productReference = 042E50742FA0F6A1DE169768 /* libPods-LocationAlert-DTTableViewManager.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		6E67EE49A3A2FBD394969A0E /* Pods-LocationAlert */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7370B74B2A05A6D681676146 /* Build configuration list for PBXNativeTarget "Pods-LocationAlert" */;
-			buildPhases = (
-				CB8F3199528FBB3240A36BF5 /* Sources */,
-				BF6904D9C971C47C55A50BC7 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E0F2B040C7C7398A79FC36FD /* PBXTargetDependency */,
-				E3454260B0A4BE031C8D74DC /* PBXTargetDependency */,
-				8E7A1B700CF08EA0B98923BC /* PBXTargetDependency */,
 			);
 			name = "Pods-LocationAlert";
 			productName = "Pods-LocationAlert";
-			productReference = A9AEB348842905244A1E8F67 /* libPods-LocationAlert.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		8D0AD4FBEE47B167D45D2627 /* Pods-LocationAlert-DTModelStorage */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8ADDA1BA53EC23BB238934BF /* Build configuration list for PBXNativeTarget "Pods-LocationAlert-DTModelStorage" */;
-			buildPhases = (
-				6ED695DA69320CAAE930E840 /* Sources */,
-				789385BE71D28FF7EF092B1C /* Frameworks */,
-				ADF9B367DE5442BA32F55AAC /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-LocationAlert-DTModelStorage";
-			productName = "Pods-LocationAlert-DTModelStorage";
-			productReference = 34A6489D3B66E8790BC603DD /* libPods-LocationAlert-DTModelStorage.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		F07965260C2F70E3DDE94226 /* Pods-LocationAlert-APAddressBook */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 704BEC5D75749968665186D0 /* Build configuration list for PBXNativeTarget "Pods-LocationAlert-APAddressBook" */;
-			buildPhases = (
-				F82B8C4A8C1EB70A9CE4DF5F /* Sources */,
-				8B83F2744BBA1EA9A3073EF1 /* Frameworks */,
-				E87F7B882ACF44CF8F26D293 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-LocationAlert-APAddressBook";
-			productName = "Pods-LocationAlert-APAddressBook";
-			productReference = 9FC56A73577874692A1F5AFD /* libPods-LocationAlert-APAddressBook.a */;
+			productReference = 9B29F831D6771D654B55E6C9 /* libPods-LocationAlert.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2333D1EF611B5C62F73C7C66 /* Project object */ = {
+		543A54D5AE2B6FEBFC0FF01E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = A4415CAF4FDB0CBD0F1C16AD /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = F80073D7D596BDAFCB293D03 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1871054A5540F1A4369AFFB7;
-			productRefGroup = 7283C924C9CF8298AB68CA1F /* Products */;
+			mainGroup = 51504A084BDB6DEB24B1F6D7;
+			productRefGroup = 6D1370AF11BEA551F3081622 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E67EE49A3A2FBD394969A0E /* Pods-LocationAlert */,
-				F07965260C2F70E3DDE94226 /* Pods-LocationAlert-APAddressBook */,
-				8D0AD4FBEE47B167D45D2627 /* Pods-LocationAlert-DTModelStorage */,
-				4EE6BFD167C7186B29B04429 /* Pods-LocationAlert-DTTableViewManager */,
+				78AE17883BF46332B00FA232 /* Pods-LocationAlert */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6ED695DA69320CAAE930E840 /* Sources */ = {
+		0D38C67AE2764B7999AD72A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB30BF82A4ACBC6FAFE6E1A5 /* DTBaseStorage.m in Sources */,
-				F6DD49CA6E73E68542B5634B /* DTCoreDataStorage.m in Sources */,
-				907CB7DF8E0858E5DEB4E79C /* DTMemoryStorage+UpdateWithoutAnimations.m in Sources */,
-				B282D642E539F2EA47278216 /* DTMemoryStorage.m in Sources */,
-				3BCB04FA07BE7A6CFC58DB9C /* DTRuntimeHelper.m in Sources */,
-				F32C8E680F6E3BF87781D0FE /* DTSectionModel.m in Sources */,
-				AF6CE9230FB5938A10788B7D /* DTStorageUpdate.m in Sources */,
-				909CB751B2E30004A43FDF09 /* Pods-LocationAlert-DTModelStorage-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8850E7D1B21587B3A13FEA0B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				379007C381E7721AF45367E2 /* DTMemoryStorage_DTTableViewManagerAdditions.m in Sources */,
-				E7BE568AA3B8590A9ACB86E0 /* DTSectionModel+SectionHeadersFooters.m in Sources */,
-				59E330A38770A6D1E589F5AF /* DTTableViewCell.m in Sources */,
-				65F67ED21119678B88D83290 /* DTTableViewController.m in Sources */,
-				7DFCE495CEF6E5BBEB40DF07 /* DTTableViewFactory.m in Sources */,
-				F9682A81A56AAA783DA42C38 /* Pods-LocationAlert-DTTableViewManager-dummy.m in Sources */,
-				2BB1209226669345B06E5812 /* UIView+DTLoading.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB8F3199528FBB3240A36BF5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				400A592062E6FCEDB05BF98A /* Pods-LocationAlert-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F82B8C4A8C1EB70A9CE4DF5F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				89E40DAA4099BF296FC9BFB1 /* APAddress.m in Sources */,
-				DE4E2EA670921CEC71FDD46C /* APAddressBook.m in Sources */,
-				4D11508B1D30FCA5491BA1FB /* APContact.m in Sources */,
-				7AC05C79C0F903658F5C0BCD /* APPhoneWithLabel.m in Sources */,
-				5757D74699791A3F20A0E7F9 /* APSocialProfile.m in Sources */,
-				1069BD31270D4E539D43FB04 /* Pods-LocationAlert-APAddressBook-dummy.m in Sources */,
+				EE4E09F8A03945FC67329D20 /* Pods-LocationAlert-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		8E7A1B700CF08EA0B98923BC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-LocationAlert-DTTableViewManager";
-			target = 4EE6BFD167C7186B29B04429 /* Pods-LocationAlert-DTTableViewManager */;
-			targetProxy = 5F250C7661B3371A45BF4388 /* PBXContainerItemProxy */;
-		};
-		A8719E6E6CD4CFE291689995 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-LocationAlert-DTModelStorage";
-			target = 8D0AD4FBEE47B167D45D2627 /* Pods-LocationAlert-DTModelStorage */;
-			targetProxy = 65D22F4B94719B8EAA4D3CCA /* PBXContainerItemProxy */;
-		};
-		E0F2B040C7C7398A79FC36FD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-LocationAlert-APAddressBook";
-			target = F07965260C2F70E3DDE94226 /* Pods-LocationAlert-APAddressBook */;
-			targetProxy = B28617B7D24207D58F1B0225 /* PBXContainerItemProxy */;
-		};
-		E3454260B0A4BE031C8D74DC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-LocationAlert-DTModelStorage";
-			target = 8D0AD4FBEE47B167D45D2627 /* Pods-LocationAlert-DTModelStorage */;
-			targetProxy = 84D6D150D9213D4977560D53 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		490918B11A6D3EB4D1140806 /* Debug */ = {
+		2F036BB3D1BED0E9A2DAFA59 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CCF2FBD159C72DC2FB12F5D /* Pods-LocationAlert.debug.xcconfig */;
 			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		6FE896EE47C12A7E2AB39BBE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18D77D9BF39A8D65313CB40B /* Pods-LocationAlert-DTTableViewManager-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-LocationAlert-DTTableViewManager/Pods-LocationAlert-DTTableViewManager-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		732CEAA5F079F179B2E38536 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29F94F14A80B92CB5795E703 /* Pods-LocationAlert-APAddressBook-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-LocationAlert-APAddressBook/Pods-LocationAlert-APAddressBook-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		9A60DAEF87256980402A80D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18D77D9BF39A8D65313CB40B /* Pods-LocationAlert-DTTableViewManager-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-LocationAlert-DTTableViewManager/Pods-LocationAlert-DTTableViewManager-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		B4BA898B8BA19E741D9A3098 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF6282B544CB4D8C4FD653BB /* Pods-LocationAlert.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		CB25F7A8586F0A76F4695844 /* Debug */ = {
+		4921B116FA84BEB43E850EBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -793,82 +302,32 @@
 			};
 			name = Debug;
 		};
-		D2AAE22D85D75A1CE7580ACA /* Release */ = {
+		9BC2518C7CDA15013E7EFE07 /* Release */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		D7846A375421A70309AF29BD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13C42BB1B4EFCDDC55B04249 /* Pods-LocationAlert-DTModelStorage-Private.xcconfig */;
+			baseConfigurationReference = E53563FF2F692753380FDA8F /* Pods-LocationAlert.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-LocationAlert-DTModelStorage/Pods-LocationAlert-DTModelStorage-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		E8A0F027F035BDFEE50F0504 /* Debug */ = {
+		CBD20E7DD861532EC7717F04 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29F94F14A80B92CB5795E703 /* Pods-LocationAlert-APAddressBook-Private.xcconfig */;
+			baseConfigurationReference = 83C27A937CC51F3F8F33F19E /* Pods-LocationAlert.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-LocationAlert-APAddressBook/Pods-LocationAlert-APAddressBook-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		F8E8786E691A453F6EE9C01E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13C42BB1B4EFCDDC55B04249 /* Pods-LocationAlert-DTModelStorage-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-LocationAlert-DTModelStorage/Pods-LocationAlert-DTModelStorage-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -878,52 +337,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		704BEC5D75749968665186D0 /* Build configuration list for PBXNativeTarget "Pods-LocationAlert-APAddressBook" */ = {
+		1DC6BEBAF9AC3C288DA4847C /* Build configuration list for PBXNativeTarget "Pods-LocationAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8A0F027F035BDFEE50F0504 /* Debug */,
-				732CEAA5F079F179B2E38536 /* Release */,
+				CBD20E7DD861532EC7717F04 /* Debug */,
+				9BC2518C7CDA15013E7EFE07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7370B74B2A05A6D681676146 /* Build configuration list for PBXNativeTarget "Pods-LocationAlert" */ = {
+		F80073D7D596BDAFCB293D03 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				490918B11A6D3EB4D1140806 /* Debug */,
-				B4BA898B8BA19E741D9A3098 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8ADDA1BA53EC23BB238934BF /* Build configuration list for PBXNativeTarget "Pods-LocationAlert-DTModelStorage" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8E8786E691A453F6EE9C01E /* Debug */,
-				D7846A375421A70309AF29BD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4415CAF4FDB0CBD0F1C16AD /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB25F7A8586F0A76F4695844 /* Debug */,
-				D2AAE22D85D75A1CE7580ACA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B2D490BBE156EEECEDCB865F /* Build configuration list for PBXNativeTarget "Pods-LocationAlert-DTTableViewManager" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6FE896EE47C12A7E2AB39BBE /* Debug */,
-				9A60DAEF87256980402A80D9 /* Release */,
+				4921B116FA84BEB43E850EBE /* Debug */,
+				2F036BB3D1BED0E9A2DAFA59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2333D1EF611B5C62F73C7C66 /* Project object */;
+	rootObject = 543A54D5AE2B6FEBFC0FF01E /* Project object */;
 }

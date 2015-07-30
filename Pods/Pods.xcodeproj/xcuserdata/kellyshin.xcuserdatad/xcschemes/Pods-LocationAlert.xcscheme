@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E67EE49A3A2FBD394969A0E"
+               BlueprintIdentifier = "78AE17883BF46332B00FA232"
                BuildableName = "libPods-LocationAlert.a"
                BlueprintName = "Pods-LocationAlert"
                ReferencedContainer = "container:Pods.xcodeproj">

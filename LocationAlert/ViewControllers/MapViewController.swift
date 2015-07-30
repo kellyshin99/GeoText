@@ -44,13 +44,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
         mapView.showsUserLocation = true
         
+        nameAlert()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        }
+        
+        sendText()
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -101,6 +104,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         })
     }
     
+    func nameAlert() {
+        var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text.", preferredStyle: .Alert)
+        nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        nameAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Enter name"
+            textField.secureTextEntry = false
+            
+        })
+        self.presentViewController(nameAlert, animated: true, completion: nil)
+        
+    }
+    
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if annotation is MKUserLocation{
             return nil
@@ -134,7 +149,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Detail" {
             storedLocation = (sender as! MKAnnotation).coordinate
-         
+            
             var detailVC = segue.destinationViewController as! DetailViewController
             detailVC.locationManager = locationManager
             detailVC.location = storedLocation
@@ -142,11 +157,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     }
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-            var circleRenderer = MKCircleRenderer(overlay: overlay)
-            circleRenderer.strokeColor = UIColor.purpleColor()
-            circleRenderer.fillColor = UIColor.purpleColor()
-            
-            return circleRenderer
+        var circleRenderer = MKCircleRenderer(overlay: overlay)
+        circleRenderer.strokeColor = UIColor.purpleColor()
+        circleRenderer.fillColor = UIColor.purpleColor()
+        
+        return circleRenderer
     }
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
@@ -154,6 +169,27 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             let alert = UIAlertController(title: "test", message: "test", preferredStyle: .Alert)
             // send text
         }
+    }
+    
+    private func sendText() {
+        var swiftRequest = SwiftRequest();
+        
+        var data = [
+            "To" : "+19495262990",
+            "From" : "+12516164888",
+            "Body" : "Hello World"
+        ];
+        
+        swiftRequest.post("https://api.twilio.com/2010-04-01/Accounts/ACe59ae55b5f1d2a999a8bcb9cf2ad5a2f/Messages.json",
+            auth: ["username" : "ACe59ae55b5f1d2a999a8bcb9cf2ad5a2f", "password" : "6aadae36ac8be174451c7432e9795ec4"],
+            data: data,
+            callback: {err, response, body in
+                if err == nil {
+                    println("Success: \(response)")
+                } else {
+                    println("Error: \(err)")
+                }
+        });
     }
     
     // MARK: Map Settings Alert

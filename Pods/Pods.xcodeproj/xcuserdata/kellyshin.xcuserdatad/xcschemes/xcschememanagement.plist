@@ -4,21 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-LocationAlert-APAddressBook.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-LocationAlert-DTModelStorage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-LocationAlert-DTTableViewManager.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-LocationAlert.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4EE6BFD167C7186B29B04429</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6E67EE49A3A2FBD394969A0E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8D0AD4FBEE47B167D45D2627</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F07965260C2F70E3DDE94226</key>
+		<key>78AE17883BF46332B00FA232</key>
 		<dict>
 			<key>primary</key>
 			<true/>

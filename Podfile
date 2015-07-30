@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'LocationAlert' do
-
+pod 'TwilioSDK'
 end
 
 target 'LocationAlertTests' do

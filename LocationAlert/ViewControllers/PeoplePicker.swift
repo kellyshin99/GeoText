@@ -31,7 +31,7 @@ extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
         if (ABMultiValueGetCount(numbers) > 0) {
             let index = 0 as CFIndex
             let phoneNumber = ABMultiValueCopyValueAtIndex(numbers, index).takeRetainedValue() as! String
-            println(phoneNumber)
+            
         } else {
             println("No phone number")
         }
