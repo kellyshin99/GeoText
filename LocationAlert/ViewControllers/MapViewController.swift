@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 import CoreLocation
-import MessageUI
 
 class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
     
@@ -19,6 +18,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     var matchingItems: [MKMapItem] = [MKMapItem]()
     let locationManager = CLLocationManager()
     var overlay: MKOverlay!
+    var nameTextField: UITextField!
     
     var storedLocation: CLLocationCoordinate2D? = nil
     
@@ -48,22 +48,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         }
         mapView.showsUserLocation = true
         
-        nameAlert()
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         
-        sendText()
+        nameAlert()
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        //        sendText()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
         locationManager.monitoredRegions
-        
-        if let storedLocation = storedLocation {
-            var circle = MKCircle(centerCoordinate: storedLocation, radius: 60)
-            mapView.addOverlay(circle)
-        }
         
     }
     
@@ -106,18 +104,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func nameAlert() {
         var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text.", preferredStyle: .Alert)
-        nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            SharedData.currentUserName = self.nameTextField.text
+        }))
+        
         nameAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Enter name"
             textField.secureTextEntry = false
-            
+            self.nameTextField = textField
         })
         self.presentViewController(nameAlert, animated: true, completion: nil)
-        
     }
     
+    
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        if annotation is MKUserLocation{
+        if annotation is MKUserLocation {
             return nil
         }
         
@@ -149,10 +150,20 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Detail" {
             storedLocation = (sender as! MKAnnotation).coordinate
-            
             var detailVC = segue.destinationViewController as! DetailViewController
             detailVC.locationManager = locationManager
             detailVC.location = storedLocation
+        }
+    }
+    
+    @IBAction func unwindToList(segue:UIStoryboardSegue) {
+        if segue.identifier == "chooseContact" {
+            if let vc = segue.sourceViewController as? DetailViewController {
+                if let storedLocation = vc.location {
+                    var circle = MKCircle(centerCoordinate: storedLocation, radius: 60)
+                    mapView.addOverlay(circle)
+                }
+            }
         }
     }
     
@@ -166,30 +177,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         if region is CLCircularRegion {
-            let alert = UIAlertController(title: "test", message: "test", preferredStyle: .Alert)
-            // send text
+            SharedData.sendText()
         }
-    }
-    
-    private func sendText() {
-        var swiftRequest = SwiftRequest();
-        
-        var data = [
-            "To" : "+19495262990",
-            "From" : "+12516164888",
-            "Body" : "Hello World"
-        ];
-        
-        swiftRequest.post("https://api.twilio.com/2010-04-01/Accounts/ACe59ae55b5f1d2a999a8bcb9cf2ad5a2f/Messages.json",
-            auth: ["username" : "ACe59ae55b5f1d2a999a8bcb9cf2ad5a2f", "password" : "6aadae36ac8be174451c7432e9795ec4"],
-            data: data,
-            callback: {err, response, body in
-                if err == nil {
-                    println("Success: \(response)")
-                } else {
-                    println("Error: \(err)")
-                }
-        });
     }
     
     // MARK: Map Settings Alert

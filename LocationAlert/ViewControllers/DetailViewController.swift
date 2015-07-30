@@ -12,7 +12,7 @@ import CoreLocation
 import AddressBookUI
 
 class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITextViewDelegate {
-
+    
     @IBOutlet weak var address: UITextView!
     @IBOutlet weak var contactName: UITextView!
     var addressBook: ABAddressBook!
@@ -47,14 +47,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
             let alert = UIAlertView(title: "Select a Contact", message: "Please select a contact to message", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         } else {
-        
-        let region = CLCircularRegion(center: self.location, radius: 25.0, identifier: "geofence")
-        self.locationManager.startMonitoringForRegion(region)
-        
-        navigationController!.popViewControllerAnimated(true)
+            
+            let region = CLCircularRegion(center: self.location, radius: 25.0, identifier: "geofence")
+            self.locationManager.startMonitoringForRegion(region)
+            
+            performSegueWithIdentifier("chooseContact", sender: nil)
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -62,7 +62,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
     
 }
 
@@ -80,7 +79,7 @@ extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
         
         peoplePicker.dismissViewControllerAnimated(true, completion: nil)
         
-        return false;
+        return false
     }
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!) {
@@ -88,8 +87,7 @@ extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
         if (ABMultiValueGetCount(numbers) > 0) {
             let index = 0 as CFIndex
             let phoneNumber = ABMultiValueCopyValueAtIndex(numbers, index).takeRetainedValue() as! String
-            println(phoneNumber)
-            
+            SharedData.currentPhoneNumber = phoneNumber
         } else {
             println("No phone number")
         }
