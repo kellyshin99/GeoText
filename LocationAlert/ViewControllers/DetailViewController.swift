@@ -55,7 +55,23 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
         }
     }
     
-    
+//    @IBAction func sendMessage(sender: UIButton) {
+//        if (MFMessageComposeViewController.canSendText()) {
+//            let controller = MFMessageComposeViewController()
+//            controller.body = "Hello world"
+//            controller.recipients = []
+//            controller.messageComposeDelegate = self
+//            self.presentViewController(controller, animated: true, completion: nil)
+//        } else {
+//            let errorAlert = UIAlertView(title: "Cannot Send Message", message: "Sorry, your device is unable to send messages", delegate: self, cancelButtonTitle: "OK")
+//            errorAlert.show()
+//        }
+//    }
+//    
+//    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -110,7 +110,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         
         var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
         
-        if(pinView == nil){
+        if( pinView == nil) {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
             pinView!.draggable = false
@@ -151,11 +151,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         if region is CLCircularRegion {
-            let alert = UIAlertView(title: "IT WORKS", message: "It's working", delegate: self, cancelButtonTitle: "OK")
-            println("send text")
+            let alert = UIAlertController(title: "test", message: "test", preferredStyle: .Alert)
+            // send text
         }
     }
-
     
     // MARK: Map Settings Alert
     
