@@ -23,16 +23,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     var storedLocation: CLLocationCoordinate2D? = nil
     
     @IBAction func showUserLocation() {
-        switch CLLocationManager.authorizationStatus() {
-        case .AuthorizedAlways, .AuthorizedWhenInUse:
             mapView.delegate = self
             mapView.showsUserLocation = true
             mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
-        case .Denied, .Restricted:
-            self.displayCantShowLocationAlert()
-        case .NotDetermined:
-            println("not determined")
-        }
     }
     
     override func viewDidLoad() {
@@ -48,9 +41,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         mapView.showsUserLocation = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        
-        nameAlert()
-        
+    }
+    
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        switch CLLocationManager.authorizationStatus() {
+        case .AuthorizedAlways, .AuthorizedWhenInUse:
+            nameAlert()
+        case .Denied, .Restricted:
+            self.displayCantShowLocationAlert()
+        case .NotDetermined:
+            println("not determined")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -96,7 +97,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     }
     
     func nameAlert() {
-        var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text.", preferredStyle: .Alert)
+        var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text message.", preferredStyle: .Alert)
         nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             SharedData.currentUserName = self.nameTextField.text
         }))
@@ -104,8 +105,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         nameAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Enter name"
             textField.secureTextEntry = false
+            textField.autocapitalizationType = UITextAutocapitalizationType.Words
             self.nameTextField = textField
+            
         })
+        
         self.presentViewController(nameAlert, animated: true, completion: nil)
     }
     
@@ -178,7 +182,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func displayCantShowLocationAlert() {
         let cantShowLocationAlert = UIAlertController(title: "Location Services is Turned Off",
-            message: "You must give the app permission to use Location Services.",
+            message: "This app will not work without Location Services.",
             preferredStyle: .Alert)
         cantShowLocationAlert.addAction(UIAlertAction(title: "Change Settings",
             style: .Default,
