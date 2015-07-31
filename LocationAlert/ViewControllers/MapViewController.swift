@@ -38,7 +38,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     override func viewDidLoad() {
         mapView.delegate = self
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         locationManager.requestAlwaysAuthorization()
         
         if (CLLocationManager.locationServicesEnabled()) {
@@ -54,20 +53,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        //        sendText()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
         locationManager.monitoredRegions
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func performSearch() {
@@ -177,7 +170,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         if region is CLCircularRegion {
-            SharedData.sendText()
+//            SharedData.sendText()
         }
     }
     

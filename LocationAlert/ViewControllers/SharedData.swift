@@ -11,6 +11,7 @@ import Foundation
 struct SharedData {
     static var currentPhoneNumber = ""
     static var currentUserName = ""
+    static var locationAddress = ""
     
     static func sendText() {
         var swiftRequest = SwiftRequest();
@@ -20,7 +21,7 @@ struct SharedData {
         var data = [
             "To" : SharedData.currentPhoneNumber,
             "From" : "+12516164888",
-            "Body" : "\(currentUserName) has arrived at LOCATION"
+            "Body" : "\(currentUserName) has arrived at \(locationAddress)"
         ];
         
         swiftRequest.post("https://api.twilio.com/2010-04-01/Accounts/ACe59ae55b5f1d2a999a8bcb9cf2ad5a2f/Messages.json",

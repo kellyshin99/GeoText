@@ -57,10 +57,34 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        geocodeLocation()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func geocodeLocation() {
+        var geocoder = CLGeocoder()
+        var locationObject = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        geocoder.reverseGeocodeLocation(locationObject, completionHandler: { (placemarks, error) -> Void in
+            if let placemarks = placemarks as? [CLPlacemark] {
+                for placemark in placemarks {
+                    var addressText = ABCreateStringWithAddressDictionary(placemark.addressDictionary, true)
+                    self.address.text = addressText
+                    SharedData.locationAddress = addressText
+                }
+            } else {
+                if error != nil {
+                    let errorAlert = UIAlertView(title: "Error", message: "The address could not be loaded.", delegate: self, cancelButtonTitle: "OK")
+                    errorAlert.show()
+                }
+            }
+        })
     }
     
 }
@@ -88,6 +112,7 @@ extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
             let index = 0 as CFIndex
             let phoneNumber = ABMultiValueCopyValueAtIndex(numbers, index).takeRetainedValue() as! String
             SharedData.currentPhoneNumber = phoneNumber
+            SharedData.sendText()
         } else {
             println("No phone number")
         }
