@@ -97,9 +97,9 @@
 		0AAC5E6E1B56CE1F00329E15 /* LocationAlert */ = {
 			isa = PBXGroup;
 			children = (
-				0AD3CF791B6A98D800B83449 /* SwiftRequest.swift */,
 				0AAC5E9B1B585C8400329E15 /* ViewControllers */,
 				0AAC5E711B56CE1F00329E15 /* AppDelegate.swift */,
+				0AD3CF791B6A98D800B83449 /* SwiftRequest.swift */,
 				0AAC5E751B56CE1F00329E15 /* Main.storyboard */,
 				0AAC5E781B56CE1F00329E15 /* Images.xcassets */,
 				0AAC5E7A1B56CE1F00329E15 /* LaunchScreen.xib */,

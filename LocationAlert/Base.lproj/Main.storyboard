@@ -102,23 +102,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Contact Name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEm-rb-GLy">
-                                <rect key="frame" x="230" y="535" width="141" height="37"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JEm-rb-GLy">
+                                <rect key="frame" x="230" y="535" width="141" height="38"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="cJv-Wj-RrO"/>
                                 </constraints>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Address" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19J-LZ-pb6">
-                                <rect key="frame" x="21" y="122" width="563" height="255"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19J-LZ-pb6">
+                                <rect key="frame" x="21" y="113" width="563" height="255"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="255" id="DKL-yv-kGy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -131,7 +130,7 @@
                             <constraint firstItem="JEm-rb-GLy" firstAttribute="centerX" secondItem="o3I-66-o8I" secondAttribute="centerX" id="ZwR-qo-Dfr"/>
                             <constraint firstItem="xcL-ba-YqM" firstAttribute="top" secondItem="cHa-Hb-FLf" secondAttribute="bottom" constant="26" id="apZ-fh-Kno"/>
                             <constraint firstItem="xcL-ba-YqM" firstAttribute="leading" secondItem="B0C-Bd-PUs" secondAttribute="leadingMargin" constant="9" id="cfL-CB-LZd"/>
-                            <constraint firstItem="19J-LZ-pb6" firstAttribute="top" secondItem="xcL-ba-YqM" secondAttribute="bottom" constant="8" symbolic="YES" id="ilh-Vz-GNR"/>
+                            <constraint firstItem="19J-LZ-pb6" firstAttribute="top" secondItem="xcL-ba-YqM" secondAttribute="bottom" constant="-1" id="ilh-Vz-GNR"/>
                             <constraint firstItem="FVG-CD-BhP" firstAttribute="top" secondItem="o3I-66-o8I" secondAttribute="bottom" constant="80" id="r4p-87-0Nm"/>
                         </constraints>
                     </view>

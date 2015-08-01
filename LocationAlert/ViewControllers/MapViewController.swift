@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var bottomSpaceContraint: NSLayoutConstraint!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -90,7 +90,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
                     annotation.title = item.name
                     self.mapView.addAnnotation(annotation)
                     self.mapView.showAnnotations(self.mapView.annotations, animated: true)
-                    
                 }
             }
         })
@@ -99,6 +98,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     func nameAlert() {
         var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text message.", preferredStyle: .Alert)
         nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            self.searchBar.showsCancelButton = false
+            UIView.animateWithDuration(0.5) {
+                self.bottomSpaceContraint.constant = 44
+                self.view.layoutIfNeeded()
+            }
             SharedData.currentUserName = self.nameTextField.text
         }))
         
@@ -107,12 +111,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             textField.secureTextEntry = false
             textField.autocapitalizationType = UITextAutocapitalizationType.Words
             self.nameTextField = textField
-            
         })
         
         self.presentViewController(nameAlert, animated: true, completion: nil)
     }
-    
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if annotation is MKUserLocation {
@@ -174,7 +176,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         if region is CLCircularRegion {
-//            SharedData.sendText()
+            SharedData.sendText()
         }
     }
     
@@ -236,6 +238,4 @@ extension MapViewController: UISearchBarDelegate {
         
     }
 }
-
-
 

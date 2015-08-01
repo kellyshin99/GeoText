@@ -20,6 +20,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
     var locationManager: CLLocationManager!
     var location: CLLocationCoordinate2D!
     
+    
+    
     @IBAction func showPicker(sender: AnyObject) {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
         if (authorizationStatus == ABAuthorizationStatus.NotDetermined) {
@@ -112,7 +114,6 @@ extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
             let index = 0 as CFIndex
             let phoneNumber = ABMultiValueCopyValueAtIndex(numbers, index).takeRetainedValue() as! String
             SharedData.currentPhoneNumber = phoneNumber
-            SharedData.sendText()
         } else {
             println("No phone number")
         }
