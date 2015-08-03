@@ -17,10 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cyW-gn-SYC">
-                                <rect key="frame" x="0.0" y="108" width="600" height="448"/>
-                                <gestureRecognizers/>
-                            </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="b70-xG-LX6">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -45,6 +41,10 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cyW-gn-SYC">
+                                <rect key="frame" x="0.0" y="108" width="600" height="448"/>
+                                <gestureRecognizers/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -102,15 +102,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JEm-rb-GLy">
-                                <rect key="frame" x="230" y="535" width="141" height="38"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="141" id="cJv-Wj-RrO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19J-LZ-pb6">
                                 <rect key="frame" x="21" y="113" width="563" height="255"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,14 +111,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send text to: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxd-A9-Txj">
+                                <rect key="frame" x="146" y="534" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEm-rb-GLy">
+                                <rect key="frame" x="252" y="526" width="305" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="cJv-Wj-RrO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gxd-A9-Txj" firstAttribute="top" secondItem="o3I-66-o8I" secondAttribute="bottom" constant="14" id="3mG-mQ-uga"/>
                             <constraint firstItem="o3I-66-o8I" firstAttribute="centerX" secondItem="B0C-Bd-PUs" secondAttribute="centerX" id="6KZ-mU-uIF"/>
                             <constraint firstItem="19J-LZ-pb6" firstAttribute="centerX" secondItem="o3I-66-o8I" secondAttribute="centerX" constant="2" id="Fqn-LX-gLC"/>
-                            <constraint firstItem="JEm-rb-GLy" firstAttribute="top" secondItem="o3I-66-o8I" secondAttribute="bottom" constant="15" id="K0c-gw-JGX"/>
+                            <constraint firstItem="JEm-rb-GLy" firstAttribute="top" secondItem="o3I-66-o8I" secondAttribute="bottom" constant="6" id="K0c-gw-JGX"/>
+                            <constraint firstItem="JEm-rb-GLy" firstAttribute="leading" secondItem="gxd-A9-Txj" secondAttribute="trailing" constant="2" id="Oto-Xr-iCK"/>
                             <constraint firstItem="19J-LZ-pb6" firstAttribute="leading" secondItem="B0C-Bd-PUs" secondAttribute="leadingMargin" constant="5" id="QST-hq-Qn3"/>
-                            <constraint firstItem="JEm-rb-GLy" firstAttribute="centerX" secondItem="o3I-66-o8I" secondAttribute="centerX" id="ZwR-qo-Dfr"/>
+                            <constraint firstItem="JEm-rb-GLy" firstAttribute="centerX" secondItem="o3I-66-o8I" secondAttribute="centerX" constant="104" id="ZwR-qo-Dfr"/>
                             <constraint firstItem="xcL-ba-YqM" firstAttribute="top" secondItem="cHa-Hb-FLf" secondAttribute="bottom" constant="26" id="apZ-fh-Kno"/>
                             <constraint firstItem="xcL-ba-YqM" firstAttribute="leading" secondItem="B0C-Bd-PUs" secondAttribute="leadingMargin" constant="9" id="cfL-CB-LZd"/>
                             <constraint firstItem="19J-LZ-pb6" firstAttribute="top" secondItem="xcL-ba-YqM" secondAttribute="bottom" constant="-1" id="ilh-Vz-GNR"/>
@@ -144,7 +152,7 @@
                     <connections>
                         <outlet property="address" destination="19J-LZ-pb6" id="fQu-BA-evx"/>
                         <outlet property="contactName" destination="JEm-rb-GLy" id="HNg-Kw-JNr"/>
-                        <segue destination="amQ-9x-wCP" kind="unwind" identifier="chooseContact" unwindAction="unwindToList:" id="S3A-VC-sbC"/>
+                        <segue destination="amQ-9x-wCP" kind="unwind" identifier="returnToMap" unwindAction="unwindToList:" id="S3A-VC-sbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7P-Vf-Lvq" userLabel="First Responder" sceneMemberID="firstResponder"/>

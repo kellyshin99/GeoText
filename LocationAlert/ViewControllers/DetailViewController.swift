@@ -45,21 +45,24 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
     }
     
     @IBAction func set() {
-        if contactName.text == "Contact Name" {
-            let alert = UIAlertView(title: "Select a Contact", message: "Please select a contact to message", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
+        if contactName.hasText() == false {
+            let addContactAlert = UIAlertController(title: "Select a Contact", message: "Please select a contact to send a text message.", preferredStyle: .Alert)
+            addContactAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            presentViewController(addContactAlert, animated: true, completion: nil)
+        } else if (locationManager.monitoredRegions != nil) && (locationManager.monitoredRegions != []) {
+                let cannotSetRegionAlert = UIAlertController(title: "Error", message: "Sorry, you can only set one region at a time", preferredStyle: .Alert)
+                cannotSetRegionAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+                presentViewController(cannotSetRegionAlert, animated: true, completion: nil)
         } else {
-            
             let region = CLCircularRegion(center: self.location, radius: 25.0, identifier: "geofence")
             self.locationManager.startMonitoringForRegion(region)
             
-            performSegueWithIdentifier("chooseContact", sender: nil)
+            performSegueWithIdentifier("returnToMap", sender: nil)
+            }
         }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -82,8 +85,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
                 }
             } else {
                 if error != nil {
-                    let errorAlert = UIAlertView(title: "Error", message: "The address could not be loaded.", delegate: self, cancelButtonTitle: "OK")
-                    errorAlert.show()
+                    let errorAlert = UIAlertController(title: "Error", message: "The address could not be loaded.", preferredStyle: .Alert)
+                    errorAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
                 }
             }
         })

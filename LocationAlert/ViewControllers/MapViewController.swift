@@ -101,7 +101,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             self.searchBar.showsCancelButton = false
             UIView.animateWithDuration(0.5) {
                 self.bottomSpaceContraint.constant = 44
-                self.view.layoutIfNeeded()
+                self.nameTextField.endEditing(true)
             }
             SharedData.currentUserName = self.nameTextField.text
         }))
@@ -143,9 +143,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         if control == view.rightCalloutAccessoryView {
             performSegueWithIdentifier("Detail", sender: view.annotation)
+            }
         }
-    }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Detail" {
             storedLocation = (sender as! MKAnnotation).coordinate
@@ -155,8 +155,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         }
     }
     
-    @IBAction func unwindToList(segue:UIStoryboardSegue) {
-        if segue.identifier == "chooseContact" {
+    func unwindToList(segue : UIStoryboardSegue) {
+        if segue.identifier == "returnToMap" {
             if let vc = segue.sourceViewController as? DetailViewController {
                 if let storedLocation = vc.location {
                     var circle = MKCircle(centerCoordinate: storedLocation, radius: 60)
@@ -168,8 +168,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         var circleRenderer = MKCircleRenderer(overlay: overlay)
+        circleRenderer.lineWidth = 2.0
         circleRenderer.strokeColor = UIColor.purpleColor()
-        circleRenderer.fillColor = UIColor.purpleColor()
+        circleRenderer.fillColor = UIColor.purpleColor().colorWithAlphaComponent(0.4)
         
         return circleRenderer
     }
@@ -177,8 +178,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
         if region is CLCircularRegion {
             SharedData.sendText()
+            for region in locationManager.monitoredRegions {
+                if let circularRegion = region as? CLCircularRegion {
+                    if circularRegion.identifier == "geofence" {
+                        locationManager.stopMonitoringForRegion(circularRegion)
+                    }
+                }
+            }
         }
     }
+
     
     // MARK: Map Settings Alert
     
