@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A3EB42A1B5F0ED2002F0016 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3EB4291B5F0ED2002F0016 /* DetailViewController.swift */; };
 		0A74CB9E1B61ABE000354B3C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A74CB9D1B61ABE000354B3C /* CoreLocation.framework */; };
 		0A74CB9F1B61AC0300354B3C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC5E911B56D4B300329E15 /* MapKit.framework */; };
 		0AAC5E721B56CE1F00329E15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E711B56CE1F00329E15 /* AppDelegate.swift */; };
@@ -16,6 +15,8 @@
 		0AAC5E7C1B56CE1F00329E15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAC5E7A1B56CE1F00329E15 /* LaunchScreen.xib */; };
 		0AAC5E881B56CE2000329E15 /* LocationAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E871B56CE2000329E15 /* LocationAlertTests.swift */; };
 		0AAC5E9D1B585C8400329E15 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E9C1B585C8400329E15 /* MapViewController.swift */; };
+		0ACF8F8E1B702CEA003D7128 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF8F8D1B702CEA003D7128 /* MainViewController.swift */; };
+		0ACF8F901B7132F6003D7128 /* SetAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACF8F8F1B7132F6003D7128 /* SetAlertViewController.swift */; };
 		0AD3CF7A1B6A98D800B83449 /* SwiftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3CF791B6A98D800B83449 /* SwiftRequest.swift */; };
 		0AD3CF7C1B6ADD9100B83449 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3CF7B1B6ADD9100B83449 /* SharedData.swift */; };
 		EC0F5F919D47E1776904CC0E /* libPods-LocationAlert.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E05A5A9438F642FE5D0D01 /* libPods-LocationAlert.a */; };
@@ -33,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		040527FDEC174474EB865698 /* Pods-LocationAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationAlert/Pods-LocationAlert.debug.xcconfig"; sourceTree = "<group>"; };
-		0A3EB4291B5F0ED2002F0016 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0A74CB9D1B61ABE000354B3C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0AAC5E6C1B56CE1F00329E15 /* LocationAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAC5E701B56CE1F00329E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		0AAC5E911B56D4B300329E15 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0AAC5E9C1B585C8400329E15 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0AAC5EB11B59CD1400329E15 /* APAddressBook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APAddressBook-Bridging-Header.h"; sourceTree = "<group>"; };
+		0ACF8F8D1B702CEA003D7128 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0ACF8F8F1B7132F6003D7128 /* SetAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAlertViewController.swift; sourceTree = "<group>"; };
 		0AD3CF791B6A98D800B83449 /* SwiftRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRequest.swift; sourceTree = "<group>"; };
 		0AD3CF7B1B6ADD9100B83449 /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		87FDC4E2D700399EEEABAF0F /* Pods-LocationAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationAlert/Pods-LocationAlert.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,9 +139,10 @@
 		0AAC5E9B1B585C8400329E15 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0ACF8F8D1B702CEA003D7128 /* MainViewController.swift */,
 				0AAC5E9C1B585C8400329E15 /* MapViewController.swift */,
-				0A3EB4291B5F0ED2002F0016 /* DetailViewController.swift */,
 				0AD3CF7B1B6ADD9100B83449 /* SharedData.swift */,
+				0ACF8F8F1B7132F6003D7128 /* SetAlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -303,9 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A3EB42A1B5F0ED2002F0016 /* DetailViewController.swift in Sources */,
 				0AAC5E9D1B585C8400329E15 /* MapViewController.swift in Sources */,
 				0AAC5E721B56CE1F00329E15 /* AppDelegate.swift in Sources */,
+				0ACF8F901B7132F6003D7128 /* SetAlertViewController.swift in Sources */,
+				0ACF8F8E1B702CEA003D7128 /* MainViewController.swift in Sources */,
 				0AD3CF7C1B6ADD9100B83449 /* SharedData.swift in Sources */,
 				0AD3CF7A1B6A98D800B83449 /* SwiftRequest.swift in Sources */,
 			);

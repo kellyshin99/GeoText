@@ -1,26 +1,23 @@
 //
-//  DetailViewController.swift
+//  MainViewController.swift
 //  LocationAlert
 //
-//  Created by Kelly Shin on 7/22/15.
+//  Created by Kelly Shin on 8/3/15.
 //  Copyright (c) 2015 KellyShin. All rights reserved.
 //
 
 import UIKit
-import MapKit
 import CoreLocation
 import AddressBookUI
 
-class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITextViewDelegate {
-    
-    @IBOutlet weak var address: UITextView!
-    @IBOutlet weak var contactName: UITextView!
+class MainViewController: UIViewController {
+
     var addressBook: ABAddressBook!
     var person: ABRecord!
-    var locationManager: CLLocationManager!
     var location: CLLocationCoordinate2D!
+    @IBOutlet var locationAddress: UITextView!
     
-    @IBAction func showPicker(sender: AnyObject) {
+    @IBAction func chooseContact(sender: AnyObject) {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
         if (authorizationStatus == ABAuthorizationStatus.NotDetermined) {
             var emptyDictionary: CFDictionaryRef?
@@ -39,61 +36,36 @@ class DetailViewController: UIViewController, UITextFieldDelegate, ABPeoplePicke
         } else if (authorizationStatus == ABAuthorizationStatus.Authorized) {
             self.showContacts()
         }
-        
+
     }
     
-    @IBAction func set() {
-//        if contactName.hasText() == false {
-//            let addContactAlert = UIAlertController(title: "Select a Contact", message: "Please select a contact to send a text message.", preferredStyle: .Alert)
-//            addContactAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-//            presentViewController(addContactAlert, animated: true, completion: nil)
-//        } else if (locationManager.monitoredRegions != nil) && (locationManager.monitoredRegions != []) {
-//                let cannotSetRegionAlert = UIAlertController(title: "Error", message: "Sorry, you can only set one region at a time", preferredStyle: .Alert)
-//                cannotSetRegionAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-//                presentViewController(cannotSetRegionAlert, animated: true, completion: nil)
-//        } else {
-            let region = CLCircularRegion(center: self.location, radius: 25.0, identifier: "geofence")
-            self.locationManager.startMonitoringForRegion(region)
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        if segue.identifier == "unwindToMain" {
+            segue.sourceViewController as! MapViewController
+        }
+    }
+    
+    @IBAction func setGeofence(segue: UIStoryboardSegue) {
+        if segue.identifier == "showGeofence" {
             
-            performSegueWithIdentifier("returnToMap", sender: nil)
-            }
-//        }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func viewWillAppear(animated: Bool) {
-//        geocodeLocation()
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func geocodeLocation() {
-        var geocoder = CLGeocoder()
-        var locationObject = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        geocoder.reverseGeocodeLocation(locationObject, completionHandler: { (placemarks, error) -> Void in
-            if let placemarks = placemarks as? [CLPlacemark] {
-                for placemark in placemarks {
-                    var addressText = ABCreateStringWithAddressDictionary(placemark.addressDictionary, true)
-                    self.address.text = addressText
-                    SharedData.locationAddress = addressText
-                }
-            } else {
-                if error != nil {
-                    let errorAlert = UIAlertController(title: "Error", message: "The address could not be loaded.", preferredStyle: .Alert)
-                    errorAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-                    self.presentViewController(errorAlert, animated: true, completion: nil)
-                }
-            }
-        })
+    override func viewWillAppear(animated: Bool) {
+        locationAddress.text = SharedData.locationAddress
     }
-    
+
 }
 
-extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
+extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
     func showContacts() {
         var picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
         
@@ -122,7 +94,7 @@ extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
         
         let nameCFString : CFString = ABRecordCopyCompositeName(person).takeRetainedValue()
         let name : NSString = nameCFString as NSString
-        contactName.text = name as String
+//        contactName.text = name as String
     }
     
     
@@ -151,4 +123,3 @@ extension DetailViewController: ABPeoplePickerNavigationControllerDelegate {
     }
     
 }
-

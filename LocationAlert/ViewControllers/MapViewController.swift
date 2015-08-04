@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import AddressBookUI
 
 class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
     
@@ -18,7 +19,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     var matchingItems: [MKMapItem] = [MKMapItem]()
     let locationManager = CLLocationManager()
     var overlay: MKOverlay!
-    var nameTextField: UITextField!
     
     var storedLocation: CLLocationCoordinate2D? = nil
     
@@ -46,7 +46,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         switch CLLocationManager.authorizationStatus() {
         case .AuthorizedAlways, .AuthorizedWhenInUse:
-            nameAlert()
+            println("authorized")
         case .Denied, .Restricted:
             self.displayCantShowLocationAlert()
         case .NotDetermined:
@@ -95,27 +95,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         })
     }
     
-    func nameAlert() {
-        var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text message.", preferredStyle: .Alert)
-        nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-            self.searchBar.showsCancelButton = false
-            UIView.animateWithDuration(0.5) {
-                self.bottomSpaceContraint.constant = 44
-                self.nameTextField.endEditing(true)
-            }
-            SharedData.currentUserName = self.nameTextField.text
-        }))
-        
-        nameAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
-            textField.placeholder = "Enter name"
-            textField.secureTextEntry = false
-            textField.autocapitalizationType = UITextAutocapitalizationType.Words
-            self.nameTextField = textField
-        })
-        
-        self.presentViewController(nameAlert, animated: true, completion: nil)
-    }
-    
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if annotation is MKUserLocation {
             return nil
@@ -142,22 +121,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         if control == view.rightCalloutAccessoryView {
-            performSegueWithIdentifier("Detail", sender: view.annotation)
-            }
-        }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Detail" {
-            storedLocation = (sender as! MKAnnotation).coordinate
-            var detailVC = segue.destinationViewController as! DetailViewController
-            detailVC.locationManager = locationManager
-            detailVC.location = storedLocation
+            storedLocation = view.annotation.coordinate
+            
+            let region = CLCircularRegion(center: storedLocation!, radius: 25.0, identifier: "geofence")
+            self.locationManager.startMonitoringForRegion(region)
+            
+            geocodeLocation()
         }
     }
     
-    func unwindToList(segue : UIStoryboardSegue) {
-        if segue.identifier == "returnToMap" {
-            if let vc = segue.sourceViewController as? DetailViewController {
+    func unwindSegue(segue: UIStoryboardSegue) {
+        if segue.identifier == "unwindToMain" {
+            if let vc = segue.sourceViewController as? MainViewController {
                 if let storedLocation = vc.location {
                     var circle = MKCircle(centerCoordinate: storedLocation, radius: 60)
                     mapView.addOverlay(circle)
@@ -187,7 +162,27 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             }
         }
     }
-
+    
+    func geocodeLocation() {
+        var geocoder = CLGeocoder()
+        var locationObject = CLLocation(latitude: storedLocation!.latitude, longitude: storedLocation!.longitude)
+        geocoder.reverseGeocodeLocation(locationObject, completionHandler: { (placemarks, error) -> Void in
+            if let placemarks = placemarks as? [CLPlacemark] {
+                for placemark in placemarks {
+                    var addressText = ABCreateStringWithAddressDictionary(placemark.addressDictionary, true)
+//                    let addressArray = placemark.addressDictionary["FormattedAddressLines"] as! [String]
+                    SharedData.locationAddress = addressText
+                }
+                self.performSegueWithIdentifier("unwindToMain", sender: self)
+            } else {
+                if error != nil {
+                    let errorAlert = UIAlertController(title: "Error", message: "The address could not be loaded.", preferredStyle: .Alert)
+                    errorAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+                }
+            }
+        })
+    }
     
     // MARK: Map Settings Alert
     

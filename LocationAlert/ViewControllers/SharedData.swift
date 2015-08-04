@@ -11,7 +11,7 @@ import Foundation
 struct SharedData {
     static var currentPhoneNumber = ""
     static var currentUserName = ""
-    static var locationAddress = ""
+    static var locationAddress = "" //[String]()
     
     static func sendText() {
         var swiftRequest = SwiftRequest();
