@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     var addressBook: ABAddressBook!
     var person: ABRecord!
     var location: CLLocationCoordinate2D!
+    @IBOutlet weak var chooseContactButton: UIButton!
     @IBOutlet var locationAddress: UITextView!
     
     @IBAction func chooseContact(sender: AnyObject) {
@@ -42,12 +43,6 @@ class MainViewController: UIViewController {
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         if segue.identifier == "unwindToMain" {
             segue.sourceViewController as! MapViewController
-        }
-    }
-    
-    @IBAction func setGeofence(segue: UIStoryboardSegue) {
-        if segue.identifier == "showGeofence" {
-            
         }
     }
     
@@ -94,6 +89,7 @@ extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
         
         let nameCFString : CFString = ABRecordCopyCompositeName(person).takeRetainedValue()
         let name : NSString = nameCFString as NSString
+        chooseContactButton.setTitle("\(name)", forState: .Normal)
 //        contactName.text = name as String
     }
     

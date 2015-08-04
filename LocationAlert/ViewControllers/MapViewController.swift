@@ -54,11 +54,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        
-        locationManager.monitoredRegions
-    }
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(true)
+//        
+//        locationManager.monitoredRegions
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -113,6 +113,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             
             var calloutButton = UIButton.buttonWithType(.DetailDisclosure) as! UIButton
             pinView!.rightCalloutAccessoryView = calloutButton
+
+//            var calloutButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+//            calloutButton.setTitle("Set", forState: .Normal)
+//            calloutButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+//            pinView!.rightCalloutAccessoryView = calloutButton
+            
         } else {
             pinView!.annotation = annotation
         }
@@ -125,41 +131,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             
             let region = CLCircularRegion(center: storedLocation!, radius: 25.0, identifier: "geofence")
             self.locationManager.startMonitoringForRegion(region)
-            
+
             geocodeLocation()
-        }
-    }
-    
-    func unwindSegue(segue: UIStoryboardSegue) {
-        if segue.identifier == "unwindToMain" {
-            if let vc = segue.sourceViewController as? MainViewController {
-                if let storedLocation = vc.location {
-                    var circle = MKCircle(centerCoordinate: storedLocation, radius: 60)
-                    mapView.addOverlay(circle)
-                }
-            }
-        }
-    }
-    
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        var circleRenderer = MKCircleRenderer(overlay: overlay)
-        circleRenderer.lineWidth = 2.0
-        circleRenderer.strokeColor = UIColor.purpleColor()
-        circleRenderer.fillColor = UIColor.purpleColor().colorWithAlphaComponent(0.4)
-        
-        return circleRenderer
-    }
-    
-    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
-        if region is CLCircularRegion {
-            SharedData.sendText()
-            for region in locationManager.monitoredRegions {
-                if let circularRegion = region as? CLCircularRegion {
-                    if circularRegion.identifier == "geofence" {
-                        locationManager.stopMonitoringForRegion(circularRegion)
-                    }
-                }
-            }
         }
     }
     
