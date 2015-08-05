@@ -28,8 +28,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     }
     
     override func viewDidLoad() {
-        mapView.delegate = self
         super.viewDidLoad()
+        mapView.delegate = self
         locationManager.requestAlwaysAuthorization()
         
         if (CLLocationManager.locationServicesEnabled()) {
@@ -38,6 +38,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             locationManager.startUpdatingLocation()
         }
         mapView.showsUserLocation = true
+        self.mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
     }
@@ -52,12 +53,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             println("not determined")
         }
     }
-    
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(true)
-//        
-//        locationManager.monitoredRegions
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

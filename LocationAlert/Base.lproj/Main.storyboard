@@ -31,9 +31,9 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3B-ED-Kns">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="My Location" id="Lk4-oJ-RRZ">
+                                    <barButtonItem image="CurrentLocation" id="4IQ-Gb-5wb">
                                         <connections>
-                                            <action selector="showUserLocation" destination="BYZ-38-t0r" id="RYK-Tf-umB"/>
+                                            <action selector="showUserLocation" destination="BYZ-38-t0r" id="H5C-rx-J5C"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -101,6 +101,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="rmc-6E-Jsm"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,6 +113,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="cancel:" destination="HtM-2v-XzA" eventType="touchUpInside" id="G2r-B0-VDH"/>
+                                    <segue destination="03R-Q5-fBw" kind="unwind" identifier="cancelToMain" unwindAction="unwindSegue:" id="VeL-rW-6G8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUo-cm-Ekl">
@@ -152,10 +154,10 @@
                         <outlet property="address" destination="kOs-HH-2we" id="QKJ-BN-KfF"/>
                         <outlet property="cancelButton" destination="WV2-gY-G3j" id="Ccc-bH-mIK"/>
                         <outlet property="mapView" destination="Mq7-yh-lt7" id="WYF-MG-Xmy"/>
-                        <segue destination="o1S-Hj-kt9" kind="show" identifier="cancelToMain" id="c7D-rH-BFg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZu-LA-Vy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="03R-Q5-fBw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1083" y="1332"/>
         </scene>
@@ -267,8 +269,6 @@
     </scenes>
     <resources>
         <image name="Background" width="700" height="639"/>
+        <image name="CurrentLocation" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="c7D-rH-BFg"/>
-    </inferredMetricsTieBreakers>
 </document>

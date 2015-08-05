@@ -69,8 +69,13 @@ class MainViewController: UIViewController {
         chooseLocationButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         chooseLocationButton.titleLabel?.textAlignment = NSTextAlignment.Left
         if SharedData.locationAddress != "" {
-        chooseLocationButton.setTitle(SharedData.locationAddress, forState: .Normal)
+            chooseLocationButton.setTitle(SharedData.locationAddress, forState: .Normal)
+        } else {
+            if SharedData.locationAddress == "" {
+                chooseLocationButton.setTitle("Choose Location", forState: .Normal)
+            }
         }
+        locationManager.delegate = nil
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
