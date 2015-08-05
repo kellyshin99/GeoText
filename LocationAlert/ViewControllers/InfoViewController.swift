@@ -25,39 +25,35 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         address.text = SharedData.locationAddress
+        
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
         mapView.showsUserLocation = true
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        let region = [locationManager.monitoredRegions]
-        var circularRegion = region[0]        
+        self.mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
         
-//        var circle = MKCircle(centerCoordinate: location!, radius: 60)
-//        mapView.addOverlay(circle)
+        let region = locationManager.monitoredRegions
+        if let circularRegion = region.first as? CLCircularRegion {
+            let center = circularRegion.center
+            var circle = MKCircle(centerCoordinate: center, radius: 60)
+            mapView.addOverlay(circle)
+            
+            var annotation = MKPointAnnotation()
+            annotation.coordinate = center
+            self.mapView.addAnnotation(annotation)
+            self.mapView.showAnnotations(self.mapView.annotations, animated: true)
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "unwindToMain" {
-//            if let vc = segue.sourceViewController as? MainViewController {
-//                if let storedLocation = vc.location {
-//                    var circle = MKCircle(centerCoordinate: storedLocation, radius: 60)
-//                    mapView.addOverlay(circle)
-//                }
-//            }
-//        }
-//    }
-//    
+ 
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         var circleRenderer = MKCircleRenderer(overlay: overlay)
         circleRenderer.lineWidth = 2.0

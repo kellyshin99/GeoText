@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     let locationManager = CLLocationManager()
     @IBOutlet weak var chooseContactButton: UIButton!
     @IBOutlet var locationAddress: UITextView!
+    @IBOutlet weak var chooseLocationButton: UIButton!
     
     @IBAction func chooseContact(sender: AnyObject) {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
@@ -54,7 +55,7 @@ class MainViewController: UIViewController {
             let chooseLocationAlert = UIAlertController(title: "Error", message: "Please choose a location.", preferredStyle: .Alert)
             chooseLocationAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(chooseLocationAlert, animated: true, completion: nil)
-        } else if chooseContactButton.titleLabel == "Choose Contact" {
+        } else if chooseContactButton.currentTitle == "Choose Contact" {
             let addContactAlert = UIAlertController(title: "Select a Contact", message: "Please select a contact to send a text message.", preferredStyle: .Alert)
             addContactAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(addContactAlert, animated: true, completion: nil)
