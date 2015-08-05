@@ -16,8 +16,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     @IBOutlet weak var bottomSpaceContraint: NSLayoutConstraint!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
+    var locationManager: CLLocationManager!
     var matchingItems: [MKMapItem] = [MKMapItem]()
-    let locationManager = CLLocationManager()
     var overlay: MKOverlay!
     
     var storedLocation: CLLocationCoordinate2D? = nil
@@ -111,13 +111,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             pinView!.animatesDrop = true
             pinView!.pinColor = .Red
             
-            var calloutButton = UIButton.buttonWithType(.DetailDisclosure) as! UIButton
+            var calloutButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+            let buttonTitle: NSString = "Set"
+            calloutButton.setTitle(buttonTitle as String, forState: .Normal)
+            calloutButton.frame = CGRect(x: 0, y: 0, width: buttonTitle.length, height: 22)
             pinView!.rightCalloutAccessoryView = calloutButton
-
-//            var calloutButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
-//            calloutButton.setTitle("Set", forState: .Normal)
-//            calloutButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
-//            pinView!.rightCalloutAccessoryView = calloutButton
             
         } else {
             pinView!.annotation = annotation

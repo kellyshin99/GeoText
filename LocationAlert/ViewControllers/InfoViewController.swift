@@ -1,5 +1,5 @@
 //
-//  SetAlertViewController.swift
+//  InfoViewController.swift
 //  LocationAlert
 //
 //  Created by Kelly Shin on 8/4/15.
@@ -15,8 +15,8 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var address: UITextView!
-    @IBOutlet weak var contact: UITextView!
     var locationManager: CLLocationManager!
+    var overlay: MKOverlay!
     
     @IBAction func cancel(sender: AnyObject?) {
         
@@ -25,18 +25,18 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         address.text = SharedData.locationAddress
-        contact.text = SharedData.currentUserName
-//        if (CLLocationManager.locationServicesEnabled()) {
-//            locationManager.delegate = self
-//            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//            locationManager.startUpdatingLocation()
-//        }
-//        mapView.showsUserLocation = true
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+        mapView.showsUserLocation = true
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-//        locationManager.monitoredRegions
+        locationManager.monitoredRegions
+        mapView.addOverlay(overlay)
     }
     
     override func didReceiveMemoryWarning() {

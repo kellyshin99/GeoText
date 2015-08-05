@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     var addressBook: ABAddressBook!
     var person: ABRecord!
     var location: CLLocationCoordinate2D!
+    let locationManager = CLLocationManager()
     @IBOutlet weak var chooseContactButton: UIButton!
     @IBOutlet var locationAddress: UITextView!
     
@@ -57,7 +58,17 @@ class MainViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         locationAddress.text = SharedData.locationAddress
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMap" {
+            var mapVC = segue.destinationViewController as! MapViewController
+            mapVC.locationManager = locationManager
+        } else if segue.identifier == "showInfo" {
+            var showInfoVC = segue.destinationViewController as! InfoViewController
+            showInfoVC.locationManager = locationManager
+        }
+    }
+    
 }
 
 extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
