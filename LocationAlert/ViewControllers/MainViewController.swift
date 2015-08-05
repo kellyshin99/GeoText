@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
     var person: ABRecord!
     var location: CLLocationCoordinate2D? = nil
     let locationManager = CLLocationManager()
+    var nameTextField: UITextField!
+
     @IBOutlet weak var chooseContactButton: UIButton!
     @IBOutlet weak var chooseLocationButton: UIButton!
     
@@ -42,7 +44,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func set(sender: AnyObject) {
-        if chooseLocationButton.titleLabel != SharedData.locationAddress {
+        if chooseLocationButton.titleLabel == "Choose Location" {
             let chooseLocationAlert = UIAlertController(title: "Error", message: "Please choose a location.", preferredStyle: .Alert)
             chooseLocationAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(chooseLocationAlert, animated: true, completion: nil)
@@ -51,7 +53,7 @@ class MainViewController: UIViewController {
             addContactAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(addContactAlert, animated: true, completion: nil)
         } else {
-            performSegueWithIdentifier("showInfo", sender: nil)
+            nameAlert()
         }
     }
     
@@ -65,7 +67,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         chooseLocationButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        chooseLocationButton.titleLabel?.textAlignment = NSTextAlignment.Center
+        chooseLocationButton.titleLabel?.textAlignment = NSTextAlignment.Left
         if SharedData.locationAddress != "" {
         chooseLocationButton.setTitle(SharedData.locationAddress, forState: .Normal)
         }
@@ -97,6 +99,26 @@ class MainViewController: UIViewController {
             showInfoVC.locationManager = locationManager
             }
         }
+    }
+    
+    func nameAlert() {
+        var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text message.", preferredStyle: .Alert)
+        nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+//            if self.nameTextField.hasText() == false {
+//                
+//            } else {
+                self.performSegueWithIdentifier("showInfo", sender: nil)
+                SharedData.currentUserName = self.nameTextField.text
+//            }
+            }))
+        
+        nameAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Enter name"
+            textField.secureTextEntry = false
+            textField.autocapitalizationType = UITextAutocapitalizationType.Words
+            self.nameTextField = textField
+        })
+        self.presentViewController(nameAlert, animated: true, completion: nil)
     }
     
 }
