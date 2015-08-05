@@ -18,9 +18,17 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var locationManager: CLLocationManager!
     var overlay: MKOverlay!
     var location: CLLocationCoordinate2D?
+    var userLocation: MKUserLocation!
     
     @IBAction func cancel(sender: AnyObject?) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        performSegueWithIdentifier("cancelToMain", sender: self)
+        for region in locationManager.monitoredRegions {
+            if let circularRegion = region as? CLCircularRegion {
+                if circularRegion.identifier == "geofence" {
+                    locationManager.stopMonitoringForRegion(circularRegion)
+                }
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -53,7 +61,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
- 
+    
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         var circleRenderer = MKCircleRenderer(overlay: overlay)
         circleRenderer.lineWidth = 2.0

@@ -17,7 +17,6 @@ class MainViewController: UIViewController {
     var location: CLLocationCoordinate2D? = nil
     let locationManager = CLLocationManager()
     @IBOutlet weak var chooseContactButton: UIButton!
-    @IBOutlet var locationAddress: UITextView!
     @IBOutlet weak var chooseLocationButton: UIButton!
     
     @IBAction func chooseContact(sender: AnyObject) {
@@ -42,16 +41,8 @@ class MainViewController: UIViewController {
 
     }
     
-    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
-        if segue.identifier == "unwindToMain" {
-            locationManager.delegate = nil
-            var vc = segue.sourceViewController as! MapViewController
-            vc.location = location
-        }
-    }
-    
     @IBAction func set(sender: AnyObject) {
-        if locationAddress.hasText() == false {
+        if chooseLocationButton.titleLabel != SharedData.locationAddress {
             let chooseLocationAlert = UIAlertController(title: "Error", message: "Please choose a location.", preferredStyle: .Alert)
             chooseLocationAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(chooseLocationAlert, animated: true, completion: nil)
@@ -73,7 +64,27 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        locationAddress.text = SharedData.locationAddress
+        chooseLocationButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        chooseLocationButton.titleLabel?.textAlignment = NSTextAlignment.Center
+        if SharedData.locationAddress != "" {
+        chooseLocationButton.setTitle(SharedData.locationAddress, forState: .Normal)
+        }
+    }
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        if segue.identifier == "unwindToMain" {
+            locationManager.delegate = nil
+            var vc = segue.sourceViewController as! MapViewController
+            vc.location = location
+        } else {
+            if segue.identifier == "cancelToMain" {
+                segue.sourceViewController as! InfoViewController
+                locationManager.delegate = nil
+                SharedData.locationAddress = ""
+                SharedData.currentPhoneNumber = ""
+                chooseContactButton.setTitle("Choose Contact", forState: .Normal)
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
