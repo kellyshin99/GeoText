@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
 
     var addressBook: ABAddressBook!
     var person: ABRecord!
-    var location: CLLocationCoordinate2D!
+    var location: CLLocationCoordinate2D? = nil
     let locationManager = CLLocationManager()
     @IBOutlet weak var chooseContactButton: UIButton!
     @IBOutlet var locationAddress: UITextView!
@@ -43,7 +43,23 @@ class MainViewController: UIViewController {
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         if segue.identifier == "unwindToMain" {
-            segue.sourceViewController as! MapViewController
+            locationManager.delegate = nil
+            var vc = segue.sourceViewController as! MapViewController
+            vc.location = location
+        }
+    }
+    
+    @IBAction func set(sender: AnyObject) {
+        if locationAddress.hasText() == false {
+            let chooseLocationAlert = UIAlertController(title: "Error", message: "Please choose a location.", preferredStyle: .Alert)
+            chooseLocationAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            presentViewController(chooseLocationAlert, animated: true, completion: nil)
+        } else if chooseContactButton.titleLabel == "Choose Contact" {
+            let addContactAlert = UIAlertController(title: "Select a Contact", message: "Please select a contact to send a text message.", preferredStyle: .Alert)
+            addContactAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            presentViewController(addContactAlert, animated: true, completion: nil)
+        } else {
+            performSegueWithIdentifier("showInfo", sender: nil)
         }
     }
     
@@ -63,9 +79,11 @@ class MainViewController: UIViewController {
         if segue.identifier == "showMap" {
             var mapVC = segue.destinationViewController as! MapViewController
             mapVC.locationManager = locationManager
-        } else if segue.identifier == "showInfo" {
+        } else {
+            if segue.identifier == "showInfo" {
             var showInfoVC = segue.destinationViewController as! InfoViewController
             showInfoVC.locationManager = locationManager
+            }
         }
     }
     
@@ -78,16 +96,7 @@ extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
         picker.peoplePickerDelegate = self
         self.presentViewController(picker, animated: true, completion:nil)
     }
-    
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {
         
-        peoplePickerNavigationController(peoplePicker, shouldContinueAfterSelectingPerson: person)
-        
-        peoplePicker.dismissViewControllerAnimated(true, completion: nil)
-        
-        return false
-    }
-    
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!) {
         let numbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue()
         if (ABMultiValueGetCount(numbers) > 0) {
@@ -102,6 +111,8 @@ extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
         let name : NSString = nameCFString as NSString
         chooseContactButton.setTitle("\(name)", forState: .Normal)
 //        contactName.text = name as String
+        peoplePicker.dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     

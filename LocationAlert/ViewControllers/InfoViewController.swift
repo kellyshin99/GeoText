@@ -17,9 +17,10 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     @IBOutlet weak var address: UITextView!
     var locationManager: CLLocationManager!
     var overlay: MKOverlay!
+    var location: CLLocationCoordinate2D?
     
     @IBAction func cancel(sender: AnyObject?) {
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -35,8 +36,11 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        locationManager.monitoredRegions
-        mapView.addOverlay(overlay)
+        let region = [locationManager.monitoredRegions]
+        var circularRegion = region[0]        
+        
+//        var circle = MKCircle(centerCoordinate: location!, radius: 60)
+//        mapView.addOverlay(circle)
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,27 +58,27 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
 //        }
 //    }
 //    
-//    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-//        var circleRenderer = MKCircleRenderer(overlay: overlay)
-//        circleRenderer.lineWidth = 2.0
-//        circleRenderer.strokeColor = UIColor.purpleColor()
-//        circleRenderer.fillColor = UIColor.purpleColor().colorWithAlphaComponent(0.4)
-//        
-//        return circleRenderer
-//    }
-//    
-//    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
-//        if region is CLCircularRegion {
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        var circleRenderer = MKCircleRenderer(overlay: overlay)
+        circleRenderer.lineWidth = 2.0
+        circleRenderer.strokeColor = UIColor.purpleColor()
+        circleRenderer.fillColor = UIColor.purpleColor().colorWithAlphaComponent(0.4)
+        
+        return circleRenderer
+    }
+    
+    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        if region is CLCircularRegion {
 //            SharedData.sendText()
-//            for region in locationManager.monitoredRegions {
-//                if let circularRegion = region as? CLCircularRegion {
-//                    if circularRegion.identifier == "geofence" {
-//                        locationManager.stopMonitoringForRegion(circularRegion)
-//                    }
-//                }
-//            }
-//        }
-//    }
+            for region in locationManager.monitoredRegions {
+                if let circularRegion = region as? CLCircularRegion {
+                    if circularRegion.identifier == "geofence" {
+                        locationManager.stopMonitoringForRegion(circularRegion)
+                    }
+                }
+            }
+        }
+    }
 
     
 }

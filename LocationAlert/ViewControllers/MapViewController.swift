@@ -19,8 +19,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     var locationManager: CLLocationManager!
     var matchingItems: [MKMapItem] = [MKMapItem]()
     var overlay: MKOverlay!
-    
-    var storedLocation: CLLocationCoordinate2D? = nil
+    var location: CLLocationCoordinate2D?
     
     @IBAction func showUserLocation() {
             mapView.delegate = self
@@ -112,9 +111,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             pinView!.pinColor = .Red
             
             var calloutButton = UIButton.buttonWithType(UIButtonType.System) as! UIButton
-            let buttonTitle: NSString = "Set"
+            let buttonTitle = "Set"
+            let size = (buttonTitle as NSString).sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(17.0)])
             calloutButton.setTitle(buttonTitle as String, forState: .Normal)
-            calloutButton.frame = CGRect(x: 0, y: 0, width: buttonTitle.length, height: 22)
+            calloutButton.frame = CGRect(x: 0, y: 0, width: size.width, height: 22)
             pinView!.rightCalloutAccessoryView = calloutButton
             
         } else {
@@ -125,9 +125,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         if control == view.rightCalloutAccessoryView {
-            storedLocation = view.annotation.coordinate
+            location = view.annotation.coordinate
             
-            let region = CLCircularRegion(center: storedLocation!, radius: 25.0, identifier: "geofence")
+            let region = CLCircularRegion(center: location!, radius: 25.0, identifier: "geofence")
             self.locationManager.startMonitoringForRegion(region)
 
             geocodeLocation()
@@ -136,7 +136,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     func geocodeLocation() {
         var geocoder = CLGeocoder()
-        var locationObject = CLLocation(latitude: storedLocation!.latitude, longitude: storedLocation!.longitude)
+        var locationObject = CLLocation(latitude: location!.latitude, longitude: location!.longitude)
         geocoder.reverseGeocodeLocation(locationObject, completionHandler: { (placemarks, error) -> Void in
             if let placemarks = placemarks as? [CLPlacemark] {
                 for placemark in placemarks {

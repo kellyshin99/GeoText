@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b70-xG-LX6">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="b70-xG-LX6">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -41,7 +41,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cyW-gn-SYC">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cyW-gn-SYC">
                                 <rect key="frame" x="0.0" y="108" width="600" height="448"/>
                                 <gestureRecognizers/>
                             </mapView>
@@ -61,6 +61,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Set Location" id="PJv-8J-LB8"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="bottomSpaceContraint" destination="4TT-k6-XzY" id="oMC-KQ-YoV"/>
                         <outlet property="mapView" destination="cyW-gn-SYC" id="Ceh-EF-2iI"/>
@@ -85,13 +86,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mq7-yh-lt7">
-                                <rect key="frame" x="0.0" y="64" width="600" height="264"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="264" id="DDH-9f-CbG"/>
-                                </constraints>
-                            </mapView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-HH-2we">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-HH-2we">
                                 <rect key="frame" x="16" y="377" width="289" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -101,7 +96,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUo-cm-Ekl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUo-cm-Ekl">
                                 <rect key="frame" x="21" y="348" width="74" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Xw9-dI-5Le"/>
@@ -111,7 +106,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WV2-gY-G3j">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WV2-gY-G3j">
                                 <rect key="frame" x="40" y="510" width="521" height="64"/>
                                 <color key="backgroundColor" red="0.0" green="0.61897708600000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -131,6 +126,12 @@
                                     <segue destination="o1S-Hj-kt9" kind="show" id="JrD-Nr-sjj"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mq7-yh-lt7">
+                                <rect key="frame" x="0.0" y="64" width="600" height="264"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="264" id="DDH-9f-CbG"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -155,6 +156,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="address" destination="kOs-HH-2we" id="QKJ-BN-KfF"/>
                         <outlet property="cancelButton" destination="WV2-gY-G3j" id="Ccc-bH-mIK"/>
@@ -177,7 +179,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="226" placeholderIntrinsicHeight="72" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOt-vc-HgY">
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="226" placeholderIntrinsicHeight="72" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOt-vc-HgY">
                                 <rect key="frame" x="187" y="146" width="226" height="72"/>
                                 <color key="backgroundColor" red="0.0" green="0.61897708603905155" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -193,7 +195,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="showMap" id="0GI-Rk-9IO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtq-r2-83e">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtq-r2-83e">
                                 <rect key="frame" x="187" y="372" width="226" height="72"/>
                                 <color key="backgroundColor" red="0.0" green="0.61897708600000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -208,7 +210,7 @@
                                     <action selector="chooseContact:" destination="o1S-Hj-kt9" eventType="touchUpInside" id="CAu-Qk-H53"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mdC-cc-jbq">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdC-cc-jbq">
                                 <rect key="frame" x="36" y="226" width="528" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -217,7 +219,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp6-rP-3Am">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp6-rP-3Am">
                                 <rect key="frame" x="187" y="480" width="226" height="72"/>
                                 <color key="backgroundColor" red="0.0" green="0.61897708600000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -226,7 +228,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="HtM-2v-XzA" kind="show" identifier="showInfo" id="cuG-eB-mIi"/>
+                                    <action selector="set:" destination="o1S-Hj-kt9" eventType="touchUpInside" id="Si4-Vz-mnK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -248,9 +250,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pmr-HM-ZLU"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="chooseContactButton" destination="qtq-r2-83e" id="CpA-Pt-rPh"/>
                         <outlet property="locationAddress" destination="mdC-cc-jbq" id="hWV-oz-Evx"/>
+                        <segue destination="HtM-2v-XzA" kind="show" identifier="showInfo" id="Q8f-hO-KDM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NXd-Tu-t5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
