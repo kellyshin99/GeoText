@@ -14,9 +14,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     var window: UIWindow?
     let locationManager = CLLocationManager()
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
+        
+        if let phoneValue = defaults.valueForKey("currentPhoneNumber") as? String {
+            SharedData.currentPhoneNumber = phoneValue
+        }
+        
+        if let nameValue = defaults.valueForKey("currentUserName") as? String {
+            SharedData.currentUserName = nameValue
+        }
+        
+        if let locationValue = defaults.valueForKey("locationAddress") as? String {
+            SharedData.locationAddress = locationValue
+        }
+        
+        if let contactValue = defaults.valueForKey("contactName") as? String {
+            SharedData.contactName = contactValue
+        }
+        
         return true
     }
     
@@ -40,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
     }
     
 }

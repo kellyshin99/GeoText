@@ -44,12 +44,12 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func set(sender: AnyObject) {
-        if chooseLocationButton.titleLabel == "Choose Location" {
+        if locationManager.monitoredRegions.isEmpty {
             let chooseLocationAlert = UIAlertController(title: "Error", message: "Please choose a location.", preferredStyle: .Alert)
             chooseLocationAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(chooseLocationAlert, animated: true, completion: nil)
-        } else if chooseContactButton.currentTitle == "Choose Contact" {
-            let addContactAlert = UIAlertController(title: "Select a Contact", message: "Please select a contact to send a text message.", preferredStyle: .Alert)
+        } else if SharedData.currentPhoneNumber.isEmpty == true {
+            let addContactAlert = UIAlertController(title: "Select a Contact", message: "Please select a contact to send a text message to.", preferredStyle: .Alert)
             addContactAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(addContactAlert, animated: true, completion: nil)
         } else {
@@ -68,13 +68,19 @@ class MainViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         chooseLocationButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         chooseLocationButton.titleLabel?.textAlignment = NSTextAlignment.Left
-        if SharedData.locationAddress != "" {
+        
+        if SharedData.locationAddress.isEmpty == false {
             chooseLocationButton.setTitle(SharedData.locationAddress, forState: .Normal)
         } else {
-            if SharedData.locationAddress == "" {
                 chooseLocationButton.setTitle("Choose Location", forState: .Normal)
-            }
         }
+        
+        if SharedData.contactName.isEmpty == false {
+            chooseContactButton.setTitle(SharedData.contactName, forState: .Normal)
+        } else {
+            chooseContactButton.setTitle("Choose Contact", forState: .Normal)
+        }
+        
         locationManager.delegate = nil
     }
     
@@ -89,6 +95,7 @@ class MainViewController: UIViewController {
                 locationManager.delegate = nil
                 SharedData.locationAddress = ""
                 SharedData.currentPhoneNumber = ""
+                SharedData.contactName = ""
                 chooseContactButton.setTitle("Choose Contact", forState: .Normal)
             }
         }
@@ -108,6 +115,7 @@ class MainViewController: UIViewController {
     
     func nameAlert() {
         var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text message.", preferredStyle: .Alert)
+        nameAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
 //            if self.nameTextField.hasText() == false {
 //                
@@ -148,8 +156,8 @@ extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
         
         let nameCFString : CFString = ABRecordCopyCompositeName(person).takeRetainedValue()
         let name : NSString = nameCFString as NSString
+        SharedData.contactName = name as String
         chooseContactButton.setTitle("\(name)", forState: .Normal)
-//        contactName.text = name as String
         peoplePicker.dismissViewControllerAnimated(true, completion: nil)
 
     }

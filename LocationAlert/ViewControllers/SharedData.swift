@@ -9,9 +9,31 @@
 import Foundation
 
 struct SharedData {
-    static var currentPhoneNumber = ""
-    static var currentUserName = ""
-    static var locationAddress = "" 
+    static var currentPhoneNumber = "" {
+        didSet {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(currentPhoneNumber, forKey: "currentPhoneNumber")
+        }
+    }
+    static var currentUserName = "" {
+        didSet {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(currentUserName, forKey: "currentUserName")
+        }
+    }
+    static var locationAddress = "" {
+        didSet {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(locationAddress, forKey: "locationAddress")
+        }
+    }
+    
+    static var contactName = "" {
+        didSet {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setValue(contactName, forKey: "contactName")
+        }
+    }
     
     static func sendText() {
         var swiftRequest = SwiftRequest();

@@ -18,7 +18,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var locationManager: CLLocationManager!
     var overlay: MKOverlay!
     var location: CLLocationCoordinate2D?
-    var userLocation: MKUserLocation!
+    var userLocation = MKUserLocation()
     
     @IBAction func cancel(sender: AnyObject?) {
         performSegueWithIdentifier("cancelToMain", sender: self)
@@ -44,18 +44,6 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         mapView.showsUserLocation = true
         self.mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
         
-        let region = locationManager.monitoredRegions
-        if let circularRegion = region.first as? CLCircularRegion {
-            let center = circularRegion.center
-            var circle = MKCircle(centerCoordinate: center, radius: 60)
-            mapView.addOverlay(circle)
-            
-            var annotation = MKPointAnnotation()
-            annotation.coordinate = center
-            self.mapView.addAnnotation(annotation)
-            self.mapView.showAnnotations(self.mapView.annotations, animated: true)
-        }
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,8 +60,9 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        println("did enter region")
         if region is CLCircularRegion {
-//            SharedData.sendText()
+            SharedData.sendText()
             for region in locationManager.monitoredRegions {
                 if let circularRegion = region as? CLCircularRegion {
                     if circularRegion.identifier == "geofence" {
@@ -81,8 +70,39 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     }
                 }
             }
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
 
+    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+        let region = locationManager.monitoredRegions
+        if let circularRegion = region.first as? CLCircularRegion {
+            let center = circularRegion.center
+            var circle = MKCircle(centerCoordinate: center, radius: 60)
+            mapView.addOverlay(circle)
+            
+            var annotation = MKPointAnnotation()
+            annotation.coordinate = center
+            self.mapView.addAnnotation(annotation)
+            
+            for annotation in mapView.annotations {
+                var lat = mapView.userLocation.coordinate.latitude
+                var long = mapView.userLocation.coordinate.longitude
+                var userCoordinate = CLLocationCoordinate2DMake(lat, long)
+                var userPoint: MKMapPoint = MKMapPointForCoordinate(userCoordinate)
+                var pinPoint: MKMapPoint = MKMapPointForCoordinate(center)
+                
+                let padding = max(abs(userPoint.x - pinPoint.x), abs(userPoint.y - pinPoint.y)) * 0.2
+                
+                
+                var userRect: MKMapRect = MKMapRectMake(userPoint.x - padding, userPoint.y - padding, padding*2, padding*2)
+                var pinRect: MKMapRect = MKMapRectMake(pinPoint.x - padding, pinPoint.y - padding, padding*2, padding*2)
+                var unionRect = MKMapRectUnion(userRect, pinRect)
+                mapView.setVisibleMapRect(unionRect, animated: true)
+                
+                
+            }
+        }
+    }
     
 }
