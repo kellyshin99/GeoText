@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A2A96C81B72F71400DB5E35 /* WalkingSimulator.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A2A96C71B72F71400DB5E35 /* WalkingSimulator.gpx */; };
 		0A74CB9E1B61ABE000354B3C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A74CB9D1B61ABE000354B3C /* CoreLocation.framework */; };
 		0A74CB9F1B61AC0300354B3C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC5E911B56D4B300329E15 /* MapKit.framework */; };
 		0AAC5E721B56CE1F00329E15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E711B56CE1F00329E15 /* AppDelegate.swift */; };
@@ -35,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		040527FDEC174474EB865698 /* Pods-LocationAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationAlert/Pods-LocationAlert.debug.xcconfig"; sourceTree = "<group>"; };
-		0A2A96C71B72F71400DB5E35 /* WalkingSimulator.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WalkingSimulator.gpx; sourceTree = "<group>"; };
 		0A74CB9D1B61ABE000354B3C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0AAC5E6C1B56CE1F00329E15 /* LocationAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAC5E701B56CE1F00329E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				0AAC5E701B56CE1F00329E15 /* Info.plist */,
-				0A2A96C71B72F71400DB5E35 /* WalkingSimulator.gpx */,
 				0AAC5EB11B59CD1400329E15 /* APAddressBook-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
@@ -258,7 +255,6 @@
 			files = (
 				0AAC5E771B56CE1F00329E15 /* Main.storyboard in Resources */,
 				0AAC5E7C1B56CE1F00329E15 /* LaunchScreen.xib in Resources */,
-				0A2A96C81B72F71400DB5E35 /* WalkingSimulator.gpx in Resources */,
 				0AAC5E791B56CE1F00329E15 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -118,7 +118,7 @@ class MainViewController: UIViewController {
         nameAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
 //            if self.nameTextField.hasText() == false {
-//                
+//                println("error")
 //            } else {
                 self.performSegueWithIdentifier("showInfo", sender: nil)
                 SharedData.currentUserName = self.nameTextField.text

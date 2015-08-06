@@ -85,16 +85,6 @@
                                     <constraint firstAttribute="height" constant="300" id="DDH-9f-CbG"/>
                                 </constraints>
                             </mapView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-HH-2we">
-                                <rect key="frame" x="16" y="401" width="289" height="101"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="101" id="ZJs-A0-9qg"/>
-                                    <constraint firstAttribute="width" constant="289" id="gyW-yh-BNd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WV2-gY-G3j">
                                 <rect key="frame" x="40" y="510" width="521" height="64"/>
                                 <color key="backgroundColor" red="0.0" green="0.61897708600000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,6 +116,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-HH-2we">
+                                <rect key="frame" x="16" y="401" width="289" height="101"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="ZJs-A0-9qg"/>
+                                    <constraint firstAttribute="width" constant="289" id="gyW-yh-BNd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
