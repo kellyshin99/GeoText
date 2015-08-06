@@ -1,6 +1,6 @@
 //
 //  InfoViewController.swift
-//  LocationAlert
+//  AutoText
 //
 //  Created by Kelly Shin on 8/4/15.
 //  Copyright (c) 2015 KellyShin. All rights reserved.

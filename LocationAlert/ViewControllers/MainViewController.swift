@@ -1,6 +1,6 @@
 //
 //  MainViewController.swift
-//  LocationAlert
+//  AutoText
 //
 //  Created by Kelly Shin on 8/3/15.
 //  Copyright (c) 2015 KellyShin. All rights reserved.
@@ -117,12 +117,8 @@ class MainViewController: UIViewController {
         var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text message.", preferredStyle: .Alert)
         nameAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-//            if self.nameTextField.hasText() == false {
-//                println("error")
-//            } else {
                 self.performSegueWithIdentifier("showInfo", sender: nil)
                 SharedData.currentUserName = self.nameTextField.text
-//            }
             }))
         
         nameAlert.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
