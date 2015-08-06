@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kellyshin/Desktop/My Projects/LocationAlert/AutoText.xcodeproj">
+      location = "group:/Users/kellyshin/Desktop/My Projects/LocationAlert/GeoText.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

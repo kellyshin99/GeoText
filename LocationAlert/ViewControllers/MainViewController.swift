@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
                 }
             })
         } else if (authorizationStatus == ABAuthorizationStatus.Denied || authorizationStatus == ABAuthorizationStatus.Restricted) {
-            println("access denied")
+            self.displayCantShowContactsAlert()
         } else if (authorizationStatus == ABAuthorizationStatus.Authorized) {
             self.showContacts()
         }
@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
     
     @IBAction func set(sender: AnyObject) {
         if locationManager.monitoredRegions.isEmpty {
-            let chooseLocationAlert = UIAlertController(title: "Error", message: "Please choose a location.", preferredStyle: .Alert)
+            let chooseLocationAlert = UIAlertController(title: "Please choose a location.", message: "", preferredStyle: .Alert)
             chooseLocationAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(chooseLocationAlert, animated: true, completion: nil)
         } else if SharedData.currentPhoneNumber.isEmpty == true {

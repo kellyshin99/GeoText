@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2A96CA1B74110400DB5E35 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A96C91B74110400DB5E35 /* AboutViewController.swift */; };
 		0A74CB9E1B61ABE000354B3C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A74CB9D1B61ABE000354B3C /* CoreLocation.framework */; };
 		0A74CB9F1B61AC0300354B3C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AAC5E911B56D4B300329E15 /* MapKit.framework */; };
 		0AAC5E721B56CE1F00329E15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAC5E711B56CE1F00329E15 /* AppDelegate.swift */; };
@@ -34,14 +35,15 @@
 
 /* Begin PBXFileReference section */
 		040527FDEC174474EB865698 /* Pods-LocationAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationAlert/Pods-LocationAlert.debug.xcconfig"; sourceTree = "<group>"; };
+		0A2A96C91B74110400DB5E35 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0A74CB9D1B61ABE000354B3C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		0AAC5E6C1B56CE1F00329E15 /* AutoText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoText.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AAC5E6C1B56CE1F00329E15 /* GeoText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAC5E701B56CE1F00329E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AAC5E711B56CE1F00329E15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AAC5E761B56CE1F00329E15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0AAC5E781B56CE1F00329E15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0AAC5E7B1B56CE1F00329E15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0AAC5E811B56CE2000329E15 /* AutoTextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoTextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AAC5E811B56CE2000329E15 /* GeoTextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoTextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AAC5E861B56CE2000329E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AAC5E871B56CE2000329E15 /* LocationAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlertTests.swift; sourceTree = "<group>"; };
 		0AAC5E911B56D4B300329E15 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -90,8 +92,8 @@
 		0AAC5E6D1B56CE1F00329E15 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0AAC5E6C1B56CE1F00329E15 /* AutoText.app */,
-				0AAC5E811B56CE2000329E15 /* AutoTextTests.xctest */,
+				0AAC5E6C1B56CE1F00329E15 /* GeoText.app */,
+				0AAC5E811B56CE2000329E15 /* GeoTextTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +145,7 @@
 				0AAC5E9C1B585C8400329E15 /* MapViewController.swift */,
 				0ACF8F8F1B7132F6003D7128 /* InfoViewController.swift */,
 				0AD3CF7B1B6ADD9100B83449 /* SharedData.swift */,
+				0A2A96C91B74110400DB5E35 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,9 +172,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0AAC5E6B1B56CE1F00329E15 /* AutoText */ = {
+		0AAC5E6B1B56CE1F00329E15 /* GeoText */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AAC5E8B1B56CE2000329E15 /* Build configuration list for PBXNativeTarget "AutoText" */;
+			buildConfigurationList = 0AAC5E8B1B56CE2000329E15 /* Build configuration list for PBXNativeTarget "GeoText" */;
 			buildPhases = (
 				A39207E45C96698E3B3CF233 /* Check Pods Manifest.lock */,
 				0AAC5E681B56CE1F00329E15 /* Sources */,
@@ -183,14 +186,14 @@
 			);
 			dependencies = (
 			);
-			name = AutoText;
+			name = GeoText;
 			productName = LocationAlert;
-			productReference = 0AAC5E6C1B56CE1F00329E15 /* AutoText.app */;
+			productReference = 0AAC5E6C1B56CE1F00329E15 /* GeoText.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0AAC5E801B56CE2000329E15 /* AutoTextTests */ = {
+		0AAC5E801B56CE2000329E15 /* GeoTextTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AAC5E8E1B56CE2000329E15 /* Build configuration list for PBXNativeTarget "AutoTextTests" */;
+			buildConfigurationList = 0AAC5E8E1B56CE2000329E15 /* Build configuration list for PBXNativeTarget "GeoTextTests" */;
 			buildPhases = (
 				0AAC5E7D1B56CE2000329E15 /* Sources */,
 				0AAC5E7E1B56CE2000329E15 /* Frameworks */,
@@ -201,9 +204,9 @@
 			dependencies = (
 				0AAC5E831B56CE2000329E15 /* PBXTargetDependency */,
 			);
-			name = AutoTextTests;
+			name = GeoTextTests;
 			productName = LocationAlertTests;
-			productReference = 0AAC5E811B56CE2000329E15 /* AutoTextTests.xctest */;
+			productReference = 0AAC5E811B56CE2000329E15 /* GeoTextTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +233,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0AAC5E671B56CE1F00329E15 /* Build configuration list for PBXProject "AutoText" */;
+			buildConfigurationList = 0AAC5E671B56CE1F00329E15 /* Build configuration list for PBXProject "GeoText" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -243,8 +246,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0AAC5E6B1B56CE1F00329E15 /* AutoText */,
-				0AAC5E801B56CE2000329E15 /* AutoTextTests */,
+				0AAC5E6B1B56CE1F00329E15 /* GeoText */,
+				0AAC5E801B56CE2000329E15 /* GeoTextTests */,
 			);
 		};
 /* End PBXProject section */
@@ -310,6 +313,7 @@
 				0AAC5E9D1B585C8400329E15 /* MapViewController.swift in Sources */,
 				0AAC5E721B56CE1F00329E15 /* AppDelegate.swift in Sources */,
 				0ACF8F901B7132F6003D7128 /* InfoViewController.swift in Sources */,
+				0A2A96CA1B74110400DB5E35 /* AboutViewController.swift in Sources */,
 				0ACF8F8E1B702CEA003D7128 /* MainViewController.swift in Sources */,
 				0AD3CF7C1B6ADD9100B83449 /* SharedData.swift in Sources */,
 				0AD3CF7A1B6A98D800B83449 /* SwiftRequest.swift in Sources */,
@@ -329,7 +333,7 @@
 /* Begin PBXTargetDependency section */
 		0AAC5E831B56CE2000329E15 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0AAC5E6B1B56CE1F00329E15 /* AutoText */;
+			target = 0AAC5E6B1B56CE1F00329E15 /* GeoText */;
 			targetProxy = 0AAC5E821B56CE2000329E15 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -446,7 +450,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LocationAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = AutoText;
+				PRODUCT_NAME = GeoText;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kellyshin/Desktop/My Projects/LocationAlert/LocationAlert/APAddressBook-Bridging-Header.h";
 			};
@@ -461,7 +465,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LocationAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = AutoText;
+				PRODUCT_NAME = GeoText;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kellyshin/Desktop/My Projects/LocationAlert/LocationAlert/APAddressBook-Bridging-Header.h";
 			};
@@ -481,7 +485,7 @@
 				);
 				INFOPLIST_FILE = LocationAlertTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = AutoTextTests;
+				PRODUCT_NAME = GeoTextTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocationAlert.app/LocationAlert";
 			};
 			name = Debug;
@@ -496,7 +500,7 @@
 				);
 				INFOPLIST_FILE = LocationAlertTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = AutoTextTests;
+				PRODUCT_NAME = GeoTextTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocationAlert.app/LocationAlert";
 			};
 			name = Release;
@@ -504,7 +508,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0AAC5E671B56CE1F00329E15 /* Build configuration list for PBXProject "AutoText" */ = {
+		0AAC5E671B56CE1F00329E15 /* Build configuration list for PBXProject "GeoText" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AAC5E891B56CE2000329E15 /* Debug */,
@@ -513,7 +517,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0AAC5E8B1B56CE2000329E15 /* Build configuration list for PBXNativeTarget "AutoText" */ = {
+		0AAC5E8B1B56CE2000329E15 /* Build configuration list for PBXNativeTarget "GeoText" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AAC5E8C1B56CE2000329E15 /* Debug */,
@@ -522,7 +526,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0AAC5E8E1B56CE2000329E15 /* Build configuration list for PBXNativeTarget "AutoTextTests" */ = {
+		0AAC5E8E1B56CE2000329E15 /* Build configuration list for PBXNativeTarget "GeoTextTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AAC5E8F1B56CE2000329E15 /* Debug */,

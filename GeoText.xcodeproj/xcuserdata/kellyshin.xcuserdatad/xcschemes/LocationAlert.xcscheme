@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0AAC5E6B1B56CE1F00329E15"
-               BuildableName = "AutoText.app"
-               BlueprintName = "AutoText"
-               ReferencedContainer = "container:AutoText.xcodeproj">
+               BuildableName = "GeoText.app"
+               BlueprintName = "GeoText"
+               ReferencedContainer = "container:GeoText.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0AAC5E801B56CE2000329E15"
-               BuildableName = "AutoTextTests.xctest"
-               BlueprintName = "AutoTextTests"
-               ReferencedContainer = "container:AutoText.xcodeproj">
+               BuildableName = "GeoTextTests.xctest"
+               BlueprintName = "GeoTextTests"
+               ReferencedContainer = "container:GeoText.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0AAC5E801B56CE2000329E15"
-               BuildableName = "AutoTextTests.xctest"
-               BlueprintName = "AutoTextTests"
-               ReferencedContainer = "container:AutoText.xcodeproj">
+               BuildableName = "GeoTextTests.xctest"
+               BlueprintName = "GeoTextTests"
+               ReferencedContainer = "container:GeoText.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0AAC5E6B1B56CE1F00329E15"
-            BuildableName = "AutoText.app"
-            BlueprintName = "AutoText"
-            ReferencedContainer = "container:AutoText.xcodeproj">
+            BuildableName = "GeoText.app"
+            BlueprintName = "GeoText"
+            ReferencedContainer = "container:GeoText.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0AAC5E6B1B56CE1F00329E15"
-            BuildableName = "AutoText.app"
-            BlueprintName = "AutoText"
-            ReferencedContainer = "container:AutoText.xcodeproj">
+            BuildableName = "GeoText.app"
+            BlueprintName = "GeoText"
+            ReferencedContainer = "container:GeoText.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -100,9 +100,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0AAC5E6B1B56CE1F00329E15"
-            BuildableName = "AutoText.app"
-            BlueprintName = "AutoText"
-            ReferencedContainer = "container:AutoText.xcodeproj">
+            BuildableName = "GeoText.app"
+            BlueprintName = "GeoText"
+            ReferencedContainer = "container:GeoText.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
