@@ -451,7 +451,7 @@
 				INFOPLIST_FILE = LocationAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = LocationAlert;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "d9478e4b-9221-4b14-9a44-df57b9fc126b";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kellyshin/Desktop/My Projects/LocationAlert/LocationAlert/APAddressBook-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -467,7 +467,7 @@
 				INFOPLIST_FILE = LocationAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = LocationAlert;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "d9478e4b-9221-4b14-9a44-df57b9fc126b";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kellyshin/Desktop/My Projects/LocationAlert/LocationAlert/APAddressBook-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

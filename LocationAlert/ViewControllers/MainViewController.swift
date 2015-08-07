@@ -142,9 +142,11 @@ extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
         var picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
         
         picker.peoplePickerDelegate = self
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
+
         self.presentViewController(picker, animated: true, completion:nil)
     }
-        
+    
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!) {
         let numbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue()
         if (ABMultiValueGetCount(numbers) > 0) {
@@ -165,6 +167,7 @@ extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
     
     
     func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         peoplePicker.dismissViewControllerAnimated(true, completion: nil)
     }
     
