@@ -9,7 +9,7 @@
         <!--Set Location-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="GeoText" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -33,6 +33,7 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem image="CurrentLocation" id="4IQ-Gb-5wb">
+                                        <color key="tintColor" red="0.36078431370000003" green="0.18039215689999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="showUserLocation" destination="BYZ-38-t0r" id="H5C-rx-J5C"/>
                                         </connections>
@@ -71,7 +72,7 @@
         <!--Info View Controller-->
         <scene sceneID="HjY-ox-rLF">
             <objects>
-                <viewController id="HtM-2v-XzA" customClass="InfoViewController" customModule="GeoText" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HtM-2v-XzA" customClass="InfoViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kc2-kC-qL7"/>
                         <viewControllerLayoutGuide type="bottom" id="UVd-nD-hd8"/>
@@ -88,7 +89,7 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WV2-gY-G3j">
                                 <rect key="frame" x="40" y="524" width="521" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.61897708600000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.18039215689999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nNH-r2-Adn"/>
                                 </constraints>
@@ -102,16 +103,6 @@
                                     <segue destination="03R-Q5-fBw" kind="unwind" identifier="cancelToMain" unwindAction="unwindSegue:" id="VeL-rW-6G8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUo-cm-Ekl">
-                                <rect key="frame" x="25" y="393" width="74" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Xw9-dI-5Le"/>
-                                    <constraint firstAttribute="width" constant="74" id="saO-cO-bIW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-HH-2we">
                                 <rect key="frame" x="16" y="415" width="289" height="101"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,13 +113,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUo-cm-Ekl">
+                                <rect key="frame" x="22" y="393" width="74" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Xw9-dI-5Le"/>
+                                    <constraint firstAttribute="width" constant="74" id="saO-cO-bIW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UVd-nD-hd8" firstAttribute="top" secondItem="WV2-gY-G3j" secondAttribute="bottom" constant="26" id="AhF-is-neh"/>
                             <constraint firstItem="kOs-HH-2we" firstAttribute="top" secondItem="HUo-cm-Ekl" secondAttribute="bottom" constant="1" id="Dsg-SG-898"/>
                             <constraint firstItem="WV2-gY-G3j" firstAttribute="centerX" secondItem="Mq7-yh-lt7" secondAttribute="centerX" id="VqJ-Wg-gYL"/>
-                            <constraint firstItem="HUo-cm-Ekl" firstAttribute="leading" secondItem="2u5-Os-tZg" secondAttribute="leadingMargin" constant="9" id="YUe-Hj-n4B"/>
+                            <constraint firstItem="HUo-cm-Ekl" firstAttribute="leading" secondItem="2u5-Os-tZg" secondAttribute="leadingMargin" constant="6" id="YUe-Hj-n4B"/>
                             <constraint firstItem="WV2-gY-G3j" firstAttribute="top" secondItem="kOs-HH-2we" secondAttribute="bottom" constant="8" id="cwJ-60-kvp"/>
                             <constraint firstItem="WV2-gY-G3j" firstAttribute="leading" secondItem="2u5-Os-tZg" secondAttribute="leadingMargin" constant="24" id="dQJ-zH-A5Z"/>
                             <constraint firstItem="HUo-cm-Ekl" firstAttribute="top" secondItem="Mq7-yh-lt7" secondAttribute="bottom" constant="15" id="dxT-xM-lKP"/>
@@ -152,7 +153,7 @@
         <!--GeoText-->
         <scene sceneID="xFR-FT-Yen">
             <objects>
-                <viewController id="o1S-Hj-kt9" customClass="MainViewController" customModule="GeoText" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="o1S-Hj-kt9" customClass="MainViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7VT-it-5ep"/>
                         <viewControllerLayoutGuide type="bottom" id="gD8-fr-gzX"/>
@@ -167,7 +168,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="226" placeholderIntrinsicHeight="72" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOt-vc-HgY">
                                 <rect key="frame" x="185" y="130" width="230" height="128"/>
-                                <color key="backgroundColor" red="0.0" green="0.61897708600000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.36078431372549019" green="0.1803921568627451" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="i1z-f2-BFM"/>
                                 </constraints>
@@ -182,7 +183,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtq-r2-83e">
                                 <rect key="frame" x="185" y="268" width="230" height="64"/>
-                                <color key="backgroundColor" red="0.0" green="0.61897708600000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.18039215689999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="17v-gt-Wvz"/>
                                 </constraints>
@@ -196,8 +197,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp6-rP-3Am">
-                                <rect key="frame" x="185" y="502" width="230" height="64"/>
-                                <color key="backgroundColor" red="0.0" green="0.61897708600000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="185" y="482" width="230" height="64"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.18039215689999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Set">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -219,7 +220,7 @@
                             <constraint firstAttribute="centerY" secondItem="qtq-r2-83e" secondAttribute="centerY" id="RSd-OI-kpy"/>
                             <constraint firstItem="6gP-Dy-R8J" firstAttribute="top" secondItem="7VT-it-5ep" secondAttribute="bottom" id="VtO-BD-Z3D"/>
                             <constraint firstItem="LOt-vc-HgY" firstAttribute="trailing" secondItem="bp6-rP-3Am" secondAttribute="trailing" id="WfR-EV-xaz"/>
-                            <constraint firstItem="bp6-rP-3Am" firstAttribute="top" secondItem="qtq-r2-83e" secondAttribute="bottom" constant="170" id="YZD-JQ-qUz"/>
+                            <constraint firstItem="bp6-rP-3Am" firstAttribute="top" secondItem="qtq-r2-83e" secondAttribute="bottom" constant="150" id="YZD-JQ-qUz"/>
                             <constraint firstItem="LOt-vc-HgY" firstAttribute="leading" secondItem="qtq-r2-83e" secondAttribute="leading" id="Zyh-lo-27w"/>
                             <constraint firstItem="gD8-fr-gzX" firstAttribute="top" secondItem="6gP-Dy-R8J" secondAttribute="bottom" id="daa-Wg-EuO"/>
                             <constraint firstItem="gD8-fr-gzX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bp6-rP-3Am" secondAttribute="bottom" constant="5" id="jcv-sd-O1D"/>
@@ -232,6 +233,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="GeoText" id="Pmr-HM-ZLU">
                         <barButtonItem key="leftBarButtonItem" image="Info" id="Mbx-Sn-doF">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="zZs-RY-m3Q" kind="presentation" id="Wk4-xF-ZN4"/>
                             </connections>
@@ -240,6 +242,7 @@
                     <connections>
                         <outlet property="chooseContactButton" destination="qtq-r2-83e" id="CpA-Pt-rPh"/>
                         <outlet property="chooseLocationButton" destination="LOt-vc-HgY" id="aXb-Ii-3Bm"/>
+                        <outlet property="setButton" destination="bp6-rP-3Am" id="ufo-67-EAU"/>
                         <segue destination="HtM-2v-XzA" kind="show" identifier="showInfo" id="Q8f-hO-KDM"/>
                     </connections>
                 </viewController>
@@ -250,7 +253,7 @@
         <!--Credits-->
         <scene sceneID="uy4-b7-1bl">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BRX-5I-OnA" customClass="AboutViewController" customModule="GeoText" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BRX-5I-OnA" customClass="AboutViewController" customModule="LocationAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kFb-2h-veM"/>
                         <viewControllerLayoutGuide type="bottom" id="6BD-wI-laT"/>
@@ -262,7 +265,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-zL-ujc">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Icon made by Scott de Jonge from www.flaticon.com
+                                <string key="text">Icon made by Scott de Jonge from www.flaticon.com
 
 Info icon by Icons8.com
 
@@ -276,7 +279,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -291,6 +294,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                     </view>
                     <navigationItem key="navigationItem" title="Credits" id="24C-O9-d8V">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ltb-4p-RPu">
+                            <color key="tintColor" red="0.043137254899999998" green="0.37254901959999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="done" destination="BRX-5I-OnA" id="CQU-bA-g7e"/>
                             </connections>
@@ -307,9 +311,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4gt-b7-3EQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TJS-kK-rzi">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="TJS-kK-rzi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51372549020000002" green="0.0" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

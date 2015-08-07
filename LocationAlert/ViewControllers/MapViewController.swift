@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  AutoText
+//  LocationAlert
 //
 //  Created by Kelly Shin on 7/15/15.
 //  Copyright (c) 2015 KellyShin. All rights reserved.

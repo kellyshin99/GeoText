@@ -8,3 +8,4 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <Mixpanel/Mixpanel.h>

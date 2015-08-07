@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  AutoText
+//  LocationAlert
 //
 //  Created by Kelly Shin on 7/15/15.
 //  Copyright (c) 2015 KellyShin. All rights reserved.
@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     let defaults = NSUserDefaults.standardUserDefaults()
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
+        // Save data
         if let phoneValue = defaults.valueForKey("currentPhoneNumber") as? String {
             SharedData.currentPhoneNumber = phoneValue
         }
@@ -33,6 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if let contactValue = defaults.valueForKey("contactName") as? String {
             SharedData.contactName = contactValue
         }
+        
+        // Analytics
+        Mixpanel.sharedInstanceWithToken("24da484878cc9f0f3f9fb09b56a6eea0")
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("App launched")
         
         return true
     }

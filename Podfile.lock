@@ -1,10 +1,15 @@
 PODS:
+  - Mixpanel (2.8.2):
+    - Mixpanel/Mixpanel (= 2.8.2)
+  - Mixpanel/Mixpanel (2.8.2)
   - TwilioSDK (1.2.3)
 
 DEPENDENCIES:
+  - Mixpanel
   - TwilioSDK
 
 SPEC CHECKSUMS:
+  Mixpanel: f4d71ac2a306e7cda6ad03d4a2be249a0fd7a967
   TwilioSDK: a9aeead884e926858a38b6013e583ea0443b1f1c
 
 COCOAPODS: 0.37.2

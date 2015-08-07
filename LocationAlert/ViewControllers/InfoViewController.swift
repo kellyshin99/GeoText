@@ -1,6 +1,6 @@
 //
 //  InfoViewController.swift
-//  AutoText
+//  LocationAlert
 //
 //  Created by Kelly Shin on 8/4/15.
 //  Copyright (c) 2015 KellyShin. All rights reserved.
@@ -35,6 +35,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         super.viewDidLoad()
         mapView.delegate = self
         address.text = SharedData.locationAddress
+        cancelButton.layer.cornerRadius = 4.0
         
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager.delegate = self

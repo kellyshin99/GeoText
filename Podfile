@@ -2,7 +2,8 @@
 # platform :ios, '6.0'
 
 target 'LocationAlert' do
-pod 'TwilioSDK'
+   pod 'TwilioSDK'
+   pod 'Mixpanel'
 end
 
 target 'LocationAlertTests' do

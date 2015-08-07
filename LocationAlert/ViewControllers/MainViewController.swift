@@ -1,6 +1,6 @@
 //
 //  MainViewController.swift
-//  AutoText
+//  LocationAlert
 //
 //  Created by Kelly Shin on 8/3/15.
 //  Copyright (c) 2015 KellyShin. All rights reserved.
@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var chooseContactButton: UIButton!
     @IBOutlet weak var chooseLocationButton: UIButton!
+    @IBOutlet weak var setButton: UIButton!
     
     @IBAction func chooseContact(sender: AnyObject) {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
@@ -66,6 +67,10 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        chooseLocationButton.layer.cornerRadius = 4.0
+        chooseContactButton.layer.cornerRadius = 4.0
+        setButton.layer.cornerRadius = 4.0
+        
         chooseLocationButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
         chooseLocationButton.titleLabel?.textAlignment = NSTextAlignment.Left
         
