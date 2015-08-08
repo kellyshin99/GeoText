@@ -15,6 +15,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var address: UITextView!
+    @IBOutlet weak var contactLabel: UITextField!
     var locationManager: CLLocationManager!
     var overlay: MKOverlay!
     var location: CLLocationCoordinate2D?
@@ -35,6 +36,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         super.viewDidLoad()
         mapView.delegate = self
         address.text = SharedData.locationAddress
+        contactLabel.text = SharedData.contactName
         cancelButton.layer.cornerRadius = 4.0
         
         if (CLLocationManager.locationServicesEnabled()) {

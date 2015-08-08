@@ -451,7 +451,7 @@
 				INFOPLIST_FILE = LocationAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = LocationAlert;
-				PROVISIONING_PROFILE = "d9478e4b-9221-4b14-9a44-df57b9fc126b";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kellyshin/Desktop/My Projects/LocationAlert/LocationAlert/APAddressBook-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -462,8 +462,7 @@
 			baseConfigurationReference = 87FDC4E2D700399EEEABAF0F /* Pods-LocationAlert.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: YeonKyung Kim (UV7Z265TF9)";
 				INFOPLIST_FILE = LocationAlert/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = LocationAlert;

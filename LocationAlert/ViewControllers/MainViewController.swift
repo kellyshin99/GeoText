@@ -149,6 +149,7 @@ extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!) {
         let numbers: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         if (ABMultiValueGetCount(numbers) > 0) {
             let index = 0 as CFIndex
             let phoneNumber = ABMultiValueCopyValueAtIndex(numbers, index).takeRetainedValue() as! String
