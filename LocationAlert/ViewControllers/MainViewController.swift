@@ -49,12 +49,19 @@ class MainViewController: UIViewController {
             let chooseLocationAlert = UIAlertController(title: "Please choose a location.", message: "", preferredStyle: .Alert)
             chooseLocationAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(chooseLocationAlert, animated: true, completion: nil)
-        } else if SharedData.currentPhoneNumber.isEmpty == true {
+        } else if SharedData.currentPhoneNumber.isEmpty {
             let addContactAlert = UIAlertController(title: "Select a Contact", message: "Please select a contact to send a text message to.", preferredStyle: .Alert)
             addContactAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
             presentViewController(addContactAlert, animated: true, completion: nil)
         } else {
             nameAlert()
+//            SharedData.sendText()
+        }
+        
+        if locationManager.monitoredRegions.isEmpty == false {
+            setButton.setTitle("Show Map", forState: .Normal)
+        } else {
+            setButton.setTitle("Set", forState: .Normal)
         }
     }
     
@@ -102,6 +109,7 @@ class MainViewController: UIViewController {
                 SharedData.currentPhoneNumber = ""
                 SharedData.contactName = ""
                 chooseContactButton.setTitle("Choose Contact", forState: .Normal)
+                setButton.setTitle("Set", forState: .Normal)
             }
         }
     }
@@ -119,6 +127,7 @@ class MainViewController: UIViewController {
     }
     
     func nameAlert() {
+        if SharedData.currentUserName.isEmpty == true {
         var nameAlert = UIAlertController(title: "What is your name?", message: "This will be included in the text message.", preferredStyle: .Alert)
         nameAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         nameAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
@@ -133,6 +142,9 @@ class MainViewController: UIViewController {
             self.nameTextField = textField
         })
         self.presentViewController(nameAlert, animated: true, completion: nil)
+        } else {
+            self.performSegueWithIdentifier("showInfo", sender: nil)
+        }
     }
     
 }

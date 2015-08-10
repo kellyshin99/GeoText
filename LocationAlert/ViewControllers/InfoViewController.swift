@@ -73,6 +73,9 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                     }
                 }
             }
+            SharedData.locationAddress = ""
+            SharedData.currentPhoneNumber = ""
+            SharedData.contactName = ""
             dismissViewControllerAnimated(true, completion: nil)
         }
     }

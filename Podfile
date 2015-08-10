@@ -4,6 +4,8 @@
 target 'LocationAlert' do
    pod 'TwilioSDK'
    pod 'Mixpanel'
+pod 'Fabric'
+pod 'Crashlytics'
 end
 
 target 'LocationAlertTests' do

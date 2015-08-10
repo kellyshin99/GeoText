@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "25C0C60CA8920892B0498A26"
+               BlueprintIdentifier = "D44B8EBE2E3CC402B4980B30"
                BuildableName = "libPods-LocationAlert-Mixpanel.a"
                BlueprintName = "Pods-LocationAlert-Mixpanel"
                ReferencedContainer = "container:Pods.xcodeproj">
