@@ -58,14 +58,13 @@ struct SharedData {
 
                         var success: UILocalNotification = UILocalNotification()
                         success.alertBody = "Message Sent!"
-                        success.fireDate = NSDate(timeIntervalSinceNow: 5)
                         UIApplication.sharedApplication().scheduleLocalNotification(success)
 
                     } else {
+                        
                         var failed: UILocalNotification = UILocalNotification()
                         failed.alertBody = "Message failed to send."
                         UIApplication.sharedApplication().scheduleLocalNotification(failed)
-
 
                     }
                     
