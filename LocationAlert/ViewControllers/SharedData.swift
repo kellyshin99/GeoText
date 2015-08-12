@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct SharedData {
     static var currentPhoneNumber = "" {
@@ -42,7 +43,8 @@ struct SharedData {
         
         var data = [
             "To" : SharedData.currentPhoneNumber,
-            "From" : "+12516164888",
+//            "From" : "+12516164888",
+            "From" : "+1251616488",
             "Body" : "\(currentUserName) has arrived at \(locationAddress)"
         ];
         
@@ -51,9 +53,22 @@ struct SharedData {
             data: data,
             callback: {err, response, body in
                 if err == nil {
-                    println("Success: \(response)")
-                } else {
-                    println("Error: \(err)")
+                    if response?.statusCode == 201 {
+                        println("Success: \(response)")
+
+                        var success: UILocalNotification = UILocalNotification()
+                        success.alertBody = "Message Sent!"
+                        success.fireDate = NSDate(timeIntervalSinceNow: 5)
+                        UIApplication.sharedApplication().scheduleLocalNotification(success)
+
+                    } else {
+                        var failed: UILocalNotification = UILocalNotification()
+                        failed.alertBody = "Message failed to send."
+                        UIApplication.sharedApplication().scheduleLocalNotification(failed)
+
+
+                    }
+                    
                 }
         });
     }

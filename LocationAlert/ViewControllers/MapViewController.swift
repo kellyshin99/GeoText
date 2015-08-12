@@ -21,12 +21,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     var overlay: MKOverlay!
     var location: CLLocationCoordinate2D?
     
-    @IBAction func showUserLocation() {
-            mapView.delegate = self
-            mapView.showsUserLocation = true
-            mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -43,6 +37,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func showUserLocation() {
+            mapView.delegate = self
+            mapView.showsUserLocation = true
+            mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
+    }
+    
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         switch CLLocationManager.authorizationStatus() {
         case .AuthorizedAlways, .AuthorizedWhenInUse:
@@ -52,10 +56,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         case .NotDetermined:
             println("not determined")
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     func performSearch() {

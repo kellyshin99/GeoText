@@ -260,7 +260,7 @@
                         <barButtonItem key="leftBarButtonItem" image="Info" id="Mbx-Sn-doF">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="zZs-RY-m3Q" kind="presentation" id="Wk4-xF-ZN4"/>
+                                <segue destination="zZs-RY-m3Q" kind="presentation" identifier="showCredits" id="Wk4-xF-ZN4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

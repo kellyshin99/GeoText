@@ -22,6 +22,41 @@ class MainViewController: UIViewController {
     @IBOutlet weak var chooseLocationButton: UIButton!
     @IBOutlet weak var setButton: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+               
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        chooseLocationButton.layer.cornerRadius = 4.0
+        chooseContactButton.layer.cornerRadius = 4.0
+        setButton.layer.cornerRadius = 4.0
+        
+        chooseLocationButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        chooseLocationButton.titleLabel?.textAlignment = NSTextAlignment.Left
+        
+        if SharedData.locationAddress.isEmpty == false {
+            chooseLocationButton.setTitle(SharedData.locationAddress, forState: .Normal)
+        } else {
+            chooseLocationButton.setTitle("Choose Location", forState: .Normal)
+        }
+        
+        if SharedData.contactName.isEmpty == false {
+            chooseContactButton.setTitle(SharedData.contactName, forState: .Normal)
+        } else {
+            chooseContactButton.setTitle("Choose Contact", forState: .Normal)
+        }
+        
+        locationManager.delegate = nil
+    }
+    
+    // Button Actions
+    
     @IBAction func chooseContact(sender: AnyObject) {
         let authorizationStatus = ABAddressBookGetAuthorizationStatus()
         if (authorizationStatus == ABAuthorizationStatus.NotDetermined) {
@@ -55,7 +90,7 @@ class MainViewController: UIViewController {
             presentViewController(addContactAlert, animated: true, completion: nil)
         } else {
             nameAlert()
-//            SharedData.sendText()
+            SharedData.sendText()
         }
         
         if locationManager.monitoredRegions.isEmpty == false {
@@ -65,36 +100,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        chooseLocationButton.layer.cornerRadius = 4.0
-        chooseContactButton.layer.cornerRadius = 4.0
-        setButton.layer.cornerRadius = 4.0
-        
-        chooseLocationButton.titleLabel?.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        chooseLocationButton.titleLabel?.textAlignment = NSTextAlignment.Left
-        
-        if SharedData.locationAddress.isEmpty == false {
-            chooseLocationButton.setTitle(SharedData.locationAddress, forState: .Normal)
-        } else {
-                chooseLocationButton.setTitle("Choose Location", forState: .Normal)
-        }
-        
-        if SharedData.contactName.isEmpty == false {
-            chooseContactButton.setTitle(SharedData.contactName, forState: .Normal)
-        } else {
-            chooseContactButton.setTitle("Choose Contact", forState: .Normal)
-        }
-        
-        locationManager.delegate = nil
-    }
+    // Unwind Segue
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         if segue.identifier == "unwindToMain" {
@@ -113,6 +119,8 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    // Prepare for segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMap" {
@@ -154,9 +162,11 @@ extension MainViewController: ABPeoplePickerNavigationControllerDelegate {
         var picker: ABPeoplePickerNavigationController =  ABPeoplePickerNavigationController()
         
         picker.peoplePickerDelegate = self
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
 
         self.presentViewController(picker, animated: true, completion:nil)
+        
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
     }
     
     func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!) {

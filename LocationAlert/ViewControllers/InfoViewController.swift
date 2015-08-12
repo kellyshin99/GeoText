@@ -21,17 +21,6 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     var location: CLLocationCoordinate2D?
     var userLocation = MKUserLocation()
     
-    @IBAction func cancel(sender: AnyObject?) {
-        performSegueWithIdentifier("cancelToMain", sender: self)
-        for region in locationManager.monitoredRegions {
-            if let circularRegion = region as? CLCircularRegion {
-                if circularRegion.identifier == "geofence" {
-                    locationManager.stopMonitoringForRegion(circularRegion)
-                }
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -52,6 +41,17 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    @IBAction func cancel(sender: AnyObject?) {
+        performSegueWithIdentifier("cancelToMain", sender: self)
+        for region in locationManager.monitoredRegions {
+            if let circularRegion = region as? CLCircularRegion {
+                if circularRegion.identifier == "geofence" {
+                    locationManager.stopMonitoringForRegion(circularRegion)
+                }
+            }
+        }
+    }
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         var circleRenderer = MKCircleRenderer(overlay: overlay)
@@ -62,23 +62,6 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         return circleRenderer
     }
     
-    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
-        println("did enter region")
-        if region is CLCircularRegion {
-            SharedData.sendText()
-            for region in locationManager.monitoredRegions {
-                if let circularRegion = region as? CLCircularRegion {
-                    if circularRegion.identifier == "geofence" {
-                        locationManager.stopMonitoringForRegion(circularRegion)
-                    }
-                }
-            }
-            SharedData.locationAddress = ""
-            SharedData.currentPhoneNumber = ""
-            SharedData.contactName = ""
-            dismissViewControllerAnimated(true, completion: nil)
-        }
-    }
 
     func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
         let region = locationManager.monitoredRegions
@@ -108,6 +91,24 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 
                 
             }
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+        println("did enter region")
+        if region is CLCircularRegion {
+            SharedData.sendText()
+            for region in locationManager.monitoredRegions {
+                if let circularRegion = region as? CLCircularRegion {
+                    if circularRegion.identifier == "geofence" {
+                        locationManager.stopMonitoringForRegion(circularRegion)
+                    }
+                }
+            }
+            SharedData.locationAddress = ""
+            SharedData.currentPhoneNumber = ""
+            SharedData.contactName = ""
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
