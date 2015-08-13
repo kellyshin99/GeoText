@@ -29,7 +29,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
+            locationManager.startMonitoringSignificantLocationChanges()
         }
         mapView.showsUserLocation = true
         self.mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)

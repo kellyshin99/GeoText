@@ -31,7 +31,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
+            locationManager.startMonitoringSignificantLocationChanges()
         }
         mapView.showsUserLocation = true
         self.mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)

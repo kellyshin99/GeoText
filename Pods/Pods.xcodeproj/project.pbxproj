@@ -7,225 +7,225 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EA5E30139C5A5956FC599E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72ADCBB6C89097D6B3FF5CCD /* Foundation.framework */; };
-		3FC89686D1DA214F2D761B27 /* Pods-LocationAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E53258A7376ED06E524DBF /* Pods-LocationAlert-dummy.m */; };
+		203922F2527B8F56486FC6EC /* Pods-LocationAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 020985B7BE692CCCC0AA2F91 /* Pods-LocationAlert-dummy.m */; };
+		CD0911013ABE1B4D571BEC3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC1CB79A6B589F18C4A772F /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		023B5E8B9264484DB0E0A000 /* TCConnectionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCConnectionDelegate.h; path = Headers/TCConnectionDelegate.h; sourceTree = "<group>"; };
-		0D6D9F0BFA337158A6741482 /* incoming.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = incoming.wav; path = Resources/incoming.wav; sourceTree = "<group>"; };
-		0E19FE40160DA7FFA315F660 /* Pods-LocationAlert-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LocationAlert-acknowledgements.plist"; sourceTree = "<group>"; };
-		22E2700DCD9CE2B5F71100C7 /* TwilioClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TwilioClient.h; path = Headers/TwilioClient.h; sourceTree = "<group>"; };
-		29E53258A7376ED06E524DBF /* Pods-LocationAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LocationAlert-dummy.m"; sourceTree = "<group>"; };
-		3B87CC7A4A8587B07D3C836B /* TCDeviceDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCDeviceDelegate.h; path = Headers/TCDeviceDelegate.h; sourceTree = "<group>"; };
-		483A368FFD895004C90EDA10 /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = Libraries/libcrypto.a; sourceTree = "<group>"; };
-		48CB5874282ACAD29C21E7FF /* Pods-LocationAlert-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LocationAlert-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4A50D45F02D90AEBA76F0970 /* dtmf_7.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_7.wav; path = Resources/dtmf_7.wav; sourceTree = "<group>"; };
-		4B8F44B3404431EE5B901A28 /* outgoing.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = outgoing.wav; path = Resources/outgoing.wav; sourceTree = "<group>"; };
-		615127F26ACFB41E4128DFB3 /* dtmf_hash.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_hash.wav; path = Resources/dtmf_hash.wav; sourceTree = "<group>"; };
-		689E50AFE4EFAABBE9AA4EEC /* dtmf_star.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_star.wav; path = Resources/dtmf_star.wav; sourceTree = "<group>"; };
-		6BBA9C34305D1A694493ABE8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		72ADCBB6C89097D6B3FF5CCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		73B2C46435E264E6B6B2A843 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		78312BE43FEA56AC3173FB80 /* Pods-LocationAlert-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LocationAlert-environment.h"; sourceTree = "<group>"; };
-		7A712274E609C43DE017FBA0 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		84128B09FC7A5AFF3CB381FB /* dtmf_3.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_3.wav; path = Resources/dtmf_3.wav; sourceTree = "<group>"; };
-		8D79275DCC34DCC7610E8588 /* libPods-LocationAlert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationAlert.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92EB277EE93CFE673A6FB820 /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = Libraries/libssl.a; sourceTree = "<group>"; };
-		93B2287B7C52C678A7218A9E /* TCPresenceEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCPresenceEvent.h; path = Headers/TCPresenceEvent.h; sourceTree = "<group>"; };
-		950A9B1D5E953EA5EA73BA93 /* TCDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCDevice.h; path = Headers/TCDevice.h; sourceTree = "<group>"; };
-		97849AA57017AE7CDD7B5022 /* libTwilioClient.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libTwilioClient.a; path = Libraries/libTwilioClient.a; sourceTree = "<group>"; };
-		9AB8E301501AD1A32439FF22 /* dtmf_2.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_2.wav; path = Resources/dtmf_2.wav; sourceTree = "<group>"; };
-		9D00F723EDD30829C19DDF51 /* dtmf_6.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_6.wav; path = Resources/dtmf_6.wav; sourceTree = "<group>"; };
-		A3DF77BA54DFB9E4E74ADF69 /* disconnect.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = disconnect.wav; path = Resources/disconnect.wav; sourceTree = "<group>"; };
-		B3FF87639B76F41FB89B26BF /* dtmf_4.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_4.wav; path = Resources/dtmf_4.wav; sourceTree = "<group>"; };
-		B4C5B37449DB22B3F79C7D84 /* dtmf_0.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_0.wav; path = Resources/dtmf_0.wav; sourceTree = "<group>"; };
-		B7E549A738710DF0C2A7D6AD /* dtmf_1.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_1.wav; path = Resources/dtmf_1.wav; sourceTree = "<group>"; };
-		BE714F8748376B023210F0B2 /* Pods-LocationAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert.debug.xcconfig"; sourceTree = "<group>"; };
-		C372F8457AD7C3FEA721428D /* dtmf_8.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_8.wav; path = Resources/dtmf_8.wav; sourceTree = "<group>"; };
-		D042308AB7E7C453C6DFA739 /* dtmf_9.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_9.wav; path = Resources/dtmf_9.wav; sourceTree = "<group>"; };
-		DF9F014C27529218F415C24C /* dtmf_5.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_5.wav; path = Resources/dtmf_5.wav; sourceTree = "<group>"; };
-		EB83E157A499120303C6E15A /* TCConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCConnection.h; path = Headers/TCConnection.h; sourceTree = "<group>"; };
-		F23EA3E4B0DBB9945DA59115 /* Pods-LocationAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert.release.xcconfig"; sourceTree = "<group>"; };
-		FE110189E3A0CD0B4C81F9E6 /* Pods-LocationAlert-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LocationAlert-resources.sh"; sourceTree = "<group>"; };
+		0061BEB8989AF73A41956E9E /* Pods-LocationAlert-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LocationAlert-environment.h"; sourceTree = "<group>"; };
+		020985B7BE692CCCC0AA2F91 /* Pods-LocationAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LocationAlert-dummy.m"; sourceTree = "<group>"; };
+		0C89E13B86DE508B859781C8 /* incoming.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = incoming.wav; path = Resources/incoming.wav; sourceTree = "<group>"; };
+		14405FECDAB1129709BB2EA0 /* libcrypto.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libcrypto.a; path = Libraries/libcrypto.a; sourceTree = "<group>"; };
+		20AC96C086DBE005FDB51BFA /* libssl.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libssl.a; path = Libraries/libssl.a; sourceTree = "<group>"; };
+		21740C1BA8962D434DCADE25 /* dtmf_4.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_4.wav; path = Resources/dtmf_4.wav; sourceTree = "<group>"; };
+		228803055D73E321CE6A0B54 /* Pods-LocationAlert-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LocationAlert-resources.sh"; sourceTree = "<group>"; };
+		2D54A8261B348F309D473446 /* Pods-LocationAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert.debug.xcconfig"; sourceTree = "<group>"; };
+		33A03C06209731066F85DDD6 /* Pods-LocationAlert-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LocationAlert-acknowledgements.plist"; sourceTree = "<group>"; };
+		39E1BCFAB2F6AA8AE467AAA2 /* disconnect.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = disconnect.wav; path = Resources/disconnect.wav; sourceTree = "<group>"; };
+		460DC8C89A527E713F16D82A /* dtmf_3.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_3.wav; path = Resources/dtmf_3.wav; sourceTree = "<group>"; };
+		465BBE97D76B31857EBCEC50 /* dtmf_star.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_star.wav; path = Resources/dtmf_star.wav; sourceTree = "<group>"; };
+		4B7ED3BEBEABC803FFECB502 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		53C63C179FACB94B22711218 /* TCConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCConnection.h; path = Headers/TCConnection.h; sourceTree = "<group>"; };
+		567B625B5431126B46FF9CF1 /* dtmf_2.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_2.wav; path = Resources/dtmf_2.wav; sourceTree = "<group>"; };
+		68D00B2DE2F5EA77EF338EEB /* dtmf_0.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_0.wav; path = Resources/dtmf_0.wav; sourceTree = "<group>"; };
+		6B661A623789B1F47EC7F277 /* Pods-LocationAlert-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LocationAlert-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8A412879E0C8EC219EC7C2E4 /* dtmf_hash.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_hash.wav; path = Resources/dtmf_hash.wav; sourceTree = "<group>"; };
+		8A78064A2A5D4CDAF7290E94 /* TCDevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCDevice.h; path = Headers/TCDevice.h; sourceTree = "<group>"; };
+		9D0A1AC5E2737ADAD6A75359 /* TwilioClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TwilioClient.h; path = Headers/TwilioClient.h; sourceTree = "<group>"; };
+		9DCDD75CFD926BC5C3822376 /* dtmf_7.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_7.wav; path = Resources/dtmf_7.wav; sourceTree = "<group>"; };
+		9EA8CA56684760C4C4BB1244 /* TCDeviceDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCDeviceDelegate.h; path = Headers/TCDeviceDelegate.h; sourceTree = "<group>"; };
+		A0219058BD60D2CDEEBB2612 /* dtmf_9.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_9.wav; path = Resources/dtmf_9.wav; sourceTree = "<group>"; };
+		A55315423066C33FF8483CD7 /* outgoing.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = outgoing.wav; path = Resources/outgoing.wav; sourceTree = "<group>"; };
+		B33D3EC4FA19C890BD98FBD3 /* Pods-LocationAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LocationAlert.release.xcconfig"; sourceTree = "<group>"; };
+		BB56DA156246272DE67D6B5D /* dtmf_6.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_6.wav; path = Resources/dtmf_6.wav; sourceTree = "<group>"; };
+		C0A3023D69ABA877B9F87BA5 /* libTwilioClient.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libTwilioClient.a; path = Libraries/libTwilioClient.a; sourceTree = "<group>"; };
+		C3F3E412EEE3486EEBC623BF /* dtmf_1.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_1.wav; path = Resources/dtmf_1.wav; sourceTree = "<group>"; };
+		C5A9589816F42EF2D3BFFDDA /* libPods-LocationAlert.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationAlert.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7288345FE516410F3215FA3 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CE18D5367B0BE5B07E556D08 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D38DB6DCABB2F641E11037BF /* dtmf_5.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_5.wav; path = Resources/dtmf_5.wav; sourceTree = "<group>"; };
+		D482F99DA4BCD9D28BD7A96C /* dtmf_8.wav */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = audio.wav; name = dtmf_8.wav; path = Resources/dtmf_8.wav; sourceTree = "<group>"; };
+		D856C09AD1E9E86DA6270389 /* TCPresenceEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCPresenceEvent.h; path = Headers/TCPresenceEvent.h; sourceTree = "<group>"; };
+		DC4CF8755D9B48B6FAE41417 /* TCConnectionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TCConnectionDelegate.h; path = Headers/TCConnectionDelegate.h; sourceTree = "<group>"; };
+		FAC1CB79A6B589F18C4A772F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D75F442594D7FF88936C3F83 /* Frameworks */ = {
+		F809B6B8DEC7637D5DD07F5D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EA5E30139C5A5956FC599E4 /* Foundation.framework in Frameworks */,
+				CD0911013ABE1B4D571BEC3A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14BB91E85AE7D38B8372DEEF /* Targets Support Files */ = {
+		02B9B2E1F684760F406AA000 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BAC3398741A9D1B830A82969 /* Pods-LocationAlert */,
+				F6E1D36CD965BB53040C9B5C /* iOS */,
 			);
-			name = "Targets Support Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2B7197EFBCC242EFF506621C /* TwilioSDK */ = {
+		053AEB274513BBC42A4DBD39 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EB83E157A499120303C6E15A /* TCConnection.h */,
-				023B5E8B9264484DB0E0A000 /* TCConnectionDelegate.h */,
-				950A9B1D5E953EA5EA73BA93 /* TCDevice.h */,
-				3B87CC7A4A8587B07D3C836B /* TCDeviceDelegate.h */,
-				93B2287B7C52C678A7218A9E /* TCPresenceEvent.h */,
-				22E2700DCD9CE2B5F71100C7 /* TwilioClient.h */,
-				70116EBF03E53ED1153646E1 /* Frameworks */,
-				37072802B95C18BDCDD757E4 /* Resources */,
+				C5A9589816F42EF2D3BFFDDA /* libPods-LocationAlert.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B457C0E1D198E57B206A9BC /* TwilioSDK */ = {
+			isa = PBXGroup;
+			children = (
+				53C63C179FACB94B22711218 /* TCConnection.h */,
+				DC4CF8755D9B48B6FAE41417 /* TCConnectionDelegate.h */,
+				8A78064A2A5D4CDAF7290E94 /* TCDevice.h */,
+				9EA8CA56684760C4C4BB1244 /* TCDeviceDelegate.h */,
+				D856C09AD1E9E86DA6270389 /* TCPresenceEvent.h */,
+				9D0A1AC5E2737ADAD6A75359 /* TwilioClient.h */,
+				7423B024CF628050B576C35A /* Frameworks */,
+				D20C5ECCFADF40E945C23A1B /* Resources */,
 			);
 			path = TwilioSDK;
 			sourceTree = "<group>";
 		};
-		360AA81B8038BFD45BCBA7A1 /* Pods */ = {
+		7423B024CF628050B576C35A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8D6C14B14114F8522422AEC3 /* Crashlytics */,
-				3ED9264AC5EDE9853AF6D67B /* Fabric */,
-				2B7197EFBCC242EFF506621C /* TwilioSDK */,
+				C0A3023D69ABA877B9F87BA5 /* libTwilioClient.a */,
+				14405FECDAB1129709BB2EA0 /* libcrypto.a */,
+				20AC96C086DBE005FDB51BFA /* libssl.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74C018EE73EE3EBE6DDA3B30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B7ED3BEBEABC803FFECB502 /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BDCE3FE69CF3C8FE6AC973D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FEBE5E91EABD483CA303D814 /* Crashlytics */,
+				88D82C7AC3D705E08D0E00EF /* Fabric */,
+				5B457C0E1D198E57B206A9BC /* TwilioSDK */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		37072802B95C18BDCDD757E4 /* Resources */ = {
+		7E2BA71C937458DB4D98A6B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A3DF77BA54DFB9E4E74ADF69 /* disconnect.wav */,
-				B4C5B37449DB22B3F79C7D84 /* dtmf_0.wav */,
-				B7E549A738710DF0C2A7D6AD /* dtmf_1.wav */,
-				9AB8E301501AD1A32439FF22 /* dtmf_2.wav */,
-				84128B09FC7A5AFF3CB381FB /* dtmf_3.wav */,
-				B3FF87639B76F41FB89B26BF /* dtmf_4.wav */,
-				DF9F014C27529218F415C24C /* dtmf_5.wav */,
-				9D00F723EDD30829C19DDF51 /* dtmf_6.wav */,
-				4A50D45F02D90AEBA76F0970 /* dtmf_7.wav */,
-				C372F8457AD7C3FEA721428D /* dtmf_8.wav */,
-				D042308AB7E7C453C6DFA739 /* dtmf_9.wav */,
-				615127F26ACFB41E4128DFB3 /* dtmf_hash.wav */,
-				689E50AFE4EFAABBE9AA4EEC /* dtmf_star.wav */,
-				0D6D9F0BFA337158A6741482 /* incoming.wav */,
-				4B8F44B3404431EE5B901A28 /* outgoing.wav */,
+				CE18D5367B0BE5B07E556D08 /* Crashlytics.framework */,
 			);
-			name = Resources;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3ED9264AC5EDE9853AF6D67B /* Fabric */ = {
+		88D82C7AC3D705E08D0E00EF /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
-				BD917E50BF5678D525690BC9 /* Base */,
+				AE1E7672E1EC243DF92C998E /* Base */,
 			);
 			path = Fabric;
 			sourceTree = "<group>";
 		};
-		3F9BF7AF16F8690B9EA64EBE /* Frameworks */ = {
+		8B516B8D7A93512E0FEDC0BA = {
 			isa = PBXGroup;
 			children = (
-				D9D34CE47DEE47ABABD2712F /* iOS */,
+				C7288345FE516410F3215FA3 /* Podfile */,
+				02B9B2E1F684760F406AA000 /* Frameworks */,
+				7BDCE3FE69CF3C8FE6AC973D /* Pods */,
+				053AEB274513BBC42A4DBD39 /* Products */,
+				96EF185E6A03B3561C89046A /* Targets Support Files */,
 			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		70116EBF03E53ED1153646E1 /* Frameworks */ = {
+		96EF185E6A03B3561C89046A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				97849AA57017AE7CDD7B5022 /* libTwilioClient.a */,
-				483A368FFD895004C90EDA10 /* libcrypto.a */,
-				92EB277EE93CFE673A6FB820 /* libssl.a */,
+				9941B7216CF3E333CD12076C /* Pods-LocationAlert */,
 			);
-			name = Frameworks;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7A2901C2C75C33F490B69346 /* Frameworks */ = {
+		9941B7216CF3E333CD12076C /* Pods-LocationAlert */ = {
 			isa = PBXGroup;
 			children = (
-				6BBA9C34305D1A694493ABE8 /* Crashlytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8D6C14B14114F8522422AEC3 /* Crashlytics */ = {
-			isa = PBXGroup;
-			children = (
-				7A2901C2C75C33F490B69346 /* Frameworks */,
-			);
-			path = Crashlytics;
-			sourceTree = "<group>";
-		};
-		90E692F869B1F6E0E83DFF86 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				73B2C46435E264E6B6B2A843 /* Fabric.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BAC3398741A9D1B830A82969 /* Pods-LocationAlert */ = {
-			isa = PBXGroup;
-			children = (
-				48CB5874282ACAD29C21E7FF /* Pods-LocationAlert-acknowledgements.markdown */,
-				0E19FE40160DA7FFA315F660 /* Pods-LocationAlert-acknowledgements.plist */,
-				29E53258A7376ED06E524DBF /* Pods-LocationAlert-dummy.m */,
-				78312BE43FEA56AC3173FB80 /* Pods-LocationAlert-environment.h */,
-				FE110189E3A0CD0B4C81F9E6 /* Pods-LocationAlert-resources.sh */,
-				BE714F8748376B023210F0B2 /* Pods-LocationAlert.debug.xcconfig */,
-				F23EA3E4B0DBB9945DA59115 /* Pods-LocationAlert.release.xcconfig */,
+				6B661A623789B1F47EC7F277 /* Pods-LocationAlert-acknowledgements.markdown */,
+				33A03C06209731066F85DDD6 /* Pods-LocationAlert-acknowledgements.plist */,
+				020985B7BE692CCCC0AA2F91 /* Pods-LocationAlert-dummy.m */,
+				0061BEB8989AF73A41956E9E /* Pods-LocationAlert-environment.h */,
+				228803055D73E321CE6A0B54 /* Pods-LocationAlert-resources.sh */,
+				2D54A8261B348F309D473446 /* Pods-LocationAlert.debug.xcconfig */,
+				B33D3EC4FA19C890BD98FBD3 /* Pods-LocationAlert.release.xcconfig */,
 			);
 			name = "Pods-LocationAlert";
 			path = "Target Support Files/Pods-LocationAlert";
 			sourceTree = "<group>";
 		};
-		BD917E50BF5678D525690BC9 /* Base */ = {
+		AE1E7672E1EC243DF92C998E /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				90E692F869B1F6E0E83DFF86 /* Frameworks */,
+				74C018EE73EE3EBE6DDA3B30 /* Frameworks */,
 			);
 			name = Base;
 			sourceTree = "<group>";
 		};
-		C4D5610EAD279D18BE726C99 = {
+		D20C5ECCFADF40E945C23A1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7A712274E609C43DE017FBA0 /* Podfile */,
-				3F9BF7AF16F8690B9EA64EBE /* Frameworks */,
-				360AA81B8038BFD45BCBA7A1 /* Pods */,
-				CBB92ED3727E11CF503FF3C2 /* Products */,
-				14BB91E85AE7D38B8372DEEF /* Targets Support Files */,
+				39E1BCFAB2F6AA8AE467AAA2 /* disconnect.wav */,
+				68D00B2DE2F5EA77EF338EEB /* dtmf_0.wav */,
+				C3F3E412EEE3486EEBC623BF /* dtmf_1.wav */,
+				567B625B5431126B46FF9CF1 /* dtmf_2.wav */,
+				460DC8C89A527E713F16D82A /* dtmf_3.wav */,
+				21740C1BA8962D434DCADE25 /* dtmf_4.wav */,
+				D38DB6DCABB2F641E11037BF /* dtmf_5.wav */,
+				BB56DA156246272DE67D6B5D /* dtmf_6.wav */,
+				9DCDD75CFD926BC5C3822376 /* dtmf_7.wav */,
+				D482F99DA4BCD9D28BD7A96C /* dtmf_8.wav */,
+				A0219058BD60D2CDEEBB2612 /* dtmf_9.wav */,
+				8A412879E0C8EC219EC7C2E4 /* dtmf_hash.wav */,
+				465BBE97D76B31857EBCEC50 /* dtmf_star.wav */,
+				0C89E13B86DE508B859781C8 /* incoming.wav */,
+				A55315423066C33FF8483CD7 /* outgoing.wav */,
 			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		CBB92ED3727E11CF503FF3C2 /* Products */ = {
+		F6E1D36CD965BB53040C9B5C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8D79275DCC34DCC7610E8588 /* libPods-LocationAlert.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D9D34CE47DEE47ABABD2712F /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				72ADCBB6C89097D6B3FF5CCD /* Foundation.framework */,
+				FAC1CB79A6B589F18C4A772F /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		FEBE5E91EABD483CA303D814 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				7E2BA71C937458DB4D98A6B1 /* Frameworks */,
+			);
+			path = Crashlytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		94F0F920C8707C3528FF4E94 /* Pods-LocationAlert */ = {
+		28A9B599F97BDD9227B7D0AA /* Pods-LocationAlert */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7E38CED212E6F13066C29FC8 /* Build configuration list for PBXNativeTarget "Pods-LocationAlert" */;
+			buildConfigurationList = 2271FC1513C93771CA58AB4E /* Build configuration list for PBXNativeTarget "Pods-LocationAlert" */;
 			buildPhases = (
-				A5FD9BD38A25FBCF8905E263 /* Sources */,
-				D75F442594D7FF88936C3F83 /* Frameworks */,
+				AEF959D530F2E4A7DCA17AB7 /* Sources */,
+				F809B6B8DEC7637D5DD07F5D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,81 +233,79 @@
 			);
 			name = "Pods-LocationAlert";
 			productName = "Pods-LocationAlert";
-			productReference = 8D79275DCC34DCC7610E8588 /* libPods-LocationAlert.a */;
+			productReference = C5A9589816F42EF2D3BFFDDA /* libPods-LocationAlert.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1829DCDCC9B15C1782869DB8 /* Project object */ = {
+		DB433FF97FF81AE6E3818540 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = B299C1922ECB47493930D5FA /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 8857EDE5F0480AE7F1332DE4 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = C4D5610EAD279D18BE726C99;
-			productRefGroup = CBB92ED3727E11CF503FF3C2 /* Products */;
+			mainGroup = 8B516B8D7A93512E0FEDC0BA;
+			productRefGroup = 053AEB274513BBC42A4DBD39 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94F0F920C8707C3528FF4E94 /* Pods-LocationAlert */,
+				28A9B599F97BDD9227B7D0AA /* Pods-LocationAlert */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A5FD9BD38A25FBCF8905E263 /* Sources */ = {
+		AEF959D530F2E4A7DCA17AB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FC89686D1DA214F2D761B27 /* Pods-LocationAlert-dummy.m in Sources */,
+				203922F2527B8F56486FC6EC /* Pods-LocationAlert-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		030FE81F35D5C21B6C307033 /* Release */ = {
+		54404F9ED1086D16843D5D8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D54A8261B348F309D473446 /* Pods-LocationAlert.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5F67A5413F532B38A7E895A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33D3EC4FA19C890BD98FBD3 /* Pods-LocationAlert.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		14973FC14C94FFA955A3BA64 /* Debug */ = {
+		7A641F1DB9633447556718F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -346,60 +344,62 @@
 			};
 			name = Debug;
 		};
-		2754C6A0F03F778B9D7CE6C0 /* Debug */ = {
+		F6F85C272D25653DE513BDFF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE714F8748376B023210F0B2 /* Pods-LocationAlert.debug.xcconfig */;
 			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		7E3B04BD4A8C4B244F806CA7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F23EA3E4B0DBB9945DA59115 /* Pods-LocationAlert.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7E38CED212E6F13066C29FC8 /* Build configuration list for PBXNativeTarget "Pods-LocationAlert" */ = {
+		2271FC1513C93771CA58AB4E /* Build configuration list for PBXNativeTarget "Pods-LocationAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2754C6A0F03F778B9D7CE6C0 /* Debug */,
-				7E3B04BD4A8C4B244F806CA7 /* Release */,
+				54404F9ED1086D16843D5D8F /* Debug */,
+				5F67A5413F532B38A7E895A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B299C1922ECB47493930D5FA /* Build configuration list for PBXProject "Pods" */ = {
+		8857EDE5F0480AE7F1332DE4 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				14973FC14C94FFA955A3BA64 /* Debug */,
-				030FE81F35D5C21B6C307033 /* Release */,
+				7A641F1DB9633447556718F9 /* Debug */,
+				F6F85C272D25653DE513BDFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1829DCDCC9B15C1782869DB8 /* Project object */;
+	rootObject = DB433FF97FF81AE6E3818540 /* Project object */;
 }
