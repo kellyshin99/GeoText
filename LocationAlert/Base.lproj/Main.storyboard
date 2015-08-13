@@ -123,17 +123,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dkjfgkjdskgfhlsfdg" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7a8-Dj-rxl">
+                                <rect key="frame" x="320" y="423" width="254" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Text To: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-7g-PZ6">
                                 <rect key="frame" x="457" y="393" width="117" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7a8-Dj-rxl">
-                                <rect key="frame" x="320" y="423" width="274" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -152,7 +152,7 @@
                             <constraint firstItem="WV2-gY-G3j" firstAttribute="leading" secondItem="2u5-Os-tZg" secondAttribute="leadingMargin" constant="24" id="dQJ-zH-A5Z"/>
                             <constraint firstItem="HUo-cm-Ekl" firstAttribute="top" secondItem="Mq7-yh-lt7" secondAttribute="bottom" constant="15" id="dxT-xM-lKP"/>
                             <constraint firstItem="Mq7-yh-lt7" firstAttribute="top" secondItem="kc2-kC-qL7" secondAttribute="bottom" id="eYq-xX-LrH"/>
-                            <constraint firstItem="7a8-Dj-rxl" firstAttribute="trailing" secondItem="2u5-Os-tZg" secondAttribute="trailingMargin" constant="10" id="lPw-AV-QBr"/>
+                            <constraint firstItem="7a8-Dj-rxl" firstAttribute="trailing" secondItem="2u5-Os-tZg" secondAttribute="trailingMargin" constant="-10" id="lPw-AV-QBr"/>
                             <constraint firstItem="Mq7-yh-lt7" firstAttribute="leading" secondItem="2u5-Os-tZg" secondAttribute="leading" id="nyh-YU-v31"/>
                             <constraint firstAttribute="trailing" secondItem="Mq7-yh-lt7" secondAttribute="trailing" id="p8m-8t-uUy"/>
                             <constraint firstItem="kOs-HH-2we" firstAttribute="leading" secondItem="2u5-Os-tZg" secondAttribute="leadingMargin" id="yn7-xJ-icv"/>
