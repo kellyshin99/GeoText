@@ -36,39 +36,4 @@ struct SharedData {
         }
     }
     
-    static func sendText() {
-        var swiftRequest = SwiftRequest();
-        
-        println("phone number \(SharedData.currentPhoneNumber)")
-        
-        var data = [
-            "To" : SharedData.currentPhoneNumber,
-//            "From" : "+12516164888",
-            "From" : "+1251616488",
-            "Body" : "\(currentUserName) has arrived at \(locationAddress)"
-        ];
-        
-        swiftRequest.post("https://api.twilio.com/2010-04-01/Accounts/ACe59ae55b5f1d2a999a8bcb9cf2ad5a2f/Messages.json",
-            auth: ["username" : "ACe59ae55b5f1d2a999a8bcb9cf2ad5a2f", "password" : "6aadae36ac8be174451c7432e9795ec4"],
-            data: data,
-            callback: {err, response, body in
-                if err == nil {
-                    if response?.statusCode == 201 {
-                        println("Success: \(response)")
-
-                        var success: UILocalNotification = UILocalNotification()
-                        success.alertBody = "Message Sent!"
-                        UIApplication.sharedApplication().scheduleLocalNotification(success)
-
-                    } else {
-                        
-                        var failed: UILocalNotification = UILocalNotification()
-                        failed.alertBody = "Message failed to send."
-                        UIApplication.sharedApplication().scheduleLocalNotification(failed)
-
-                    }
-                    
-                }
-        });
-    }
 }

@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-LocationAlert-Mixpanel.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-LocationAlert.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>BF04DC018F97571D6E65CF6D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D44B8EBE2E3CC402B4980B30</key>
+		<key>94F0F920C8707C3528FF4E94</key>
 		<dict>
 			<key>primary</key>
 			<true/>

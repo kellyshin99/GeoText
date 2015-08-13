@@ -90,7 +90,7 @@ class MainViewController: UIViewController {
             presentViewController(addContactAlert, animated: true, completion: nil)
         } else {
             nameAlert()
-            SharedData.sendText()
+//            SharedData.sendText()
         }
         
         if locationManager.monitoredRegions.isEmpty == false {

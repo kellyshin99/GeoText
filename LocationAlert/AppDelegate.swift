@@ -41,11 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             SharedData.contactName = contactValue
         }
         
-        // Analytics
-        Mixpanel.sharedInstanceWithToken("24da484878cc9f0f3f9fb09b56a6eea0")
-        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-        mixpanel.track("App launched")
-        
         Fabric.with([Crashlytics()]) 
         
         return true
@@ -70,8 +65,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        println("received lcal notification")
-
+        
+//        let successAlert = UIAlertController(title: "Success!", message: "Message Sent", preferredStyle: .Alert)
+//        successAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+//        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(successAlert, animated: true, completion: nil)
+        
+//        let failedAlert = UIAlertController(title: "Failed", message: "Message failed to send.", preferredStyle: .Alert)
+//        failedAlert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+//        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(failedAlert, animated: true, completion: nil)
+        
     }
     
     func applicationWillTerminate(application: UIApplication) {
